@@ -128,3 +128,151 @@ Unit 5: Modern Java Frameworks & Java for IoT
   - Raspberry Pi programming with Pi4J library
   - Java Framework for IoT (Eclipse IoT, Apache IoTDB)
   - IoT Protocols (MQTT, CoAP) with Java
+
+
+
+
+
+Unit 1: Advanced Java Language Features (8 hours lecture, 6 hours lab)
+- Lambda expressions and functional interfaces (2 hours lecture, 1 hour lab)
+  - Introduction to lambda expressions
+  - Functional interfaces and their usage
+  - Method references and their applications
+  - Streams API and parallel processing
+- Java Generics and Type Inference (2 hours lecture, 2 hours lab)
+  - Understanding generics and their benefits
+  - Type inference and diamond operator
+  - Bounded type parameters and wildcards
+  - Generic methods and classes
+- Java Reflection API and Annotations (2 hours lecture, 1 hour lab)
+  - Reflection API basics and use cases
+  - Annotations and their applications
+  - Runtime annotation processing
+  - Dynamic class loading and object creation
+- Java Debugging & logging (1 hour lecture, 1 hour lab)
+  - Debugging techniques and tools
+  - Logging frameworks (e.g., Log4j, SLF4J)
+  - Best practices for debugging and logging
+  - Troubleshooting common Java issues
+- Java Unit testing with JUnit (1 hour lecture, 1 hour lab)
+  - Introduction to unit testing concepts
+  - Writing and running tests with JUnit
+  - Test-driven development (TDD) principles
+  - Mocking and stubbing with Mockito
+
+Unit 2: User Interface Development (9 hours lecture, 6 hours lab)
+- Brief intro of UI Development using Applet & AWT (1 hour lecture)
+  - Overview of JFC, Applet, AWT and Swing
+    - Features of the Java Foundation Classes
+  - Limitations and alternatives
+  - Difference between AWT and Swing
+- Java Swing (2 hours lecture, 2 hours lab)
+  - Swing components and containers
+    - Swing Classes Hierarchy, Commonly used Methods of Component class (add(), setSize(), setLayout(), and setVisible()), JApplet, JFrame, JLabel, JTextField, JTextArea, JButton, JCheckBox, JRadioButton, JComboBox, JMenu
+  - Layout managers and custom layouts
+    - Layout Management: Flow Layout, Border Layout, Card Layout, Box Layout, Grid Layout, Gridbag Layout, Group Layout, Spring Layout
+  - Swing event handling
+    - Event Handling: Introduction, Action Events, Key Events, Focus Events, Window Event, Mouse Event, Item Events
+    - EventListener Interface: ActionListener, KeyListener, FocusListener, WindowListener, MouseListener, MouseMotionListener, ItemListener
+  - Swing threading and concurrency
+- JavaFX and FXML (4 hours lecture, 2 hours lab)
+  - Introduction to JavaFX architecture
+  - Creating user interfaces with FXML
+  - Styling with CSS
+  - JavaFX charts and graphs
+  - JavaFX 3D and animations
+- Scene Builder for visual design (1 hour lecture, 1 hour lab)
+  - Using Scene Builder for UI design
+  - Integrating Scene Builder with IDE
+  - Best practices for UI design with Scene Builder
+- Event Handling and UI Design Patterns (1 hour lecture, 1 hour lab)
+  - Event-driven programming concepts
+  - UI design patterns (e.g., MVC, MVP, MVVM)
+  - Implementing design patterns in JavaFX
+
+Unit 3: Data Persistence and Access (8 hours lecture, 4 hours lab)
+- Two-Tier Database Design, Three-Tier Database Design
+- JDBC and Connection Pooling (2 hours lecture, 1 hour lab)
+  - JDBC basics and database connectivity
+  - Connection pooling concepts and implementation
+  - Prepared statements and result set handling
+  - Transaction management with JDBC
+  - The JDBC API: The API components, database operations like creating tables, CRUD (Create, Read, Update, Delete) operations using SQL
+  - JDBC - advantages and disadvantages, JDBC drivers, JDBC-ODBC bridge
+- Object-Relational Mapping (ORM) with Hibernate (3 hours lecture, 2 hours lab)
+  - Introduction to ORM and Hibernate
+    - ORM working model, advantages, and ORM tools
+    - Architecture of Hibernate and installation steps for IDE
+    - Hibernate Properties and supported databases
+  - Mapping entities and relationships
+  - Hibernate query language (HQL) and criteria API
+  - Caching and performance optimization with Hibernate
+- Java Persistence API (JPA) (2 hours lecture, 1 hour lab)
+  - JPA concepts and entity lifecycle
+  - Entity relationships and inheritance
+  - JPA query language (JPQL) and native queries
+  - JPA caching and performance tuning
+- Query optimization and performance tuning (1 hour lecture)
+  - Optimization techniques for JDBC, Hibernate, and JPA
+  - Identifying and resolving performance bottlenecks
+  - Indexing and query plan analysis
+  - Caching strategies and cache invalidation
+
+Unit 4: Server Side Development (8 hours lecture, 6 hours lab)
+- Java Servlets and Filters (2 hours lecture, 2 hours lab)
+  - Servlet lifecycle and API
+  - The Java Servlet Development Kit
+  - Creating and configuring servlets
+    - The Simple Servlet: create and compile servlet source code, start a web browser and request the servlet, example of echo servlet and deployment in Tomcat server
+    - The javax.servlet Package: reading database/table records and displaying them using a servlet
+  - Implementing filters for request processing
+  - Servlet security and authentication
+- JavaServer Pages (JSP) (2 hours lecture, 1 hour lab)
+  - JSP syntax and directives
+    - Components of JSP page: Directives, Comments, Expression, Scriptlets, Declarations, Implicit Objects, Standard Actions and Tag Extensions
+    - Elements Created with the INPUT Tag, Elements Created with select and option, textarea Element
+  - Implement web applications using JSP Form input elements and validation.
+  - Implement web applications using JSP database connection.
+    - Create Table using JSP, SELECT, INSERT, DELETE and UPDATE
+  - Expression Language (EL) and JSTL
+  - MVC pattern with JSP and servlets
+  - JSP best practices and performance optimization
+- Integration of Servlets and JSP (1 hour lecture, 1 hour lab)
+  - Combining servlets and JSP for dynamic web pages
+  - Best practices for servlet and JSP integration
+  - Handling form submissions and validations
+    -  JSP form validation
+  - Session management and state maintenance
+    - Read and Delete data from cookies, maintain session and track session id, Core tags, SQL tags, XML tags, JSTL functions
+    - Implement web applications using JSP Cookies and Session tracking.
+- Introduction to RESTful Web Services (1 hour lecture)
+  - REST principles and architecture
+  - Comparison with SOAP-based web services
+  - Designing RESTful APIs
+- RESTful Web Services with JAX-RS (2 hours lecture, 2 hours lab)
+  - JAX-RS API and annotations
+  - Implementing RESTful endpoints
+  - Consuming RESTful services with Java clients
+  - Exception handling and error responses in JAX-RS
+
+Unit 5: Modern Java Frameworks & Java for IoT (9 hours lecture, 6 hours lab)
+- Spring Framework (Core, MVC, Security, Data) (4 hours lecture, 2 hours lab)
+  - Spring Core concepts: Dependency Injection (DI), Inversion of Control (IoC), Aspect-oriented programming (AOP), Plain Old Java Object (POJO)
+  - Spring MVC for web application development
+    - Describe MVC Architecture Layers. Model layer, View layer, and Controller layer.
+  - Spring Security for authentication and authorization
+  - Spring Data for data access and persistence
+- Spring Boot for rapid application development (3 hours lecture, 2 hours lab)
+  - Introduction to Spring Boot
+  - Auto-configuration and starter dependencies
+  - Creating RESTful APIs with Spring Boot
+  - Spring Boot Actuator and monitoring
+- Java for IoT (2 hours lecture, 2 hours lab)
+  - Overview of IoT concepts and protocols
+  - Interfacing with Arduino and NodeMCU using Java
+  - Raspberry Pi programming with Pi4J library
+  - Java frameworks for IoT (e.g., Eclipse IoT, Apache IoTDB)
+  - IoT protocols (MQTT, CoAP) with Java
+  - Security considerations for IoT applications
+
+Total: 42 hours lecture, 28 hours lab

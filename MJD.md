@@ -276,3 +276,114 @@ Unit 5: Modern Java Frameworks & Java for IoT (9 hours lecture, 6 hours lab)
   - Security considerations for IoT applications
 
 Total: 42 hours lecture, 28 hours lab
+
+
+
+
+Unit 1: Advanced Java Language Features (8 hours lecture, 6 hours lab)
+1. Lambda expressions and functional interfaces (2 hours lecture, 1 hour lab)
+  1. Introduction to lambda expressions
+  2. Functional interfaces and their usage
+  3. Method references and their applications
+2. Java Generics and Type Inference (2 hours lecture, 2 hours lab)
+  - Understanding generics and their benefits
+  - Type inference and diamond operator
+  - Bounded type parameters and wildcards
+  - Generic methods and classes
+3. Java Reflection API and Annotations (2 hours lecture, 1 hour lab)
+  - Reflection API basics and use cases
+  - Annotations and their applications
+  - Runtime annotation processing
+  - Dynamic class loading and object creation
+4. Streams API and parallel processing (1 hour lecture, 1 hour lab)
+  - Introduction to Streams API
+  - Intermediate and terminal operations
+  - Parallel processing with Streams
+5. Java Debugging, Logging, and Testing (1 hour lecture, 1 hour lab)
+  - Debugging techniques and tools
+  - Logging frameworks (e.g., Log4j, SLF4J)
+  - Introduction to unit testing with JUnit
+  - Test-driven development (TDD) principles
+
+Unit 2: User Interface Development (9 hours lecture, 6 hours lab)
+- Introduction to Java UI Technologies (1 hour lecture)
+  - Overview of JFC, Applet, AWT, and Swing
+  - Limitations and alternatives
+  - Differences between AWT and Swing
+- Java Swing (3 hours lecture, 2 hours lab)
+  - Swing components and containers
+  - Layout managers and custom layouts
+  - Swing event handling
+  - Swing threading and concurrency
+- JavaFX and FXML (4 hours lecture, 3 hours lab)
+  - Introduction to JavaFX architecture
+  - Creating user interfaces with FXML
+  - Styling with CSS
+  - JavaFX charts, graphs, 3D, and animations
+  - Using Scene Builder for visual design
+- Event Handling and UI Design Patterns (1 hour lecture, 1 hour lab)
+  - Event-driven programming concepts
+  - UI design patterns (e.g., MVC, MVP, MVVM)
+  - Implementing design patterns in JavaFX
+
+Unit 3: Data Persistence and Access (8 hours lecture, 5 hours lab)
+- Database Design and JDBC (2 hours lecture, 1 hour lab)
+  - Two-Tier and Three-Tier Database Design
+  - JDBC basics and database connectivity
+  - Connection pooling concepts and implementation
+  - Prepared statements and result set handling
+  - Transaction management with JDBC
+- Object-Relational Mapping (ORM) with Hibernate (3 hours lecture, 2 hours lab)
+  - Introduction to ORM and Hibernate
+  - Mapping entities and relationships
+  - Hibernate query language (HQL) and criteria API
+  - Caching and performance optimization with Hibernate
+- Java Persistence API (JPA) (2 hours lecture, 1 hour lab)
+  - JPA concepts and entity lifecycle
+  - Entity relationships and inheritance
+  - JPA query language (JPQL) and native queries
+  - JPA caching and performance tuning
+- Query Optimization and Performance Tuning (1 hour lecture, 1 hour lab)
+  - Optimization techniques for JDBC, Hibernate, and JPA
+  - Identifying and resolving performance bottlenecks
+  - Indexing and query plan analysis
+  - Caching strategies and cache invalidation
+
+Unit 4: Server-Side Development (9 hours lecture, 6 hours lab)
+- Java Servlets and Filters (2 hours lecture, 2 hours lab)
+  - Servlet lifecycle and API
+  - Creating and configuring servlets
+  - Implementing filters for request processing
+  - Servlet security and authentication
+- JavaServer Pages (JSP) (3 hours lecture, 2 hours lab)
+  - JSP syntax and directives
+  - Expression Language (EL) and JSTL
+  - MVC pattern with JSP and servlets
+  - JSP best practices and performance optimization
+- Integration of Servlets and JSP (2 hours lecture, 1 hour lab)
+  - Combining servlets and JSP for dynamic web pages
+  - Handling form submissions and validations
+  - Session management and state maintenance
+- RESTful Web Services (2 hours lecture, 1 hour lab)
+  - Introduction to REST principles and architecture
+  - Designing RESTful APIs
+  - Implementing RESTful endpoints with JAX-RS
+  - Consuming RESTful services with Java clients
+
+Unit 5: Modern Java Frameworks & Java for IoT (8 hours lecture, 5 hours lab)
+- Spring Framework (Core, MVC, Security, Data) (4 hours lecture, 2 hours lab)
+  - Spring Core concepts (DI, IoC, AOP, POJO)
+  - Spring MVC for web application development
+  - Spring Security for authentication and authorization
+  - Spring Data for data access and persistence
+- Spring Boot for Rapid Application Development (2 hours lecture, 1 hour lab)
+  - Introduction to Spring Boot
+  - Auto-configuration and starter dependencies
+  - Creating RESTful APIs with Spring Boot
+  - Spring Boot Actuator and monitoring
+- Java for IoT (2 hours lecture, 2 hours lab)
+  - Overview of IoT concepts and protocols
+  - Interfacing with Arduino and NodeMCU using Java
+  - Raspberry Pi programming with Pi4J library
+  - IoT protocols (MQTT, CoAP) with Java
+  - Security considerations for IoT applications

@@ -63,46 +63,68 @@
    4. RESTful Web Services using JAX-RS
 5.  Modern Java Frameworks, Design Patterns & Practices
     1. Design Patterns
-      1. Creational patterns (e.g., Singleton, Factory, Builder)
-      2. Structural patterns (e.g., Adapter, Facade, Decorator)
-      3. Behavioral patterns (e.g., Observer, Strategy, Template Method)
-    2. Model-View-Controller (MVC) pattern
-    3. Spring Framework (Core, MVC, Data, Security)
-    4. Spring Boot for rapid application development
-    5. Inversion of Control (IoC) and Dependency Injection (DI)
-    6. Aspect-Oriented Programming (AOP)
-    7. Microservices Architecture
+      2. Creational patterns (e.g., Singleton, Factory, Builder)
+      3. Structural patterns (e.g., Adapter, Facade, Decorator)
+      4. Behavioral patterns (e.g., Observer, Strategy, Template Method)
+    5. Model-View-Controller (MVC) pattern
+    6. Spring Framework (Core, MVC, Data, Security)
+    7. Spring Boot for rapid application development
+    8. Inversion of Control (IoC) and Dependency Injection (DI)
+    9. Aspect-Oriented Programming (AOP)
+    10. Microservices Architecture
         1.  Principles of microservices
         2.  Containerization with Docker
         3.  Orchestration with Kubernetes
-    8. Continuous Integration and Deployment (CI/CD)
-        1.  Jenkins, Travis CI, or similar tools
-        2.  Automated testing and deployment pipelines
-    9.  Java Build Tools:  Introduce build tools like Maven or Gradle for project automation.
-6.  
+    11. Continuous Integration and Deployment (CI/CD)
+         1.  Jenkins, Travis CI, or similar tools
+         2.  Automated testing and deployment pipelines
+    12. Java Build Tools:  Introduce build tools like Maven or Gradle for project automation.
+
+
+
+
+
+Unit 1: Advanced Java Language Features
+
+- Lambda expressions and functional interfaces
+- Java Generics and Type Inference
+- Java Reflection API and Annotations
+- Java Debugging & logging
+- Java Unit testing with JUnit
 
 Unit 2: User Interface Development
-Java Applets
-Event handling
-Java AWT (Abstract Window Toolkit)
-Java Swing for Desktop Applications
-Building Rich User Interfaces with JavaFX
-Understanding the difference between AWT and Swing
+
+- Brief intro of UI Development using Applet & AWT
+- Java Swing
+- JavaFX and FXML
+- Scene Builder for visual design
+- Event Handling and UI Design Patterns
+- Integration with CSS and multimedia
 
 Unit 3: Data Persistence and Access
-ODBC and JDBC
-ODBC-JDBC bridge
-Object-Relational Mapping (ORM) with Hibernate
-Java Persistence API (JPA)
 
-Unit 5: Modern Java Frameworks and Practices
-- Design Patterns
-  - Creational patterns (e.g., Singleton, Factory, Builder)
-  - Structural patterns (e.g., Adapter, Facade, Decorator)
-  - Behavioral patterns (e.g., Observer, Strategy, Template Method)
-Model-View-Controller (MVC) pattern
-Spring Framework (Core, MVC, Data, Security)
-Spring Boot for rapid application development
-Introduction to Microservices Architecture (Principles, Containerization with Docker)
-Continuous Integration and Deployment (CI/CD) with tools like Jenkins or Travis CI
-Java Build Tools: Maven or Gradle for project automation
+- JDBC and Connection Pooling
+- Object-Relational Mapping (ORM) with Hibernate
+- Java Persistence API (JPA)
+- Query optimization and performance tuning
+
+Unit 4: Server Side Development
+
+- Java Servlets and Filters
+- JavaServer Pages (JSP)
+- Integration of Servlets and JSP
+- Introduction to RESTful Web Services
+- RESTful Web Services with JAX-RS
+
+Unit 5: Modern Java Frameworks & Java for IoT
+
+- Spring Framework (Core, MVC, Security, Data)
+  - Model-View-Controller (MVC) pattern
+- Dependency Injection and Inversion of Control (IoC)
+- Spring Boot for rapid application development
+  - Implementing RESTful APIs with Spring Boot
+- Java for IoT
+  - Interfacing with Arduino and NodeMCU using Java
+  - Raspberry Pi programming with Pi4J library
+  - Java Framework for IoT (Eclipse IoT, Apache IoTDB)
+  - IoT Protocols (MQTT, CoAP) with Java

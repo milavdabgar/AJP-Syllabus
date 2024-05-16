@@ -278,8 +278,6 @@ Unit 5: Modern Java Frameworks & Java for IoT (9 hours lecture, 6 hours lab)
 Total: 42 hours lecture, 28 hours lab
 
 
-
-
 Unit 1: Advanced Java Language Features (8 hours lecture, 6 hours lab)
 1. Lambda expressions and functional interfaces (2 hours lecture, 1 hour lab)
   1. Introduction to lambda expressions

@@ -1214,49 +1214,1270 @@ By following the single-threaded model and using the `SwingUtilities.invokeLater
 
 Swing provides a comprehensive set of components, layout managers, event handling mechanisms, and threading models to build robust and interactive desktop applications. By understanding and leveraging these features, you can create visually appealing and user-friendly interfaces that meet your application's requirements.
 
+Sure, let's explore JavaFX and FXML in detail with code examples.
+
 ## JavaFX and FXML
 
-### Introduction to JavaFX architecture
+JavaFX is a modern, cross-platform UI toolkit for building rich client applications in Java. It provides a comprehensive set of tools and libraries for creating visually appealing and responsive user interfaces, with support for 2D and 3D graphics, multimedia, web content, and more.
 
-### Creating user interfaces with FXML
+### Introduction to JavaFX Architecture
+
+The JavaFX architecture is based on the concept of a Scene Graph, which is a hierarchical tree structure that represents the UI components and their relationships. The Scene Graph is rendered using hardware acceleration, providing smooth and efficient rendering of UI elements.
+
+The main components of the JavaFX architecture are:
+
+1. **Stage**: Represents the top-level window in a JavaFX application.
+2. **Scene**: Represents the root of the Scene Graph and contains the UI elements.
+3. **Node**: The base class for all UI components and shapes in the Scene Graph.
+4. **Layout Panes**: Containers that manage the layout and positioning of child nodes (e.g., `VBox`, `HBox`, `GridPane`).
+5. **UI Controls**: Components like buttons, text fields, labels, tables, and trees.
+6. **Graphics and Media**: Classes for working with 2D and 3D graphics, images, audio, and video.
+
+Here's a simple example that demonstrates the basic structure of a JavaFX application:
+
+```java
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class JavaFXExample extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a button
+        Button button = new Button("Click Me");
+
+        // Create a layout pane and add the button
+        StackPane root = new StackPane();
+        root.getChildren().add(button);
+
+        // Create a scene and set it on the stage
+        Scene scene = new Scene(root, 300, 200);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("JavaFX Example");
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+In this example, we create a `Button` and add it to a `StackPane` layout pane. We then create a `Scene` with the `StackPane` as the root node and set it on the `Stage`. Finally, we show the `Stage` to display the JavaFX application.
+
+### Creating User Interfaces with FXML
+
+FXML (JavaFX Markup Language) is an XML-based markup language that allows you to define the structure and layout of your JavaFX user interfaces declaratively. By separating the UI definition from the application logic, FXML promotes code reusability and maintainability.
+
+Here's an example of an FXML file that defines a simple user interface:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml">
+    <Label text="Enter your name:"/>
+    <TextField fx:id="nameField"/>
+    <Button text="Submit" onAction="#handleSubmitButton"/>
+</VBox>
+```
+
+In this FXML file, we define a `VBox` layout pane that contains a `Label`, a `TextField`, and a `Button`. The `fx:id` attribute is used to assign an identifier to the `TextField`, which can be accessed from the controller class. The `onAction` attribute is used to specify the method that should be called when the `Button` is clicked.
+
+To load and use this FXML file in your JavaFX application, you need to create a controller class and link it to the FXML file:
+
+```java
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+public class FXMLController {
+    @FXML
+    private TextField nameField;
+
+    @FXML
+    private void handleSubmitButton() {
+        String name = nameField.getText();
+        System.out.println("Hello, " + name + "!");
+    }
+}
+```
+
+In the controller class, we define a `TextField` field and annotate it with `@FXML` to link it to the `TextField` in the FXML file. We also define a method `handleSubmitButton` that is called when the `Button` is clicked.
+
+To load the FXML file and create the JavaFX application, you can use the `FXMLLoader` class:
+
+```java
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class FXMLExample extends Application {
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        // Load the FXML file
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("example.fxml"));
+        Parent root = loader.load();
+
+        // Create the scene and set it on the stage
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("FXML Example");
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+In this example, we use the `FXMLLoader` to load the `example.fxml` file and create the root node of the Scene Graph. We then create a `Scene` with the root node and set it on the `Stage`.
 
 ### Styling with CSS
 
-### JavaFX charts, graphs, 3D, and animations
+JavaFX provides support for styling UI components using Cascading Style Sheets (CSS), similar to how CSS is used in web development. This allows you to separate the visual styling from the application logic, making it easier to maintain and customize the appearance of your application.
 
-### Using Scene Builder for visual design
+Here's an example of how you can apply CSS styles to JavaFX components:
+
+```css
+/* styles.css */
+.root {
+    -fx-base: rgb(50, 50, 50);
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #4286f4, #2b5fac);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+}
+```
+
+In this CSS file, we define styles for the root node (which affects the overall appearance of the application), `Label` components, and `Button` components.
+
+To apply these styles to your JavaFX application, you can load the CSS file and add it to the `Scene`:
+
+```java
+// Load the CSS file
+String css = FXMLExample.class.getResource("styles.css").toExternalForm();
+
+// Create the scene and apply the CSS
+Scene scene = new Scene(root);
+scene.getStylesheets().add(css);
+primaryStage.setScene(scene);
+```
+
+By separating the styling from the application logic using CSS, you can easily change the appearance of your JavaFX application without modifying the underlying code.
+
+### JavaFX Charts, Graphs, 3D, and Animations
+
+JavaFX offers a rich set of features for creating data visualizations, 3D graphics, and animations, making it a powerful tool for building modern and engaging user interfaces.
+
+#### Charts and Graphs
+
+JavaFX provides a wide range of built-in chart types, including line charts, area charts, bar charts, pie charts, scatter charts, and bubble charts. These charts are highly customizable and can be easily integrated into your JavaFX applications.
+
+Here's an example of creating a line chart in JavaFX:
+
+```java
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+
+public class LineChartExample extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        // Define the axes
+        CategoryAxis xAxis = new CategoryAxis();
+        NumberAxis yAxis = new NumberAxis();
+
+        // Create the line chart
+        LineChart<String, Number> lineChart = new LineChart<>(xAxis, yAxis);
+        lineChart.setTitle("Line Chart Example");
+
+        // Add data series
+        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+        series1.setName("Data Series 1");
+        series1.getData().add(new XYChart.Data<>("Jan", 10));
+        series1.getData().add(new XYChart.Data<>("Feb", 15));
+        series1.getData().add(new XYChart.Data<>("Mar", 20));
+
+        lineChart.getData().add(series1);
+
+        // Create the scene and display the chart
+        Scene scene = new Scene(lineChart, 600, 400);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Line Chart Example");
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+In this example, we create a `LineChart` with a `CategoryAxis` for the x-axis and a `NumberAxis` for the y-axis. We then add a data series to the chart, specifying the data points and their corresponding values. Finally, we create a `Scene` with the chart and display it on the `Stage`.
+
+#### 3D Graphics
+
+JavaFX provides support for creating 3D graphics and scenes through the `javafx.scene.shape3D` package. You can create and manipulate 3D shapes, apply materials and textures, and incorporate lighting and camera controls.
+
+Here's an example of creating a simple 3D cube in JavaFX:
+
+```java
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.PerspectiveCamera;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.PhongMaterial;
+import javafx.scene.shape.Box;
+import javafx.stage.Stage;
+
+public class CubeExample extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a 3D cube
+        Box cube = new Box(200, 200, 200);
+        PhongMaterial material = new PhongMaterial(Color.ORANGE);
+        cube.setMaterial(material);
+
+        // Create a camera
+        PerspectiveCamera camera = new PerspectiveCamera();
+        camera.setTranslateX(300);
+        camera.setTranslateY(300);
+        camera.setTranslateZ(-500);
+
+        // Create the 3D scene
+        Group root3D = new Group(cube);
+        Scene scene = new Scene(root3D, 600, 600, true); // Enable 3D rendering
+        scene.setCamera(camera);
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("3D Cube Example");
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+In this example, we create a `Box` object representing a 3D cube and apply an `PhongMaterial` to it. We then create a `PerspectiveCamera` and position it to view the cube from a specific angle. We add the cube to a `Group` node, which serves as the root of the 3D scene. Finally, we create a `Scene` with the 3D scene and set it on the `Stage`.
+
+#### Animations
+
+JavaFX provides a powerful animation framework that allows you to create smooth and dynamic animations for your user interfaces. You can animate various properties of UI components, such as position, size, color, and opacity, using built-in transition classes or by creating custom animations.
+
+Here's an example of creating a simple translation animation in JavaFX:
+
+```java
+import javafx.animation.TranslateTransition;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+public class TranslationAnimationExample extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a rectangle
+        Rectangle rectangle = new Rectangle(50, 50, 100, 100);
+        rectangle.setFill(Color.ORANGE);
+
+        // Create a pane and add the rectangle
+        Pane pane = new Pane();
+        pane.getChildren().add(rectangle);
+
+        // Create a translation animation
+        TranslateTransition translateTransition = new TranslateTransition(Duration.millis(2000), rectangle);
+        translateTransition.setFromX(0);
+        translateTransition.setToX(300);
+        translateTransition.setAutoReverse(true); // Reverse the animation after completion
+        translateTransition.setCycleCount(TranslateTransition.INDEFINITE); // Loop indefinitely
+
+        // Start the animation
+        translateTransition.play();
+
+        // Create the scene and display it
+        Scene scene = new Scene(pane, 400, 200);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Translation Animation Example");
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+In this example, we create a `Rectangle` object and add it to a `Pane`. We then create a `TranslateTransition` animation that animates the translation (position) of the rectangle along the x-axis. We set the animation duration, the starting and ending positions, and configure the animation to automatically reverse and loop indefinitely. Finally, we start the animation, create a `Scene` with the `Pane`, and display it on the `Stage`.
+
+### Using Scene Builder for Visual Design
+
+Scene Builder is a visual design tool that allows you to create and design JavaFX user interfaces using a drag-and-drop interface. It integrates seamlessly with your JavaFX projects and generates FXML files that can be loaded and used in your applications.
+
+Here's an example of how you can use Scene Builder to create a simple user interface:
+
+1. Open Scene Builder and create a new FXML file.
+2. Drag and drop a `VBox` layout pane from the "Library" panel onto the "Content" panel.
+3. Inside the `VBox`, add a `Label` component and a `TextField` component from the "Library" panel.
+4. Arrange the components and adjust their properties (e.g., text, font, size) using the "Inspector" panel.
+5. Add a `Button` component to the `VBox` and set its text to "Submit".
+6. Save the FXML file and load it into your JavaFX application using the `FXMLLoader` class.
+
+Scene Builder provides a visual representation of your user interface and allows you to easily customize the layout, styling, and behavior of your components. It can significantly improve productivity and make the process of designing and building JavaFX user interfaces more intuitive and efficient.
+
+JavaFX and FXML provide a powerful and flexible framework for building modern, cross-platform user interfaces in Java. With its rich set of UI components, support for hardware acceleration, and integration with CSS for styling, JavaFX offers a comprehensive solution for creating visually appealing and responsive applications.
+
+JavaFX's rich set of features, including charts, graphs, 3D graphics, animations, and the Scene Builder tool, empowers developers to create modern, visually appealing, and interactive user interfaces. Whether you're building desktop applications, data visualization tools, or multimedia experiences, JavaFX provides a comprehensive and powerful solution for your UI development needs.
+
+Sure, let's dive into event handling and UI design patterns in JavaFX.
 
 ## Event Handling and UI Design Patterns
 
-### Event-driven programming concepts
+### Event-driven Programming Concepts
 
-### UI design patterns (e.g., MVC, MVP, MVVM)
+JavaFX, like many other UI frameworks, follows an event-driven programming model. This means that user interactions (such as button clicks, key presses, or mouse movements) generate events that can be handled by the application logic.
 
-### Implementing design patterns in JavaFX
+In JavaFX, events are represented by the `Event` class and its subclasses (e.g., `ActionEvent`, `MouseEvent`, `KeyEvent`). UI components can generate events, and you can register event handlers to respond to these events.
+
+Here's an example of handling a button click event in JavaFX:
+
+```java
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class ButtonEventExample extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a button
+        Button button = new Button("Click Me");
+
+        // Register an event handler
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Button clicked!");
+            }
+        });
+
+        // Create a layout and add the button
+        StackPane root = new StackPane();
+        root.getChildren().add(button);
+
+        // Create a scene and set it on the stage
+        Scene scene = new Scene(root, 300, 200);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Button Event Example");
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+In this example, we create a `Button` and register an `EventHandler` for the `ActionEvent` using the `setOnAction` method. When the button is clicked, the `handle` method of the `EventHandler` is invoked, and it prints "Button clicked!" to the console.
+
+JavaFX provides various ways to register event handlers, including method references and lambda expressions, making it more concise and readable.
+
+### UI Design Patterns
+
+UI design patterns are architectural patterns that promote code reusability, maintainability, and separation of concerns in user interface development. Some commonly used UI design patterns include:
+
+1. **Model-View-Controller (MVC)**: This pattern separates an application into three interconnected components: the Model (data and business logic), the View (user interface), and the Controller (handles user input and updates the Model and View).
+
+2. **Model-View-Presenter (MVP)**: Similar to MVC, but the Presenter acts as a mediator between the View and the Model, handling user input and updating the View accordingly.
+
+3. **Model-View-ViewModel (MVVM)**: In this pattern, the ViewModel provides a layer of abstraction between the View and the Model, exposing data and commands for the View to bind to.
+
+These patterns help organize your code, promote testability, and facilitate code reuse and maintenance.
+
+### Implementing Design Patterns in JavaFX
+
+While JavaFX doesn't enforce a particular design pattern, it provides tools and features that make it easier to implement various UI design patterns.
+
+#### Model-View-Controller (MVC) in JavaFX
+
+In JavaFX, you can implement the MVC pattern by separating your application into three components:
+
+1. **Model**: Represents the data and business logic of your application.
+2. **View**: Defined using FXML files, which describe the user interface layout and components.
+3. **Controller**: Connects the View and the Model, handling user input and updating the View accordingly.
+
+Here's an example of how you can implement the MVC pattern in JavaFX:
+
+```java
+// Model
+public class Person {
+    private String name;
+    private int age;
+    // Getters and setters
+}
+
+// View (FXML file)
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="PersonController">
+    <Label text="Name:"/>
+    <TextField fx:id="nameField"/>
+    <Label text="Age:"/>
+    <TextField fx:id="ageField"/>
+    <Button text="Save" onAction="#saveData"/>
+</VBox>
+
+// Controller
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+public class PersonController {
+    private Person person;
+
+    @FXML
+    private TextField nameField;
+
+    @FXML
+    private TextField ageField;
+
+    public void setPerson(Person person) {
+        this.person = person;
+        nameField.setText(person.getName());
+        ageField.setText(String.valueOf(person.getAge()));
+    }
+
+    @FXML
+    private void saveData(ActionEvent event) {
+        person.setName(nameField.getText());
+        person.setAge(Integer.parseInt(ageField.getText()));
+        // Save the person data
+    }
+}
+```
+
+In this example, the `Person` class represents the Model, the FXML file defines the View, and the `PersonController` class acts as the Controller, handling user input and updating the Model accordingly.
+
+#### Model-View-Presenter (MVP) in JavaFX
+
+In the MVP pattern, the Presenter sits between the View and the Model, handling user input and updating the View accordingly.
+
+```java
+// Model
+public class Person {
+    private String name;
+    private int age;
+    // Getters and setters
+}
+
+// View
+public interface PersonView {
+    void setName(String name);
+    void setAge(int age);
+    // Other view-related methods
+}
+
+// Presenter
+public class PersonPresenter {
+    private Person person;
+    private PersonView view;
+
+    public PersonPresenter(Person person, PersonView view) {
+        this.person = person;
+        this.view = view;
+        updateView();
+    }
+
+    private void updateView() {
+        view.setName(person.getName());
+        view.setAge(person.getAge());
+    }
+
+    public void setName(String name) {
+        person.setName(name);
+        updateView();
+    }
+
+    public void setAge(int age) {
+        person.setAge(age);
+        updateView();
+    }
+}
+
+// View implementation (e.g., using FXML)
+public class PersonViewImpl extends VBox implements PersonView {
+    @FXML
+    private TextField nameField;
+
+    @FXML
+    private TextField ageField;
+
+    private PersonPresenter presenter;
+
+    public PersonViewImpl(Person person) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("person_view.fxml"));
+        loader.setRoot(this);
+        loader.setController(this);
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        presenter = new PersonPresenter(person, this);
+
+        nameField.textProperty().addListener((obs, oldValue, newValue) -> presenter.setName(newValue));
+        ageField.textProperty().addListener((obs, oldValue, newValue) -> presenter.setAge(Integer.parseInt(newValue)));
+    }
+
+    @Override
+    public void setName(String name) {
+        nameField.setText(name);
+    }
+
+    @Override
+    public void setAge(int age) {
+        ageField.setText(String.valueOf(age));
+    }
+}
+```
+
+In this example, the `Person` class represents the Model, the `PersonView` interface defines the contract for the View, and the `PersonPresenter` class acts as the Presenter, handling user input and updating both the Model and the View.
+
+The `PersonViewImpl` class implements the `PersonView` interface and serves as the View implementation, using an FXML file to define the UI layout. It creates an instance of the `PersonPresenter` and updates the Model and View accordingly when user input is received.
+
+#### Model-View-ViewModel (MVVM) in JavaFX
+
+The MVVM pattern introduces a ViewModel layer that acts as an abstraction between the View and the Model, exposing data and commands for the View to bind to.
+
+```java
+// Model
+public class Person {
+    private String name;
+    private int age;
+    // Getters and setters
+}
+
+// ViewModel
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+public class PersonViewModel {
+    private Person person;
+    private StringProperty nameProperty;
+    private IntegerProperty ageProperty;
+
+    public PersonViewModel(Person person) {
+        this.person = person;
+        nameProperty = new SimpleStringProperty(person.getName());
+        ageProperty = new SimpleIntegerProperty(person.getAge());
+    }
+
+    public StringProperty nameProperty() {
+        return nameProperty;
+    }
+
+    public IntegerProperty ageProperty() {
+        return ageProperty;
+    }
+
+    public void savePerson() {
+        person.setName(nameProperty.get());
+        person.setAge(ageProperty.get());
+        // Save the person data
+    }
+}
+
+// View (FXML file)
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1">
+    <Label text="Name:"/>
+    <TextField fx:id="nameField" text="${viewModel.nameProperty}"/>
+    <Label text="Age:"/>
+    <TextField fx:id="ageField" text="${viewModel.ageProperty}"/>
+    <Button text="Save" onAction="#saveData"/>
+</VBox>
+
+// View controller
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+public class PersonViewController {
+    @FXML
+    private TextField nameField;
+
+    @FXML
+    private TextField ageField;
+
+    private PersonViewModel viewModel;
+
+    public void setViewModel(PersonViewModel viewModel) {
+        this.viewModel = viewModel;
+        nameField.textProperty().bindBidirectional(viewModel.nameProperty());
+        ageField.textProperty().bindBidirectional(viewModel.ageProperty());
+    }
+
+    @FXML
+    private void saveData() {
+        viewModel.savePerson();
+    }
+}
+```
+
+In this example, the `Person` class represents the Model, and the `PersonViewModel` class acts as the ViewModel, exposing properties and commands for the View to bind to.
+
+The FXML file defines the View, using data binding to bind the UI components to the properties exposed by the `PersonViewModel`. The `PersonViewController` class acts as the controller for the View, setting up the data binding and handling user input (e.g., the "Save" button click).
+
+When the user interacts with the UI components, the changes are automatically propagated to the ViewModel properties, and when the "Save" button is clicked, the `savePerson` method of the ViewModel is called to update the Model.
+
+These examples demonstrate how you can implement various UI design patterns in JavaFX, promoting code reusability, maintainability, and separation of concerns. The choice of pattern often depends on the complexity of your application, team preferences, and existing architectural decisions.
 
 # Unit 3: Data Persistence and Access
+
+In modern software applications, data persistence and access play a crucial role in storing, retrieving, and managing data effectively. This unit explores various techniques and frameworks for data persistence and access in Java, including database design, JDBC (Java Database Connectivity), Object-Relational Mapping (ORM) with Hibernate, and the Java Persistence API (JPA).
+
+Effective data persistence and access strategies are essential for building robust and scalable applications that can handle large amounts of data while ensuring data integrity, consistency, and performance. Throughout this unit, you'll learn how to design and implement data persistence solutions using industry-standard practices and tools.
+
+The unit is divided into the following topics:
+
+**Database Design and JDBC**
+
+1. Two-Tier and Three-Tier Database Design
+2. JDBC basics and database connectivity
+3. Connection pooling concepts and implementation
+4. Prepared statements and result set handling
+5. Transaction management with JDBC
+
+In this section, you'll explore the fundamentals of database design, including two-tier and three-tier architectures. You'll learn about JDBC, which provides a standard API for Java applications to interact with databases. Additionally, you'll gain insights into connection pooling, prepared statements, result set handling, and transaction management – essential concepts for building efficient and secure database applications.
+
+**Object-Relational Mapping (ORM) with Hibernate**
+
+1. Introduction to ORM and Hibernate
+2. Mapping entities and relationships
+3. Hibernate query language (HQL) and criteria API
+4. Caching and performance optimization with Hibernate
+
+Object-Relational Mapping (ORM) addresses the impedance mismatch between object-oriented programming languages and relational databases. In this section, you'll delve into Hibernate, a powerful ORM framework for Java. You'll learn how to map object models to database tables, query data using the Hibernate Query Language (HQL) and criteria API, and optimize performance through caching and other techniques.
+
+**Java Persistence API (JPA)**
+
+1. JPA concepts and entity lifecycle
+2. Entity relationships and inheritance
+3. JPA query language (JPQL) and native queries
+4. JPA caching and performance tuning
+
+The Java Persistence API (JPA) is a specification that provides a standard way to manage relational data in Java applications. This section will introduce you to JPA concepts, entity lifecycle management, entity relationships, and inheritance mapping. You'll also explore the JPA query language (JPQL), native queries, caching strategies, and performance tuning techniques.
+
+**Query Optimization and Performance Tuning**
+
+1. Optimization techniques for JDBC, Hibernate, and JPA
+2. Identifying and resolving performance bottlenecks
+3. Indexing and query plan analysis
+4. Caching strategies and cache invalidation
+
+Optimizing queries and tuning performance are critical aspects of building efficient and scalable data-driven applications. This section will cover various optimization techniques for JDBC, Hibernate, and JPA, as well as strategies for identifying and resolving performance bottlenecks. You'll also learn about indexing, query plan analysis, caching strategies, and cache invalidation techniques.
+
+By the end of this unit, you'll have a solid understanding of data persistence and access concepts, and you'll be equipped with the knowledge and skills to design and implement robust and efficient data management solutions in your Java applications.
+
+Sure, let's dive into the details of Database Design and JDBC.
 
 ## Database Design and JDBC
 
 ### Two-Tier and Three-Tier Database Design
 
-### JDBC basics and database connectivity
+Database design plays a crucial role in the overall architecture and performance of an application. There are two main architectural patterns for database design: two-tier and three-tier.
 
-### Connection pooling concepts and implementation
+**Two-Tier Architecture**
 
-### Prepared statements and result set handling
+In a two-tier architecture, the application and the database reside on the same machine or network. The client application directly communicates with the database server, handling both the presentation logic and data access logic.
 
-### Transaction management with JDBC
+```
++----------------+
+|     Client     |
+|  Application   |
++----------------+
+         |
+         |
++----------------+
+|    Database    |
+|     Server     |
++----------------+
+```
+
+The two-tier architecture is relatively simple and straightforward, but it has several limitations:
+
+- Scalability issues: As the number of clients increases, the database server can become a bottleneck.
+- Security concerns: Direct access to the database server from the client application can be a security risk.
+- Tight coupling: The client application is tightly coupled with the database, making it difficult to modify or replace either component independently.
+
+**Three-Tier Architecture**
+
+In a three-tier architecture, the application is divided into three logical layers: the presentation layer (client), the application layer (middle tier), and the data layer (database server).
+
+```
++----------------+
+|     Client     |
+|  Presentation  |
++----------------+
+         |
+         |
++----------------+
+|   Application  |
+|    Middle Tier |
++----------------+
+         |
+         |
++----------------+
+|    Database    |
+|     Server     |
++----------------+
+```
+
+- The presentation layer handles the user interface and user interactions.
+- The application layer (often referred to as the middle tier or business logic layer) contains the application's core functionality and acts as an intermediary between the presentation layer and the data layer.
+- The data layer consists of the database server, which manages and persists the application's data.
+
+The three-tier architecture offers several benefits:
+
+- Scalability: Each tier can be scaled independently based on the application's requirements.
+- Security: The database server is not directly exposed to the client, reducing security risks.
+- Separation of concerns: Each layer has a distinct responsibility, promoting code modularity and maintainability.
+- Reusability: The middle tier can be shared among multiple client applications or front-ends.
+
+While the three-tier architecture is more complex than the two-tier approach, it is widely adopted in enterprise applications due to its scalability, security, and modularity advantages.
+
+### JDBC Basics and Database Connectivity
+
+JDBC (Java Database Connectivity) is an API that provides a standard way for Java applications to interact with relational databases. It acts as a bridge between the Java application and the database management system (DBMS), enabling developers to execute SQL statements, retrieve and manipulate data, and handle transactions.
+
+Here's a basic example of how to establish a JDBC connection and execute a SQL query:
+
+```java
+import java.sql.*;
+
+public class JDBCExample {
+    public static void main(String[] args) {
+        try {
+            // 1. Load the JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // 2. Establish the connection
+            String url = "jdbc:mysql://localhost:3306/mydatabase";
+            String username = "root";
+            String password = "mypassword";
+            Connection conn = DriverManager.getConnection(url, username, password);
+
+            // 3. Create a statement
+            Statement stmt = conn.createStatement();
+
+            // 4. Execute a SQL query
+            String query = "SELECT * FROM users";
+            ResultSet rs = stmt.executeQuery(query);
+
+            // 5. Process the result set
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                System.out.println("ID: " + id + ", Name: " + name + ", Email: " + email);
+            }
+
+            // 6. Clean up resources
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Here's a breakdown of the steps involved:
+
+1. **Load the JDBC Driver**: Before connecting to the database, you need to load the appropriate JDBC driver for your specific database management system (e.g., MySQL, PostgreSQL, Oracle).
+
+2. **Establish the Connection**: Create a `Connection` object by providing the database URL, username, and password. The URL format varies depending on the DBMS you're using (e.g., `jdbc:mysql://localhost:3306/mydatabase` for MySQL).
+
+3. **Create a Statement**: Obtain a `Statement` object from the `Connection`, which you'll use to execute SQL statements.
+
+4. **Execute a SQL Query**: Use the `Statement` object to execute a SQL query (e.g., `SELECT`, `INSERT`, `UPDATE`, `DELETE`). The `executeQuery` method returns a `ResultSet` object for `SELECT` queries, while `executeUpdate` is used for `INSERT`, `UPDATE`, and `DELETE` statements.
+
+5. **Process the Result Set**: If you executed a `SELECT` query, you can iterate over the `ResultSet` and retrieve the data using methods like `getInt`, `getString`, etc.
+
+6. **Clean Up Resources**: Always remember to close the `ResultSet`, `Statement`, and `Connection` objects to free up resources and avoid resource leaks.
+
+This example demonstrates the basic steps involved in using JDBC to interact with a database. However, in real-world applications, you'll need to handle additional concerns like connection pooling, prepared statements, and transaction management, which we'll cover in the following sections.
+
+### Connection Pooling Concepts and Implementation
+
+In a typical JDBC application, creating and closing database connections can be a resource-intensive process, especially in high-concurrency environments. Connection pooling is a technique that helps mitigate this overhead by maintaining a pool of pre-established database connections that can be reused by multiple client requests.
+
+**Benefits of Connection Pooling**
+
+- **Improved Performance**: Creating and closing database connections is an expensive operation. Connection pooling reduces this overhead by reusing existing connections, leading to better application performance.
+- **Resource Optimization**: Database connections are limited resources. Connection pooling ensures efficient utilization of these resources by maintaining a pool of connections that can be shared among multiple clients.
+- **Scalability**: Connection pooling helps applications scale better under high load by providing a mechanism to manage and distribute connections efficiently.
+
+**Connection Pool Implementation**
+
+While JDBC itself does not provide built-in support for connection pooling, several third-party libraries and application servers (e.g., Apache DBCP, C3P0, Tomcat, Jetty) offer connection pooling implementations.
+
+Here's an example of how to use Apache DBCP (Database Connection Pool) for connection pooling:
+
+```java
+import java.sql.*;
+import org.apache.commons.dbcp2.*;
+import org.apache.commons.pool2.impl.GenericObjectPool;
+
+public class ConnectionPoolExample {
+    private static BasicDataSource dataSource;
+
+    static {
+        try {
+            // Create a connection pool
+            dataSource = new BasicDataSource();
+            dataSource.setUrl("jdbc:mysql://localhost:3306/mydatabase");
+            dataSource.setUsername("root");
+            dataSource.setPassword("mypassword");
+
+            // Connection pool configuration
+            dataSource.setInitialSize(5); // Initial number of connections
+            dataSource.setMaxTotal(10); // Maximum number of connections
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
+    }
+
+    public static void main(String[] args) {
+        try {
+            // Get a connection from the pool
+            Connection conn = getConnection();
+            // Use the connection
+            // ...
+            // Return the connection to the pool
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+In this example, we use the Apache DBCP library to create a connection pool:
+
+1. We create a `BasicDataSource` object and configure it with the database URL, username, and password.
+2. We set the initial size and maximum total size of the connection pool using `setInitialSize` and `setMaxTotal` methods.
+3. We define a static method `getConnection` that retrieves a connection from the pool.
+4. In the `main` method, we get a connection from the pool using `getConnection`, use it for database operations, and then return it to the pool by calling `close`.
+
+When a new connection is requested from the pool, and the pool has available connections, it will return an existing connection from the pool. If no connections are available, it will create a new connection (up to the configured maximum total size).
+
+Connection pooling is crucial for performance optimization and efficient resource management in database-driven applications, especially in high-concurrency environments.
+
+### Prepared Statements and Result Set Handling
+
+In JDBC, prepared statements are pre-compiled SQL statements that can be executed multiple times with different parameter values. Using prepared statements can improve application performance, especially for frequently executed queries, and provide better security by preventing SQL injection attacks.
+
+**Prepared Statements**
+
+Here's an example of how to create and use a prepared statement in JDBC:
+
+```java
+import java.sql.*;
+
+public class PreparedStatementExample {
+    public static void main(String[] args) {
+        try {
+            // 1. Establish the connection
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "mypassword");
+
+            // 2. Create a prepared statement
+            String query = "SELECT * FROM users WHERE name = ? AND email = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+
+            // 3. Set parameter values
+            stmt.setString(1, "John Doe");
+            stmt.setString(2, "john.doe@example.com");
+
+            // 4. Execute the query
+            ResultSet rs = stmt.executeQuery();
+
+            // 5. Process the result set
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                System.out.println("ID: " + id + ", Name: " + name + ", Email: " + email);
+            }
+
+            // 6. Clean up resources
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Here's a breakdown of the steps involved:
+
+1. We establish a database connection using `DriverManager.getConnection`.
+2. We create a prepared statement by calling `conn.prepareStatement` and passing the SQL query with placeholders (`?`) for parameters.
+3. We set the parameter values using the `setString` method of the `PreparedStatement` object.
+4. We execute the query by calling `stmt.executeQuery` and obtain a `ResultSet` object.
+5. We process the `ResultSet` by iterating over it and retrieving the data using methods like `getInt` and `getString`.
+6. Finally, we clean up the resources by closing the `ResultSet`, `PreparedStatement`, and `Connection` objects.
+
+**Result Set Handling**
+
+When you execute a `SELECT` query using JDBC, the result is returned as a `ResultSet` object. The `ResultSet` provides a cursor that points to the current row of data, and you can iterate over it using the `next` method.
+
+Here are some common methods for working with `ResultSet` objects:
+
+- `next()`: Moves the cursor to the next row of the `ResultSet`. Returns `true` if there is a next row, `false` otherwise.
+- `getInt(String columnLabel)`, `getString(String columnLabel)`, etc.: Retrieves the value of the specified column as an integer, string, or other data types.
+- `getObject(String columnLabel)`: Retrieves the value of the specified column as an `Object`.
+- `beforeFirst()`: Moves the cursor before the first row of the `ResultSet`.
+- `afterLast()`: Moves the cursor after the last row of the `ResultSet`.
+- `first()`: Moves the cursor to the first row of the `ResultSet`.
+- `last()`: Moves the cursor to the last row of the `ResultSet`.
+
+Proper handling of `ResultSet` objects is crucial for efficiently processing and retrieving data from the database.
+
+### Transaction Management with JDBC
+
+Transactions are a fundamental concept in database systems, ensuring data integrity and consistency. JDBC provides methods for managing transactions, allowing you to control the execution of multiple SQL statements as a single, atomic unit of work.
+
+**Transaction Properties**
+
+Transactions in database systems typically adhere to the ACID properties:
+
+- **Atomicity**: A transaction is an indivisible unit of work; either all operations within the transaction are completed successfully, or none of them are.
+- **Consistency**: A transaction must transition the database from one valid state to another valid state, following all defined rules and constraints.
+- **Isolation**: Concurrent transactions must not interfere with each other, and each transaction must operate as if it were the only one executing.
+- **Durability**: Once a transaction is committed, its effects are permanent and must persist even in the event of system failures.
+
+**Transaction Management with JDBC**
+
+JDBC provides the following methods for managing transactions:
+
+- `setAutoCommit(boolean autoCommit)`: Enables or disables auto-commit mode for the current connection. By default, auto-commit is enabled, which means each SQL statement is treated as an individual transaction and is automatically committed.
+- `commit()`: Commits the current transaction, making all changes permanent.
+- `rollback()`: Rolls back the current transaction, undoing all changes.
+
+Here's an example of how to manage transactions with JDBC:
+
+```java
+import java.sql.*;
+
+public class TransactionExample {
+    public static void main(String[] args) {
+        try {
+            // 1. Establish the connection
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "mypassword");
+
+            // 2. Disable auto-commit mode
+            conn.setAutoCommit(false);
+
+            // 3. Create a statement
+            Statement stmt = conn.createStatement();
+
+            // 4. Execute SQL statements within a transaction
+            stmt.executeUpdate("INSERT INTO users (name, email) VALUES ('John Doe', 'john.doe@example.com')");
+            stmt.executeUpdate("INSERT INTO users (name, email) VALUES ('Jane Smith', 'jane.smith@example.com')");
+
+            // 5. Commit the transaction
+            conn.commit();
+
+            // 6. Clean up resources
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            // 7. Handle exceptions and rollback the transaction if necessary
+            try {
+                if (conn != null) {
+                    conn.rollback();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+Here's a breakdown of the steps involved:
+
+1. We establish a database connection using `DriverManager.getConnection`.
+2. We disable auto-commit mode by calling `conn.setAutoCommit(false)`. This allows us to group multiple SQL statements into a single transaction.
+3. We create a `Statement` object for executing SQL statements.
+4. We execute two `INSERT` statements within the transaction.
+5. We commit the transaction by calling `conn.commit()`, making all changes permanent.
+6. We clean up the resources by closing the `Statement` and `Connection` objects.
+7. In case of an exception, we handle it by rolling back the transaction using `conn.rollback()` to undo any changes made during the transaction.
+
+By managing transactions with JDBC, you can ensure data integrity and consistency, handle exceptions gracefully, and maintain a valid state in the database.
+
+Proper understanding and implementation of database design principles, JDBC fundamentals, connection pooling, prepared statements, result set handling, and transaction management are essential for building robust and efficient database-driven applications in Java.
+
+Sure, let's dive into Object-Relational Mapping (ORM) with Hibernate.
 
 ## Object-Relational Mapping (ORM) with Hibernate
 
 ### Introduction to ORM and Hibernate
 
-### Mapping entities and relationships
+Object-Relational Mapping (ORM) is a technique that maps objects in an object-oriented programming language to records in a relational database. ORM frameworks provide an abstraction layer that allows developers to work with objects instead of writing raw SQL queries, making it easier to develop and maintain applications that interact with databases.
 
-### Hibernate query language (HQL) and criteria API
+Hibernate is a popular open-source ORM framework for Java. It simplifies the interaction between Java objects and relational databases by providing a high-level, object-oriented interface for persisting and retrieving data.
 
-### Caching and performance optimization with Hibernate
+**Key Features of Hibernate**
+
+- **Object Mapping**: Hibernate allows you to map Java classes (entities) to database tables and define relationships between them.
+- **Query Language**: Hibernate Query Language (HQL) provides an object-oriented way to query data, abstracting away the underlying SQL syntax.
+- **Caching**: Hibernate supports various caching strategies to improve performance by reducing database trips.
+- **Lazy Loading**: Hibernate can load data from the database only when it's needed, improving application performance and memory usage.
+- **Database Independence**: Hibernate supports multiple database systems, making it easier to switch between databases without modifying application code.
+- **Transaction Management**: Hibernate provides an abstraction layer for managing transactions, ensuring data integrity and consistency.
+
+### Mapping Entities and Relationships
+
+In Hibernate, you define entities by annotating Java classes with the `@Entity` annotation and mapping their properties to database columns using annotations like `@Id`, `@Column`, and others.
+
+Here's an example of an entity mapping in Hibernate:
+
+```java
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    // Constructors, getters, and setters
+}
+```
+
+In this example, the `User` class is annotated with `@Entity`, indicating that it represents a database table. The `@Table` annotation specifies the table name. The `id` field is annotated with `@Id` to mark it as the primary key, and `@GeneratedValue` specifies that the primary key values will be generated automatically by the database. The `name` and `email` fields are mapped to columns using the `@Column` annotation.
+
+Hibernate also supports mapping relationships between entities. For example, to model a one-to-many relationship between `User` and `Post` entities, you can add a `List` of `Post` objects to the `User` class:
+
+```java
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+public class User {
+    // ...
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Post> posts;
+
+    // Constructors, getters, and setters
+}
+
+@Entity
+public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String title;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    // Constructors, getters, and setters
+}
+```
+
+In this example, the `@OneToMany` annotation on the `posts` field in the `User` class defines a one-to-many relationship with the `Post` entity. The `mappedBy` attribute specifies the field in the `Post` entity that maps back to the `User` entity. The `@ManyToOne` annotation on the `user` field in the `Post` class defines the many-to-one side of the relationship, and `@JoinColumn` specifies the foreign key column in the database.
+
+### Hibernate Query Language (HQL) and Criteria API
+
+Hibernate provides two ways to query data: the Hibernate Query Language (HQL) and the Criteria API.
+
+**Hibernate Query Language (HQL)**
+
+HQL is an object-oriented query language that abstracts away the underlying SQL syntax. It operates on persistent objects and their properties, rather than directly on database tables and columns.
+
+Here's an example of using HQL to query data:
+
+```java
+import org.hibernate.*;
+
+public class HQLExample {
+    public static void main(String[] args) {
+        try (SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+             Session session = sessionFactory.openSession()) {
+
+            // Create a query
+            String hql = "FROM User WHERE email LIKE :email";
+            Query<User> query = session.createQuery(hql, User.class);
+            query.setParameter("email", "%@example.com");
+
+            // Execute the query
+            List<User> users = query.list();
+            users.forEach(user -> System.out.println(user.getName()));
+        }
+    }
+}
+```
+
+In this example, we create an HQL query that selects `User` entities where the email address contains the `@example.com` domain. We set the `email` parameter using the `setParameter` method and execute the query using the `list` method to obtain a list of `User` objects.
+
+**Criteria API**
+
+The Criteria API provides a type-safe and object-oriented way to create queries. It uses method chaining to build query criteria programmatically.
+
+Here's an example of using the Criteria API:
+
+```java
+import org.hibernate.query.Query;
+
+public class CriteriaAPIExample {
+    public static void main(String[] args) {
+        try (SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+             Session session = sessionFactory.openSession()) {
+
+            // Create a criteria query
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<User> query = builder.createQuery(User.class);
+            Root<User> root = query.from(User.class);
+            query.select(root).where(builder.like(root.get("email"), "%@example.com"));
+
+            // Execute the query
+            Query<User> typedQuery = session.createQuery(query);
+            List<User> users = typedQuery.list();
+            users.forEach(user -> System.out.println(user.getName()));
+        }
+    }
+}
+```
+
+In this example, we use the `CriteriaBuilder` and `CriteriaQuery` to create a type-safe query that selects `User` entities where the email address contains the `@example.com` domain. We build the query criteria programmatically using method chaining and execute the query using the `list` method to obtain a list of `User` objects.
+
+Both HQL and the Criteria API provide powerful and flexible ways to query data using Hibernate. While HQL is more concise and similar to SQL, the Criteria API offers better type safety and programmatic control over query construction.
+
+### Caching and Performance Optimization with Hibernate
+
+Hibernate provides various caching strategies to improve application performance by reducing the number of database trips and reusing previously loaded data.
+
+**First-Level Cache**
+
+The first-level cache is a session-level cache that stores objects loaded from the database during the current session. It is enabled by default and is transparent to the application code. When an object is loaded from the database, Hibernate stores it in the first-level cache. Subsequent requests for the same object within the same session will retrieve it from the cache, avoiding unnecessary database queries.
+
+**Second-Level Cache**
+
+The second-level cache is a cross-session cache that stores objects across multiple sessions. It is disabled by default and requires configuration. The second-level cache can significantly improve performance by reusing cached data across multiple sessions, reducing database trips for frequently accessed data.
+
+Here's an example of enabling the second-level cache in Hibernate:
+
+```xml
+<!-- hibernate.cfg.xml -->
+<hibernate-configuration>
+    <session-factory>
+        <!-- Enable second-level cache -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <!-- Configure the cache provider -->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+    </session-factory>
+</hibernate-configuration>
+```
+
+In this example, we enable the second-level cache by setting the `hibernate.cache.use_second_level_cache` property to `true`. We also configure the cache provider by setting the `hibernate.cache.region.factory_class` property to use EhCache, a popular caching library.
+
+**Query Caching**
+
+Hibernate also supports caching query results to improve performance for frequently executed queries. Query caching can be enabled at the session level or globally for all queries.
+
+Here's an example of enabling query caching for a specific query:
+
+```java
+import org.hibernate.query.Query;
+
+public class QueryCacheExample {
+    public static void main(String[] args) {
+        try (SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+             Session session = sessionFactory.openSession()) {
+
+            // Create a query
+            String hql = "FROM User WHERE email LIKE :email";
+            Query<User> query = session.createQuery(hql, User.class);
+            query.setParameter("email", "%@example.com");
+
+            // Enable query caching
+            query.setCacheable(true);
+
+            // Execute the query
+            List<User> users = query.list();
+            users.forEach(user -> System.out.println(user.getName()));
+        }
+    }
+}
+```
+
+In this example, we enable query caching for the HQL query by calling the `setCacheable(true)` method on the `Query` object before executing the query.
+
+**Performance Optimization Techniques**
+
+In addition to caching, Hibernate provides several other techniques for optimizing application performance:
+
+- **Lazy Loading**: Hibernate can load data from the database only when it's needed, reducing unnecessary data transfers and improving memory usage.
+- **Batch Processing**: Hibernate supports batch processing for insert, update, and delete operations, reducing the number of database round-trips.
+- **Statistics and Logging**: Hibernate provides statistics and logging capabilities that can help identify performance bottlenecks and optimize query execution.
+- **Connection Pooling**: Hibernate can be configured to use connection pooling, reducing the overhead of creating and closing database connections.
+
+By leveraging Hibernate's caching strategies and performance optimization techniques, you can significantly improve the performance and scalability of your data-driven applications.
 
 ## Java Persistence API (JPA)
 

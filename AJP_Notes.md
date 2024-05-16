@@ -13,7 +13,8 @@ All rights reserved. No part of this publication may be reproduced, distributed,
 [Optional: A short dedication to someone or something]
 
 **Table of Contents**
-[Automatically generated]
+
+[TOC]
 
 ### Preface
 

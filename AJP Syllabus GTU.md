@@ -133,16 +133,18 @@ The major underpinning theory is formulated as given below, and only higher-leve
 |      | 5b. Utilize Spring Boot for rapid application development.    | 2. Spring Boot for Rapid Application Development (2 hours)   |       |
 |      | 5c. Develop Java applications for IoT devices.                | 3. Java for IoT (2 hours)                                    |       |
 
+
 ## 9. SUGGESTED SPECIFICATION TABLE FOR QUESTION PAPER DESIGN
 
-| Unit No. | Unit Title                                   | Teaching Hours | Distribution of Theory Marks |
-|----------|--------------------------------------------- |----------------|-------------------------------|
-|          |                                              |                | R Level                       |
-| I        | Advanced Java Language Features              | 8              | 4                             |
-| II       | User Interface Development                   | 9              | 3                             |
-| III      | Data Persistence and Access                  | 8              | 3                             |
-| IV       | Server-Side Development                      | 9              | 3                             |
-| V        | Modern Java Frameworks & Java for IoT        | 8              | 2                             |
+| Unit No. | Unit Title                                   | Teaching Hours | Distribution of Theory Marks     |
+|----------|--------------------------------------------- |----------------|-------------------------------------------|
+|          |                                              |                | R Level | U Level | A Level | Total Marks |
+| I        | Advanced Java Language Features              | 8              | 3       | 4       | 5       | 12          |
+| II       | User Interface Development                   | 9              | 3       | 5       | 8       | 16          |
+| III      | Data Persistence and Access                  | 8              | 3       | 5       | 8       | 16          |
+| IV       | Server-Side Development                      | 9              | 3       | 5       | 8       | 16          |
+| V        | Modern Java Frameworks & Java for IoT        | 8              | 2       | 3       | 5       | 10          |
+|          | Total                                        | 42             | 14      | 22      | 34      | 70          |
 
 Legends: R=Remember, U=Understand, A=Apply and above (Revised Bloom's Taxonomy)
 

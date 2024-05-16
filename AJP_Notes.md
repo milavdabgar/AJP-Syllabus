@@ -1,4 +1,4 @@
-# Advanced Java Programming 
+# Advanced Java Programming
 
 ## Front Matter
 

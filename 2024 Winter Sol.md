@@ -3770,4 +3770,1131 @@ graph TD
     A[રિસોર્સીસ ઓળખવા] --> B[રિસોર્સ URIs વ્યાખ્યાયિત કરવી]
     B --> C[રજૂઆતો નક્કી કરવી]
     C --> D[HTTP મેથડ્સ સોંપવી]
-    D --> E[એ
+    D --> E[એરર હેન્ડલિંગ ડિઝાઇન કરવું]
+    E --> F[વર્ઝનિંગ અમલમાં મૂકવું]
+    F --> G[સુરક્ષા અમલમાં મૂકવી]
+    G --> H[API વિકસાવવી]
+    H --> I[API ડોક્યુમેન્ટ કરવી]
+    I --> J[API નું પરીક્ષણ કરવું]
+    J --> K[HATEOAS અમલમાં મૂકવું]
+    K --> L[મોનિટર અને જાળવણી કરવી]
+```
+
+આ પગલાંઓને અનુસરીને, તમે એક સારી રીતે ડિઝાઇન કરેલી, મજબૂત, અને સ્કેલેબલ RESTful API બનાવી શકો છો જે શ્રેષ્ઠ પ્રણાલીઓને અનુસરે છે અને API વપરાશકર્તાઓ માટે એક મહાન ડેવલપર અનુભવ પ્રદાન કરે છે.
+
+મુખ્ય લાભો:
+
+1. **સુસંગતતા:** API ડિઝાઇનમાં સુસંગતતા જાળવવાથી વપરાશકર્તાઓ માટે શીખવું અને વાપરવું સરળ બને છે.
+
+2. **સ્કેલેબિલિટી:** યોગ્ય રિસોર્સ ડિઝાઇન અને HTTP મેથડ્સનો ઉપયોગ API ને સરળતાથી સ્કેલ કરવાની મંજૂરી આપે છે.
+
+3. **સુરક્ષા:** શરૂઆતથી જ સુરક્ષા વિચારણાઓને ધ્યાનમાં લેવાથી સુરક્ષિત API સુનિશ્ચિત થાય છે.
+
+4. **જાળવણીક્ષમતા:** સ્પષ્ટ ડોક્યુમેન્ટેશન અને સુસંગત ડિઝાઇન API ને જાળવવા અને અપડેટ કરવાનું સરળ બનાવે છે.
+
+5. **વિકાસક્ષમતા:** વર્ઝનિંગ અને HATEOAS જેવી તકનીકોનો ઉપયોગ કરીને, API સમય સાથે વિકસી શકે છે જ્યારે હાલના ક્લાયન્ટ્સ સાથે સુસંગતતા જાળવી રાખે છે.
+
+6. **કાર્યક્ષમતા:** યોગ્ય રિસોર્સ ડિઝાઇન અને HTTP મેથડ્સનો ઉપયોગ નેટવર્ક ટ્રાફિક ઘટાડે છે અને સિસ્ટમ કાર્યક્ષમતા વધારે છે.
+
+7. **ટેસ્ટેબિલિટી:** સ્પષ્ટ રીતે વ્યાખ્યાયિત એન્ડપોઇન્ટ્સ અને રિસ્પોન્સ ફોર્મેટ્સ API નું વ્યાપક પરીક્ષણ સરળ બનાવે છે.
+
+આ પ્રક્રિયા અનુસરવાથી, તમે એક મજબૂત અને વ્યાવસાયિક-ગ્રેડ RESTful API બનાવી શકો છો જે તમારા એપ્લિકેશનની જરૂરિયાતોને પૂર્ણ કરે છે અને તમારા API વપરાશકર્તાઓને એક સરસ અનુભવ પ્રદાન કરે છે.
+
+I apologize for the oversight. I'll regenerate the answer with proper formatting as per the instructions and the sample solution.
+
+### Question 5(a): Explain the concept of Dependency Injection in Spring Framework. (3 marks)
+
+**Ans 5(a):**
+
+Dependency Injection (DI) is a fundamental concept in the Spring Framework that implements the **Inversion of Control (IoC)** principle. Key aspects of Dependency Injection include:
+
+- **Definition**: DI is a design pattern where objects receive their *dependencies* from external sources rather than creating them internally.
+
+- **Purpose**: It promotes *loose coupling* between classes, making the code more:
+  - Modular
+  - Testable
+  - Maintainable
+
+- **Types of DI in Spring**:
+  1. *Constructor Injection*: Dependencies are provided through a class constructor.
+  2. *Setter Injection*: Dependencies are set through setter methods.
+  3. *Field Injection*: Dependencies are injected directly into fields (less common).
+
+- **Benefits**:
+  - Reduced boilerplate code
+  - Easier unit testing through mock objects
+  - Increased code reusability and modularity
+
+- **Implementation**: The Spring container manages the creation and lifecycle of objects (beans) and injects dependencies as needed.
+
+```mermaid
+graph TD
+    A[Spring Container] -->|injects| B[Object A]
+    A -->|injects| C[Object B]
+    B -->|uses| C
+```
+
+### પ્રશ્ન 5(અ): સ્પ્રિંગ ફ્રેમવર્કમાં Dependency Injection ની વિભાવના સમજાવો. (3 ગુણ)
+
+**જવાબ 5(અ):**
+
+Dependency Injection (DI) એ Spring Framework માં **Inversion of Control (IoC)** સિદ્ધાંતનો અમલ કરતી એક મૂળભૂત વિભાવના છે. Dependency Injection ના મુખ્ય પાસાંઓમાં સામેલ છે:
+
+- **વ્યાખ્યા**: DI એક ડિઝાઇન પેટર્ન છે જ્યાં ઓબ્જેક્ટ્સ તેમની *dependencies* ને આંતરિક રીતે બનાવવાને બદલે બાહ્ય સ્ત્રોતોમાંથી મેળવે છે.
+
+- **હેતુ**: તે વર્ગો વચ્ચે *loose coupling* ને પ્રોત્સાહન આપે છે, જે કોડને વધુ:
+  - Modular
+  - Testable
+  - Maintainable બનાવે છે
+
+- **Spring માં DI ના પ્રકારો**:
+  1. *Constructor Injection*: Dependencies ક્લાસ constructor દ્વારા પ્રદાન કરવામાં આવે છે.
+  2. *Setter Injection*: Dependencies setter methods દ્વારા સેટ કરવામાં આવે છે.
+  3. *Field Injection*: Dependencies સીધા fields માં inject કરવામાં આવે છે (ઓછું સામાન્ય).
+
+- **લાભો**:
+  - ઘટાડેલ boilerplate કોડ
+  - mock objects દ્વારા સરળ unit testing
+  - વધારેલ કોડ reusability અને modularity
+
+- **અમલીકરણ**: Spring container ઓબ્જેક્ટ્સ (beans) ની રચના અને lifecycle નું સંચાલન કરે છે અને જરૂરિયાત મુજબ dependencies ને inject કરે છે.
+
+```mermaid
+graph TD
+    A[Spring Container] -->|inject કરે છે| B[Object A]
+    A -->|inject કરે છે| C[Object B]
+    B -->|ઉપયોગ કરે છે| C
+```
+
+### Question 5(b): Describe the features of Spring Boot that facilitate rapid application development. (4 marks)
+
+**Ans 5(b):**
+
+Spring Boot is a powerful framework that simplifies the development of Spring-based applications. It offers several features that facilitate rapid application development:
+
+1. **Auto-configuration**:
+   - Spring Boot automatically configures your application based on the dependencies you've added.
+   - Reduces the need for manual configuration, saving time and effort.
+   - Example: Adding `spring-boot-starter-web` dependency automatically configures a web application.
+
+2. **Embedded Server**:
+   - Comes with embedded servers like Tomcat, Jetty, or Undertow.
+   - Eliminates the need for external server deployment.
+   - Simplifies the development and testing process.
+
+3. **Starter Dependencies**:
+   - Pre-configured dependencies that simplify the build configuration.
+   - Grouped commonly used dependencies for specific functionalities.
+   - Examples: `spring-boot-starter-data-jpa`, `spring-boot-starter-security`
+
+4. **Spring Boot CLI**:
+   - Command-line tool for quickly prototyping Spring applications.
+   - Allows running Groovy scripts, which can be automatically compiled and run.
+
+5. **Actuator**:
+   - Provides production-ready features to help you monitor and manage your application.
+   - Offers endpoints for health checks, metrics, and application information.
+
+6. **Externalized Configuration**:
+   - Supports easy configuration through properties files, YAML files, environment variables, and command-line arguments.
+   - Allows for easy customization without changing the code.
+
+7. **Developer Tools**:
+   - Includes features like automatic restart when files change on the classpath.
+   - Improves developer productivity by reducing turnaround time.
+
+```mermaid
+graph TD
+    A[Spring Boot] --> B[Auto-configuration]
+    A --> C[Embedded Server]
+    A --> D[Starter Dependencies]
+    A --> E[Spring Boot CLI]
+    A --> F[Actuator]
+    A --> G[Externalized Configuration]
+    A --> H[Developer Tools]
+```
+
+These features collectively contribute to rapid application development by:
+- Reducing boilerplate code
+- Minimizing configuration efforts
+- Providing out-of-the-box functionality
+- Enhancing developer productivity
+- Facilitating easy deployment and monitoring
+
+### પ્રશ્ન 5(બ): ઝડપી એપ્લિકેશન ડેવલપમેન્ટને સરળ બનાવતી Spring Boot ની વિશેષતાઓનું વર્ણન કરો. (4 ગુણ)
+
+**જવાબ 5(બ):**
+
+Spring Boot એ Spring-આધારિત એપ્લિકેશનોના વિકાસને સરળ બનાવતું એક શક્તિશાળી framework છે. તે ઝડપી એપ્લિકેશન ડેવલપમેન્ટને સરળ બનાવતી ઘણી વિશેષતાઓ ધરાવે છે:
+
+1. **Auto-configuration**:
+   - Spring Boot તમે ઉમેરેલી dependencies ના આધારે તમારી એપ્લિકેશનને આપમેળે કોન્ફિગર કરે છે.
+   - મેન્યુઅલ કોન્ફિગરેશનની જરૂરિયાત ઘટાડે છે, સમય અને પ્રયાસ બચાવે છે.
+   - ઉદાહરણ: `spring-boot-starter-web` dependency ઉમેરવાથી આપમેળે વેબ એપ્લિકેશન કોન્ફિગર થાય છે.
+
+2. **Embedded Server**:
+   - Tomcat, Jetty, અથવા Undertow જેવા embedded servers સાથે આવે છે.
+   - બાહ્ય સર્વર ડિપ્લોયમેન્ટની જરૂરિયાત દૂર કરે છે.
+   - ડેવલપમેન્ટ અને ટેસ્ટિંગ પ્રક્રિયાને સરળ બનાવે છે.
+
+3. **Starter Dependencies**:
+   - બિલ્ડ કોન્ફિગરેશનને સરળ બનાવતી પૂર્વ-કોન્ફિગર કરેલી dependencies.
+   - ચોક્કસ કાર્યક્ષમતાઓ માટે સામાન્ય રીતે વપરાતી dependencies ને જૂથબદ્ધ કરે છે.
+   - ઉદાહરણો: `spring-boot-starter-data-jpa`, `spring-boot-starter-security`
+
+4. **Spring Boot CLI**:
+   - Spring એપ્લિકેશનોને ઝડપથી પ્રોટોટાઇપ કરવા માટેનું કમાન્ડ-લાઇન ટૂલ.
+   - Groovy સ્ક્રિપ્ટ્સ ચલાવવાની મંજૂરી આપે છે, જે આપમેળે કમ્પાઇલ અને ચલાવી શકાય છે.
+
+5. **Actuator**:
+   - તમારી એપ્લિકેશનનું મોનિટરિંગ અને મેનેજમેન્ટ કરવામાં મદદ કરવા માટે production-ready સુવિધાઓ પ્રદાન કરે છે.
+   - હેલ્થ ચેક્સ, મેટ્રિક્સ, અને એપ્લિકેશન માહિતી માટે endpoints આપે છે.
+
+6. **Externalized Configuration**:
+   - properties ફાઇલો, YAML ફાઇલો, environment variables, અને command-line arguments દ્વારા સરળ કોન્ફિગરેશનને સપોર્ટ કરે છે.
+   - કોડ બદલ્યા વગર સરળ કસ્ટમાઇઝેશનની મંજૂરી આપે છે.
+
+7. **Developer Tools**:
+   - જ્યારે classpath પર ફાઇલો બદલાય ત્યારે આપમેળે પુનઃપ્રારંભ જેવી સુવિધાઓ સામેલ છે.
+   - turnaround સમય ઘટાડીને ડેવલપર ઉત્પાદકતા સુધારે છે.
+
+```mermaid
+graph TD
+    A[Spring Boot] --> B[Auto-configuration]
+    A --> C[Embedded Server]
+    A --> D[Starter Dependencies]
+    A --> E[Spring Boot CLI]
+    A --> F[Actuator]
+    A --> G[Externalized Configuration]
+    A --> H[Developer Tools]
+```
+
+આ વિશેષતાઓ સામૂહિક રીતે ઝડપી એપ્લિકેશન ડેવલપમેન્ટમાં ફાળો આપે છે દ્વારા:
+- Boilerplate કોડ ઘટાડવો
+- કોન્ફિગરેશન પ્રયાસોને ન્યૂનતમ કરવા
+- Out-of-the-box કાર્યક્ષમતા પ્રદાન કરવી
+- ડેવલપર ઉત્પાદકતા વધારવી
+- સરળ ડિપ્લોયમેન્ટ અને મોનિટરિંગની સુવિધા આપવી
+
+### Question 5(c): Explain the process of developing a Java application for IoT using Raspberry Pi. (7 marks)
+
+**Ans 5(c):**
+
+Developing a Java application for IoT (Internet of Things) using Raspberry Pi involves several steps, combining Java programming with hardware interfacing. Here's a detailed explanation of the process:
+
+1. **Setting up the Raspberry Pi**:
+   - Install Raspberry Pi OS (formerly Raspbian) on the SD card.
+   - Connect peripherals (keyboard, mouse, monitor) and power up the Pi.
+   - Configure basic settings, including Wi-Fi connection.
+
+2. **Installing Java Development Kit (JDK)**:
+   - Open terminal and update package list: `sudo apt-get update`
+   - Install JDK: `sudo apt-get install default-jdk`
+   - Verify installation: `java -version`
+
+3. **Setting up the Development Environment**:
+   - Install an Integrated Development Environment (IDE) like NetBeans or Eclipse.
+   - Alternatively, use a text editor and compile/run from the command line.
+
+4. **Installing Required Libraries**:
+   - Pi4J: For GPIO (General Purpose Input/Output) control
+     ```
+     curl -sSL https://pi4j.com/install | sudo bash
+     ```
+   - Other libraries as needed (e.g., MQTT for communication)
+
+5. **Designing the IoT Application**:
+   - Define the application's purpose (e.g., temperature monitoring, home automation).
+   - Plan the hardware components needed (sensors, actuators).
+   - Design the software architecture and data flow.
+
+6. **Connecting Hardware**:
+   - Wire sensors or actuators to the Raspberry Pi's GPIO pins.
+   - Ensure proper connections and power requirements.
+
+7. **Writing the Java Code**:
+   - Create a new Java project in your IDE.
+   - Import necessary libraries (Pi4J, MQTT, etc.).
+   - Implement the main application logic:
+     ```java
+     import com.pi4j.io.gpio.*;
+     
+     public class IoTApp {
+         public static void main(String[] args) {
+             final GpioController gpio = GpioFactory.getInstance();
+             final GpioPinDigitalInput sensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_01, PinPullResistance.PULL_DOWN);
+             
+             sensor.addListener(new GpioPinListenerDigital() {
+                 @Override
+                 public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
+                     System.out.println("Sensor state changed: " + event.getState());
+                     // Add logic to process sensor data
+                 }
+             });
+             
+             // Keep the program running
+             while(true) {
+                 Thread.sleep(500);
+             }
+         }
+     }
+     ```
+
+8. **Testing and Debugging**:
+   - Compile and run the application on the Raspberry Pi.
+   - Test with connected hardware to ensure proper functionality.
+   - Debug any issues that arise during testing.
+
+9. **Implementing IoT Communication**:
+   - Add code to send data to cloud services or other devices.
+   - Implement protocols like MQTT or HTTP for data transmission.
+   ```java
+   import org.eclipse.paho.client.mqttv3.*;
+   
+   MqttClient client = new MqttClient("tcp://broker.hivemq.com:1883", MqttClient.generateClientId());
+   client.connect();
+   MqttMessage message = new MqttMessage("Hello, IoT!".getBytes());
+   client.publish("iot/test", message);
+   ```
+
+10. **Optimizing Performance**:
+    - Ensure efficient use of resources (CPU, memory, network).
+    - Implement error handling and recovery mechanisms.
+
+11. **Deploying the Application**:
+    - Create a runnable JAR file of your application.
+    - Set up the application to run automatically on Raspberry Pi boot.
+
+12. **Monitoring and Maintenance**:
+    - Implement logging for monitoring application health.
+    - Plan for regular updates and maintenance.
+
+```mermaid
+graph TD
+    A[Set up Raspberry Pi] --> B[Install JDK]
+    B --> C[Set up Development Environment]
+    C --> D[Install Libraries]
+    D --> E[Design IoT Application]
+    E --> F[Connect Hardware]
+    F --> G[Write Java Code]
+    G --> H[Test and Debug]
+    H --> I[Implement IoT Communication]
+    I --> J[Optimize Performance]
+    J --> K[Deploy Application]
+    K --> L[Monitor and Maintain]
+```
+
+This process combines software development skills with hardware knowledge, creating a powerful IoT solution using Java on Raspberry Pi. The flexibility of Java, combined with the capabilities of Raspberry Pi, allows for a wide range of IoT applications, from simple sensor data collection to complex automated systems.
+
+### પ્રશ્ન 5(ક): Raspberry Pi નો ઉપયોગ કરીને IoT માટે Java એપ્લિકેશન વિકસાવવાની પ્રક્રિયા સમજાવો. (7 ગુણ)
+
+**જવાબ 5(ક):**
+
+Raspberry Pi નો ઉપયોગ કરીને IoT (Internet of Things) માટે Java એપ્લિકેશન વિકસાવવાની પ્રક્રિયામાં ઘણા પગલાં સામેલ છે, જે Java પ્રોગ્રામિંગને hardware interfacing સાથે જોડે છે. અહીં પ્રક્રિયાનું વિગતવાર સ્પષ્ટીકરણ છે:
+
+1. **Raspberry Pi સેટ અપ કરવું**:
+   - SD કાર્ડ પર Raspberry Pi OS (અગાઉ Raspbian) ઇન્સ્ટોલ કરો.
+   - Peripherals (કીબોર્ડ, માઉસ, મોનિટર) કનેક્ટ કરો અને Pi ને પાવર આપો.
+   - Wi-Fi કનેક્શન સહિત મૂળભૂત સેટિંગ્સ કોન્ફિગર કરો.
+
+2. **Java Development Kit (JDK) ઇન્સ્ટોલ કરવું**:
+   - Terminal ખોલો અને પેકેજ લિસ્ટ અપડેટ કરો: `sudo apt-get update`
+   - JDK ઇન્સ્ટોલ કરો: `sudo apt-get install default-jdk`
+   - ઇન્સ્ટોલેશન ચકાસો: `java -version`
+
+3. **ડેવલપમેન્ટ એન્વાયરનમેન્ટ સેટ અપ કરવું**:
+   - NetBeans અથવા Eclipse જેવું Integrated Development Environment (IDE) ઇન્સ્ટોલ કરો.
+   - વૈકલ્પિક રીતે, ટેક્સ્ટ એડિટરનો ઉપયોગ કરો અને કમાન્ડ લાઇનથી કમ્પાઇલ/રન કરો.
+
+4. **જરૂરી લાઇબ્રેરીઓ ઇન્સ્ટોલ કરવી**:
+   - Pi4J: GPIO (General Purpose Input/Output) નિયંત્રણ માટે
+     ```
+     curl -sSL https://pi4j.com/install | sudo bash
+     ```
+   - જરૂર મુજબ અન્ય લાઇબ્રેરીઓ (દા.ત., કમ્યુનિકેશન માટે MQTT)
+
+5. **IoT એપ્લિકેશન ડિઝાઇન કરવી**:
+   - એપ્લિકેશનનો હેતુ વ્યાખ્યાયિત કરો (દા.ત., તાપમાન મોનિટરિંગ, હોમ ઓટોમેશન).
+   - જરૂરી હાર્ડવેર ઘટકોની યોજના બનાવો (સેન્સર્સ, એક્ચ્યુએટર્સ).
+   - સોફ્ટવેર આર્કિટેક્ચર અને ડેટા પ્રવાહની ડિઝાઇન કરો.
+
+6. **હાર્ડવેર કનેક્ટ કરવું**:
+   - Raspberry Pi ના GPIO પિન્સ પર સેન્સર્સ અથવા એક્ચ્યુએટર્સ વાયર કરો.
+   - યોગ્ય કનેક્શન્સ અને પાવર જરૂરિયાતો સુનિશ્ચિત કરો.
+
+7. **Java કોડ લખવો**:
+   - તમારા IDE માં નવું Java પ્રોજેક્ટ બનાવો.
+   - જરૂરી લાઇબ્રેરીઓ (Pi4J, MQTT, વગેરે) import કરો.
+   - મુખ્ય એપ્લિકેશન લોજિક લાગુ કરો:
+     ```java
+     import com.pi4j.io.gpio.*;
+     
+     public class IoTApp {
+         public static void main(String[] args) {
+             final GpioController gpio = GpioFactory.getInstance();
+             final GpioPinDigitalInput sensor = gpio.provisionDigitalInputPin(RaspiPin.GPIO_01, PinPullResistance.PULL_DOWN);
+             
+             sensor.addListener(new GpioPinListenerDigital() {
+                 @Override
+                 public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
+                     System.out.println("સેન્સર સ્થિતિ બદલાઈ: " + event.getState());
+                     // સેન્સર ડેટા પ્રોસેસ કરવા માટે લોજિક ઉમેરો
+                 }
+             });
+             
+             // પ્રોગ્રામ ચાલુ રાખો
+             while(true) {
+                 Thread.sleep(500);
+             }
+         }
+     }
+     ```
+
+8. **ટેસ્ટિંગ અને ડીબગિંગ**:
+   - Raspberry Pi પર એપ્લિકેશન કમ્પાઇલ અને રન કરો.
+   - યોગ્ય કાર્યક્ષમતા સુનિશ્ચિત કરવા માટે કનેક્ટેડ હાર્ડવેર સાથે ટેસ્ટ કરો.
+   - ટેસ્ટિંગ દરમિયાન ઉદ્ભવતી કોઈપણ સમસ્યાઓને ડીબગ કરો.
+
+9. **IoT કમ્યુનિકેશન લાગુ કરવું**:
+   - ક્લાઉડ સેવાઓ અથવા અન્ય ઉપકરણોને ડેટા મોકલવા માટે કોડ ઉમેરો.
+   - ડેટા ટ્રાન્સમિશન માટે MQTT અથવા HTTP જેવા પ્રોટોકોલ લાગુ કરો.
+   ```java
+   import org.eclipse.paho.client.mqttv3.*;
+   
+   MqttClient client = new MqttClient("tcp://broker.hivemq.com:1883", MqttClient.generateClientId());
+   client.connect();
+   MqttMessage message = new MqttMessage("નમસ્તે, IoT!".getBytes());
+   client.publish("iot/test", message);
+   ```
+
+10. **પરફોર્મન્સ ઓપ્ટિમાઇઝ કરવું**:
+    - સંસાધનોનો કાર્યક્ષમ ઉપયોગ સુનિશ્ચિત કરો (CPU, મેમરી, નેટવર્ક).
+    - એરર હેન્ડલિંગ અને રિકવરી મેકેનિઝમ્સ લાગુ કરો.
+
+11. **એપ્લિકેશન ડિપ્લોય કરવું**:
+    - તમારી એપ્લિકેશનની runnable JAR ફાઇલ બનાવો.
+    - Raspberry Pi બૂટ પર આપમેળે ચાલે તે માટે એપ્લિકેશન સેટ અપ કરો.
+
+12. **મોનિટરિંગ અને જાળવણી**:
+    - એપ્લિકેશન હેલ્થ મોનિટરિંગ માટે લોગિંગ લાગુ કરો.
+    - નિયમિત અપડેટ્સ અને જાળવણી માટે યોજના બનાવો.
+
+```mermaid
+graph TD
+    A[Raspberry Pi સેટ અપ કરો] --> B[JDK ઇન્સ્ટોલ કરો]
+    B --> C[ડેવલપમેન્ટ એન્વાયરનમેન્ટ સેટ અપ કરો]
+    C --> D[લાઇબ્રેરીઓ ઇન્સ્ટોલ કરો]
+    D --> E[IoT એપ્લિકેશન ડિઝાઇન કરો]
+    E --> F[હાર્ડવેર કનેક્ટ કરો]
+    F --> G[Java કોડ લખો]
+    G --> H[ટેસ્ટ અને ડીબગ કરો]
+    H --> I[IoT કમ્યુનિકેશન લાગુ કરો]
+    I --> J[પરફોર્મન્સ ઓપ્ટિમાઇઝ કરો]
+    J --> K[એપ્લિકેશન ડિપ્લોય કરો]
+    K --> L[મોનિટર અને જાળવણી કરો]
+```
+
+આ પ્રક્રિયા સોફ્ટવેર ડેવલપમેન્ટ કૌશલ્યોને હાર્ડવેર જ્ઞાન સાથે જોડે છે, જે Raspberry Pi પર Java નો ઉપયોગ કરીને શક્તિશાળી IoT સોલ્યુશન બનાવે છે. Java ની લવચીકતા, Raspberry Pi ની ક્ષમતાઓ સાથે જોડાઈને, સરળ સેન્સર ડેટા સંગ્રહથી લઈને જટિલ સ્વયંસંચાલિત સિસ્ટમ્સ સુધીની વિશાળ શ્રેણીની IoT એપ્લિકેશન્સની મંજૂરી આપે છે.
+
+વધારાના મહત્વપૂર્ણ મુદ્દાઓ:
+
+13. **સુરક્ષા વિચારણાઓ**:
+    - નેટવર્ક કમ્યુનિકેશનમાં એન્ક્રિપ્શન લાગુ કરો.
+    - સુરક્ષિત પ્રમાણીકરણ પદ્ધતિઓનો ઉપયોગ કરો.
+    - નિયમિતપણે સોફ્ટવેર અપડેટ્સ અને સુરક્ષા પેચ લાગુ કરો.
+
+14. **ડેટા મેનેજમેન્ટ**:
+    - ડેટા સ્ટોરેજ અને પ્રોસેસિંગ માટે યોગ્ય ડેટાબેઝ પસંદ કરો (દા.ત., SQLite લોકલ સ્ટોરેજ માટે).
+    - ડેટા બેકઅપ અને પુનઃપ્રાપ્તિ વ્યૂહરચનાઓ વિકસાવો.
+
+15. **સ્કેલેબિલિટી**:
+    - એપ્લિકેશનને વધુ ઉપકરણો અને વધુ ડેટા સંચાલિત કરવા માટે ડિઝાઇન કરો.
+    - ક્લાઉડ સેવાઓ સાથે એકીકરણ માટે તૈયાર રહો.
+
+16. **ઉપયોગકર્તા ઇન્ટરફેસ**:
+    - મોનિટરિંગ અને નિયંત્રણ માટે વેબ-આધારિત UI વિકસાવવાનું ધ્યાનમાં લો.
+    - મોબાઇલ એપ્લિકેશન સાથે એકીકરણ માટે REST API બનાવો.
+
+17. **ઊર્જા કાર્યક્ષમતા**:
+    - બેટરી દ્વારા સંચાલિત IoT ઉપકરણો માટે લો-પાવર મોડ્સ લાગુ કરો.
+    - સેન્સર રીડિંગ્સ અને ડેટા ટ્રાન્સમિશન માટે ઓપ્ટિમલ સમયપત્રક બનાવો.
+
+18. **ટ્રબલશૂટિંગ અને રિમોટ મેનેજમેન્ટ**:
+    - રિમોટ લોગિંગ અને ડાયગ્નોસ્ટિક્સ સક્ષમ કરો.
+    - SSH દ્વારા રિમોટ એક્સેસ સેટ અપ કરો જેથી દૂરસ્થ ડિબગિંગ અને અપડેટ્સ શક્ય બને.
+
+```mermaid
+graph TD
+    A[IoT એપ્લિકેશન] --> B[સુરક્ષા]
+    A --> C[ડેટા મેનેજમેન્ટ]
+    A --> D[સ્કેલેબિલિટી]
+    A --> E[ઉપયોગકર્તા ઇન્ટરફેસ]
+    A --> F[ઊર્જા કાર્યક્ષમતા]
+    A --> G[ટ્રબલશૂટિંગ]
+    B --> H[એન્ક્રિપ્શન]
+    B --> I[પ્રમાણીકરણ]
+    C --> J[ડેટાબેઝ]
+    C --> K[બેકઅપ]
+    D --> L[ક્લાઉડ એકીકરણ]
+    E --> M[વેબ UI]
+    E --> N[મોબાઇલ એપ]
+    F --> O[લો-પાવર મોડ]
+    G --> P[રિમોટ લોગિંગ]
+    G --> Q[SSH એક્સેસ]
+```
+
+આ વિસ્તૃત પ્રક્રિયા Raspberry Pi પર Java નો ઉપયોગ કરીને એક વ્યાપક IoT સોલ્યુશન બનાવવા માટેના તમામ મહત્વપૂર્ણ પાસાઓને આવરી લે છે. તે ટેક્નિકલ વિકાસથી લઈને વ્યવહારુ વિચારણાઓ સુધી, એક મજબૂત અને ટકાઉ IoT એપ્લિકેશન બનાવવા માટે જરૂરી તમામ પગલાંને સમાવે છે. આ અભિગમ ડેવલપર્સને તેમના IoT પ્રોજેક્ટ્સમાં Java ની શક્તિ અને Raspberry Pi ની બહુમુખી પ્રતિભાનો પૂરેપૂરો લાભ લેવાની મંજૂરી આપે છે.
+
+### Question 5(a): Explain the concept of Aspect-Oriented Programming (AOP) in Spring. (3 marks)
+
+**Ans 5(a):**
+
+Aspect-Oriented Programming (AOP) is a programming paradigm that aims to increase modularity by allowing the separation of cross-cutting concerns. In Spring Framework, AOP provides a way to add additional behavior to existing code without modifying the code itself.
+
+Key concepts of AOP in Spring:
+
+1. **Aspect**: A modularization of a concern that cuts across multiple classes. Common aspects include logging, security, and transaction management.
+
+2. **Join Point**: A point during the execution of a program, such as method execution or exception handling.
+
+3. **Advice**: The action taken by an aspect at a particular join point. Types include:
+   - *Before*: Runs before the join point
+   - *After*: Runs after the join point
+   - *Around*: Runs before and after the join point
+
+4. **Pointcut**: A predicate that matches join points. Advice is associated with a pointcut expression and runs at any join point matched by the pointcut.
+
+5. **Weaving**: The process of linking aspects with other application types or objects to create an advised object.
+
+Benefits of AOP in Spring:
+- Improves code modularity
+- Reduces code duplication
+- Enhances separation of concerns
+- Facilitates centralized handling of cross-cutting concerns
+
+Example of AOP usage in Spring:
+
+```java
+@Aspect
+@Component
+public class LoggingAspect {
+    @Before("execution(* com.example.service.*.*(..))")
+    public void logBefore(JoinPoint joinPoint) {
+        System.out.println("Before method: " + joinPoint.getSignature().getName());
+    }
+}
+```
+
+```mermaid
+graph TD
+    A[AOP in Spring] --> B[Aspect]
+    A --> C[Join Point]
+    A --> D[Advice]
+    A --> E[Pointcut]
+    A --> F[Weaving]
+    D --> G[Before]
+    D --> H[After]
+    D --> I[Around]
+```
+
+AOP in Spring allows developers to modularize cross-cutting concerns, leading to cleaner, more maintainable code.
+
+### પ્રશ્ન 5(અ): સ્પ્રિંગમાં Aspect-Oriented Programming (AOP) ની વિભાવના સમજાવો. (3 ગુણ)
+
+**જવાબ 5(અ):**
+
+Aspect-Oriented Programming (AOP) એ એક પ્રોગ્રામિંગ પેરાડાઇમ છે જે cross-cutting concerns ના અલગીકરણની મંજૂરી આપીને મોડ્યુલારિટી વધારવાનો લક્ષ્ય રાખે છે. Spring Framework માં, AOP વર્તમાન કોડને સુધાર્યા વિના તેમાં વધારાનું વર્તન ઉમેરવાની રીત પ્રદાન કરે છે.
+
+Spring માં AOP ની મુખ્ય વિભાવનાઓ:
+
+1. **Aspect**: એક ચિંતાનું મોડ્યુલાઇઝેશન જે અનેક વર્ગોમાં છેદે છે. સામાન્ય aspects માં લોગિંગ, સુરક્ષા અને ટ્રાન્ઝેક્શન મેનેજમેન્ટ શામેલ છે.
+
+2. **Join Point**: પ્રોગ્રામના અમલીકરણ દરમિયાન એક બિંદુ, જેમ કે પદ્ધતિ અમલીકરણ અથવા અપવાદ હેન્ડલિંગ.
+
+3. **Advice**: ચોક્કસ join point પર aspect દ્વારા લેવામાં આવતી ક્રિયા. પ્રકારોમાં શામેલ છે:
+   - *Before*: Join point પહેલાં ચાલે છે
+   - *After*: Join point પછી ચાલે છે
+   - *Around*: Join point પહેલાં અને પછી ચાલે છે
+
+4. **Pointcut**: Join points ને મેળ ખાતું એક પ્રેડિકેટ. Advice એક pointcut અભિવ્યક્તિ સાથે સંકળાયેલ છે અને pointcut દ્વારા મેળ ખાતા કોઈપણ join point પર ચાલે છે.
+
+5. **Weaving**: Advised object બનાવવા માટે aspects ને અન્ય એપ્લિકેશન પ્રકારો અથવા ઓબ્જેક્ટ્સ સાથે જોડવાની પ્રક્રિયા.
+
+Spring માં AOP ના ફાયદાઓ:
+- કોડ મોડ્યુલારિટી સુધારે છે
+- કોડ ડુપ્લિકેશન ઘટાડે છે
+- Concerns ના અલગીકરણમાં વધારો કરે છે
+- Cross-cutting concerns ના કેન્દ્રીકૃત હેન્ડલિંગની સુવિધા આપે છે
+
+Spring માં AOP ઉપયોગનું ઉદાહરણ:
+
+```java
+@Aspect
+@Component
+public class LoggingAspect {
+    @Before("execution(* com.example.service.*.*(..))")
+    public void logBefore(JoinPoint joinPoint) {
+        System.out.println("પદ્ધતિ પહેલાં: " + joinPoint.getSignature().getName());
+    }
+}
+```
+
+```mermaid
+graph TD
+    A[Spring માં AOP] --> B[Aspect]
+    A --> C[Join Point]
+    A --> D[Advice]
+    A --> E[Pointcut]
+    A --> F[Weaving]
+    D --> G[Before]
+    D --> H[After]
+    D --> I[Around]
+```
+
+Spring માં AOP ડેવલપર્સને cross-cutting concerns ને મોડ્યુલર બનાવવાની મંજૂરી આપે છે, જે વધુ સ્વચ્છ, વધુ જાળવી શકાય તેવા કોડ તરફ દોરી જાય છે.
+
+### Question 5(b): Describe the role of Actuator in Spring Boot applications. (4 marks)
+
+**Ans 5(b):**
+
+Spring Boot Actuator is a powerful feature that provides production-ready features to help monitor and manage Spring Boot applications. It plays a crucial role in enhancing the observability and manageability of applications in production environments.
+
+Key roles and features of Spring Boot Actuator:
+
+1. **Health Checks**:
+   - Provides a `/health` endpoint to check the application's health status.
+   - Can be customized to include checks for databases, message queues, and other external systems.
+   ```java
+   @Component
+   public class CustomHealthIndicator implements HealthIndicator {
+       @Override
+       public Health health() {
+           // Custom health check logic
+           return Health.up().withDetail("custom", "Everything is working").build();
+       }
+   }
+   ```
+
+2. **Metrics Collection**:
+   - Offers a `/metrics` endpoint for accessing application metrics.
+   - Integrates with monitoring systems like Prometheus and Graphite.
+   - Provides insights into JVM memory, garbage collection, HTTP requests, etc.
+
+3. **Environment Information**:
+   - Exposes configuration properties through the `/env` endpoint.
+   - Helps in verifying the active configuration in different environments.
+
+4. **Application Information**:
+   - Provides the `/info` endpoint for displaying application information.
+   - Can be customized to show version, build details, and other metadata.
+   ```properties
+   info.app.name=My Spring Boot Application
+   info.app.version=1.0.0
+   ```
+
+5. **Logging Configuration**:
+   - Allows dynamic modification of logging levels via the `/loggers` endpoint.
+   - Useful for debugging issues in production without restarting the application.
+
+6. **Thread Dump**:
+   - Offers the `/threaddump` endpoint for capturing thread states.
+   - Helpful in diagnosing performance issues and deadlocks.
+
+7. **HTTP Trace**:
+   - Provides the `/httptrace` endpoint for recent HTTP request-response exchanges.
+   - Useful for debugging and monitoring API usage.
+
+8. **Security Auditing**:
+   - When combined with Spring Security, provides audit events for authentication and authorization.
+
+Benefits of using Actuator:
+- Enhances application monitoring capabilities
+- Facilitates easy integration with external monitoring tools
+- Provides out-of-the-box production-ready features
+- Improves application maintainability and troubleshooting
+
+Configuration example:
+```yaml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
+  endpoint:
+    health:
+      show-details: always
+```
+
+```mermaid
+graph TD
+    A[Spring Boot Actuator] --> B[Health Checks]
+    A --> C[Metrics Collection]
+    A --> D[Environment Info]
+    A --> E[Application Info]
+    A --> F[Logging Config]
+    A --> G[Thread Dump]
+    A --> H[HTTP Trace]
+    A --> I[Security Auditing]
+```
+
+Spring Boot Actuator serves as a powerful tool for DevOps teams, providing essential insights and management capabilities for Spring Boot applications in production environments.
+
+### પ્રશ્ન 5(બ): સ્પ્રિંગ બૂટ એપ્લિકેશન્સમાં Actuator ની ભૂમિકાનું વર્ણન કરો. (4 ગુણ)
+
+**જવાબ 5(બ):**
+
+Spring Boot Actuator એ એક શક્તિશાળી સુવિધા છે જે Spring Boot એપ્લિકેશન્સનું મોનિટરિંગ અને મેનેજમેન્ટ કરવામાં મદદ કરવા માટે production-ready સુવિધાઓ પ્રદાન કરે છે. તે ઉત્પાદન વાતાવરણમાં એપ્લિકેશન્સની નિરીક્ષણક્ષમતા અને સંચાલનક્ષમતા વધારવામાં મહત્વપૂર્ણ ભૂમિકા ભજવે છે.
+
+Spring Boot Actuator ની મુખ્ય ભૂમિકાઓ અને સુવિધાઓ:
+
+1. **હેલ્થ ચેક્સ**:
+   - એપ્લિકેશનની આરોગ્ય સ્થિતિ તપાસવા માટે `/health` endpoint પ્રદાન કરે છે.
+   - ડેટાબેસ, મેસેજ ક્યુ અને અન્ય બાહ્ય સિસ્ટમ્સ માટેની તપાસ સામેલ કરવા માટે કસ્ટમાઇઝ કરી શકાય છે.
+   ```java
+   @Component
+   public class CustomHealthIndicator implements HealthIndicator {
+       @Override
+       public Health health() {
+           // કસ્ટમ હેલ્થ ચેક લોજિક
+           return Health.up().withDetail("custom", "બધું કામ કરી રહ્યું છે").build();
+       }
+   }
+   ```
+
+2. **મેટ્રિક્સ સંગ્રહ**:
+   - એપ્લિકેશન મેટ્રિક્સ ઍક્સેસ કરવા માટે `/metrics` endpoint આપે છે.
+   - Prometheus અને Graphite જેવી મોનિટરિંગ સિસ્ટમ્સ સાથે એકીકૃત થાય છે.
+   - JVM મેમરી, ગાર્બેજ કલેક્શન, HTTP વિનંતીઓ વગેરે વિશે અંતર્દૃષ્ટિ પ્રદાન કરે છે.
+
+3. **પર્યાવરણ માહિતી**:
+   - `/env` endpoint દ્વારા કોન્ફિગરેશન ગુણધર્મો પ્રદર્શિત કરે છે.
+   - વિવિધ પર્યાવરણમાં સક્રિય કોન્ફિગરેશનની ચકાસણી કરવામાં મદદ કરે છે.
+
+4. **એપ્લિકેશન માહિતી**:
+   - એપ્લિકેશન માહિતી પ્રદર્શિત કરવા માટે `/info` endpoint પ્રદાન કરે છે.
+   - આવૃત્તિ, બિલ્ડ વિગતો અને અન્ય મેટાડેટા બતાવવા માટે કસ્ટમાઇઝ કરી શકાય છે.
+   ```properties
+   info.app.name=મારી Spring Boot એપ્લિકેશન
+   info.app.version=1.0.0
+   ```
+
+5. **લોગિંગ કોન્ફિગરેશન**:
+   - `/loggers` endpoint દ્વારા લોગિંગ સ્તરોનું ગતિશીલ સંશોધન કરવાની મંજૂરી આપે છે.
+   - એપ્લિકેશન પુનઃપ્રારંભ કર્યા વિના ઉત્પાદનમાં સમસ્યાઓનું નિવારણ કરવા માટે ઉપયોગી.
+
+6. **થ્રેડ ડમ્પ**:
+   - થ્રેડ સ્થિતિઓને કેપ્ચર કરવા માટે `/threaddump` endpoint આપે છે.
+   - કાર્યક્ષમતા સમસ્યાઓ અને ડેડલોક્સનું નિદાન કરવામાં મદદરૂપ.
+
+7. **HTTP ટ્રેસ**:
+   - તાજેતરની HTTP વિનંતી-પ્રતિસાદ વિનિમયો માટે `/httptrace` endpoint પ્રદાન કરે છે.
+   - API ઉપયોગનું ડિબગિંગ અને મોનિટરિંગ માટે ઉપયોગી.
+
+8. **સુરક્ષા ઓડિટિંગ**:
+   - Spring Security સાથે જોડાયેલ હોય ત્યારે, પ્રમાણીકરણ અને અધિકૃતતા માટે ઓડિટ ઘટનાઓ પ્રદાન કરે છે.
+
+Actuator નો ઉપયોગ કરવાના ફાયદા:
+- એપ્લિકેશન મોનિટરિંગ ક્ષમતાઓ વધારે છે
+- બાહ્ય મોનિટરિંગ સાધનો સાથે સરળ એકીકરણની સુવિધા આપે છે
+- Out-of-the-box production-ready સુવિધાઓ પ્રદાન કરે છે
+- એપ્લિકેશન જાળવણી અને સમસ્યા નિવારણમાં સુધારો કરે છે
+
+કોન્ફિગરેશન ઉદાહરણ:
+```yaml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
+  endpoint:
+    health:
+      show-details: always
+```
+
+```mermaid
+graph TD
+    A[Spring Boot Actuator] --> B[હેલ્થ ચેક્સ]
+    A --> C[મેટ્રિક્સ સંગ્રહ]
+    A --> D[પર્યાવરણ માહિતી]
+    A --> E[એપ્લિકેશન માહિતી]
+    A --> F[લોગિંગ કોન્ફિગ]
+    A --> G[થ્રેડ ડમ્પ]
+    A --> H[HTTP ટ્રેસ]
+    A --> I[સુરક્ષા ઓડિટિંગ]
+```
+
+Spring Boot Actuator DevOps ટીમો માટે એક શક્તિશાળી સાધન તરીકે કામ કરે છે, જે ઉત્પાદન વાતાવરણમાં Spring Boot એપ્લિકેશન્સ માટે આવશ્યક અંતર્દૃષ્ટિ અને સંચાલન ક્ષમતાઓ પ્રદાન કરે છે.
+
+### Question 5(c): Explain the MQTT protocol and its implementation in Java for IoT applications. (7 marks)
+
+**Ans 5(c):**
+
+MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe network protocol designed for efficient communication in IoT (Internet of Things) and machine-to-machine (M2M) contexts. Its implementation in Java is crucial for developing robust IoT applications.
+
+**Key Features of MQTT:**
+
+1. **Publish-Subscribe Model**: 
+   - Devices can publish messages to topics or subscribe to topics to receive messages.
+   - Decouples message senders (publishers) from receivers (subscribers).
+
+2. **Quality of Service (QoS) Levels**:
+   - QoS 0: At most once delivery (fire and forget)
+   - QoS 1: At least once delivery (acknowledged delivery)
+   - QoS 2: Exactly once delivery (assured delivery)
+
+3. **Small Footprint**: 
+   - Minimal packet overhead, ideal for constrained devices and low-bandwidth networks.
+
+4. **Last Will and Testament (LWT)**:
+   - Allows a message to be sent automatically when a client disconnects unexpectedly.
+
+5. **Retained Messages**:
+   - The broker can store the last message for a topic, delivering it to new subscribers.
+
+**Implementing MQTT in Java for IoT:**
+
+1. **Setting Up Dependencies**:
+   - Use Eclipse Paho MQTT Client library for Java.
+   - Add to Maven `pom.xml`:
+     ```xml
+     <dependency>
+         <groupId>org.eclipse.paho</groupId>
+         <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+         <version>1.2.5</version>
+     </dependency>
+     ```
+
+2. **Connecting to an MQTT Broker**:
+   ```java
+   import org.eclipse.paho.client.mqttv3.*;
+
+   public class MQTTClient {
+       private MqttClient client;
+
+       public void connect() throws MqttException {
+           String broker = "tcp://broker.hivemq.com:1883";
+           String clientId = MqttClient.generateClientId();
+           client = new MqttClient(broker, clientId);
+           MqttConnectOptions options = new MqttConnectOptions();
+           options.setCleanSession(true);
+           client.connect(options);
+       }
+   }
+   ```
+
+3. **Publishing Messages**:
+   ```java
+   public void publish(String topic, String message) throws MqttException {
+       MqttMessage mqttMessage = new MqttMessage(message.getBytes());
+       mqttMessage.setQos(1);
+       client.publish(topic, mqttMessage);
+   }
+   ```
+
+4. **Subscribing to Topics**:
+   ```java
+   public void subscribe(String topic) throws MqttException {
+       client.subscribe(topic, (topic1, message) -> {
+           System.out.println("Received message: " + new String(message.getPayload()));
+       });
+   }
+   ```
+
+5. **Handling Connection Loss**:
+   ```java
+   options.setAutomaticReconnect(true);
+   client.setCallback(new MqttCallback() {
+       @Override
+       public void connectionLost(Throwable cause) {
+           System.out.println("Connection lost! " + cause.getMessage());
+       }
+
+       // Other callback methods...
+   });
+   ```
+
+6. **Implementing QoS**:
+   ```java
+   MqttMessage message = new MqttMessage(payload);
+   message.setQos(2); // Exactly once delivery
+   client.publish("sensor/temperature", message);
+   ```
+
+7. **Using Last Will and Testament**:
+   ```java
+   MqttConnectOptions options = new MqttConnectOptions();
+   options.setWill("device/status", "offline".getBytes(), 1, true);
+   ```
+
+**Application in IoT Scenarios:**
+
+1. **Sensor Data Collection**:
+   - Sensors publish data to specific topics (e.g., "home/livingroom/temperature").
+   - Central system subscribes to these topics for data processing.
+
+2. **Device Control**:
+   - Control commands published to topics (e.g., "home/livingroom/lights/command").
+   - Devices subscribe to relevant command topics.
+
+3. **Real-time Monitoring**:
+   - Devices continuously publish status updates.
+   - Monitoring applications subscribe to status topics.
+
+4. **Scalable Architecture**:
+   - MQTT brokers can handle thousands of simultaneous connections.
+   - Ideal for large-scale IoT deployments.
+
+```mermaid
+graph TD
+    A[MQTT Broker] --> B[Publisher: Sensor]
+    A --> C[Subscriber: Data Processor]
+    A --> D[Publisher: Control System]
+    A --> E[Subscriber: IoT Device]
+    B -->|Publishes| F[Topic: sensor/data]
+    C -->|Subscribes| F
+    D -->|Publishes| G[Topic: device/command]
+    E -->|Subscribes| G
+```
+
+**Best Practices:**
+- Use SSL/TLS for secure communication.
+- Implement proper error handling and reconnection logic.
+- Use meaningful topic structures for easy management.
+- Optimize message payload size for efficiency.
+
+MQTT's lightweight nature, coupled with its robust features, makes it an excellent choice for IoT applications in Java. Its publish-subscribe model allows for flexible, scalable, and efficient communication between devices and systems in IoT ecosystems.
+
+### પ્રશ્ન 5(ક): MQTT પ્રોટોકોલ અને IoT એપ્લિકેશન્સ માટે Java માં તેના અમલીકરણને સમજાવો. (7 ગુણ)
+
+**જવાબ 5(ક):**
+
+MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્રકાશિત-સબ્સ્ક્રાઇબ નેટવર્ક પ્રોટોકોલ છે જે IoT (Internet of Things) અને મશીન-ટુ-મશીન (M2M) સંદર્ભોમાં કાર્યક્ષમ સંચાર માટે રચાયેલ છે. Java માં તેનું અમલીકરણ મજબૂત IoT એપ્લિકેશન્સ વિકસાવવા માટે મહત્વપૂર્ણ છે.
+
+**MQTT ની મુખ્ય વિશેષતાઓ:**
+
+1. **પબ્લિશ-સબ્સ્ક્રાઇબ મોડેલ**: 
+   - ઉપકરણો વિષયો પર સંદેશાઓ પ્રકાશિત કરી શકે છે અથવા સંદેશાઓ પ્રાપ્ત કરવા માટે વિષયોને સબ્સ્ક્રાઇબ કરી શકે છે.
+   - સંદેશ મોકલનારાઓ (પ્રકાશકો)ને પ્રાપ્તકર્તાઓ (સબ્સ્ક્રાઇબર્સ)થી અલગ કરે છે.
+
+2. **સેવાની ગુણવત્તા (QoS) સ્તરો**:
+   - QoS 0: વધુમાં વધુ એક વખત વિતરણ (ફાયર એન્ડ ફોરગેટ)
+   - QoS 1: ઓછામાં ઓછું એક વખત વિતરણ (સ્વીકૃત વિતરણ)
+   - QoS 2: ચોક્કસ એક વખત વિતરણ (ખાતરીપૂર્વક વિતરણ)
+
+3. **નાનું ફૂટપ્રિન્ટ**: 
+   - ન્યૂનતમ પેકેટ ઓવરહેડ, મર્યાદિત ઉપકરણો અને ઓછી બેન્ડવિડ્થ નેટવર્ક્સ માટે આદર્શ.
+
+4. **છેલ્લી ઇચ્છા અને વસીયત (LWT)**:
+   - જ્યારે ક્લાયન્ટ અનપેક્ષિત રીતે ડિસ્કનેક્ટ થાય ત્યારે આપમેળે સંદેશ મોકલવાની મંજૂરી આપે છે.
+
+5. **જાળવી રાખેલા સંદેશાઓ**:
+   - બ્રોકર કોઈ વિષય માટે છેલ્લો સંદેશ સંગ્રહિત કરી શકે છે, તેને નવા સબ્સ્ક્રાઇબર્સને ડિલિવર કરે છે.
+
+**IoT માટે Java માં MQTT નું અમલીકરણ:**
+
+1. **ડિપેન્ડન્સીઝ સેટ અપ કરવી**:
+   - Java માટે Eclipse Paho MQTT Client લાઇબ્રેરીનો ઉપયોગ કરો.
+   - Maven `pom.xml` માં ઉમેરો:
+     ```xml
+     <dependency>
+         <groupId>org.eclipse.paho</groupId>
+         <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+         <version>1.2.5</version>
+     </dependency>
+     ```
+
+2. **MQTT બ્રોકર સાથે કનેક્ટ થવું**:
+   ```java
+   import org.eclipse.paho.client.mqttv3.*;
+
+   public class MQTTClient {
+       private MqttClient client;
+
+       public void connect() throws MqttException {
+           String broker = "tcp://broker.hivemq.com:1883";
+           String clientId = MqttClient.generateClientId();
+           client = new MqttClient(broker, clientId);
+           MqttConnectOptions options = new MqttConnectOptions();
+           options.setCleanSession(true);
+           client.connect(options);
+       }
+   }
+   ```
+
+3. **સંદેશાઓ પ્રકાશિત કરવા**:
+   ```java
+   public void publish(String topic, String message) throws MqttException {
+       MqttMessage mqttMessage = new MqttMessage(message.getBytes());
+       mqttMessage.setQos(1);
+       client.publish(topic, mqttMessage);
+   }
+   ```
+
+4. **વિષયોને સબ્સ્ક્રાઇબ કરવા**:
+   ```java
+   public void subscribe(String topic) throws MqttException {
+       client.subscribe(topic, (topic1, message) -> {
+           System.out.println("પ્રાપ્ત થયેલ સંદેશ: " + new String(message.getPayload()));
+       });
+   }
+   ```
+
+5. **કનેક્શન લોસ હેન્ડલિંગ**:
+   ```java
+   options.setAutomaticReconnect(true);
+   client.setCallback(new MqttCallback() {
+       @Override
+       public void connectionLost(Throwable cause) {
+           System.out.println("કનેક્શન ગુમાવ્યું! " + cause.getMessage());
+       }
+
+       // અન્ય કોલબેક પદ્ધતિઓ...
+   });
+   ```
+
+6. **QoS નો અમલ કરવો**:
+   ```java
+   MqttMessage message = new MqttMessage(payload);
+   message.setQos(2); // ચોક્કસ એક વખત વિતરણ
+   client.publish("sensor/temperature", message);
+   ```
+
+7. **છેલ્લી ઇચ્છા અને વસીયતનો ઉપયોગ કરવો**:
+   ```java
+   MqttConnectOptions options = new MqttConnectOptions();
+   options.setWill("device/status", "offline".getBytes(), 1, true);
+   ```
+
+**IoT પરિદૃશ્યોમાં એપ્લિકેશન:**
+
+1. **સેન્સર ડેટા સંગ્રહ**:
+   - સેન્સર્સ ચોક્કસ વિષયો પર ડેટા પ્રકાશિત કરે છે (દા.ત., "home/livingroom/temperature").
+   - કેન્દ્રીય સિસ્ટમ ડેટા પ્રોસેસિંગ માટે આ વિષયોને સબ્સ્ક્રાઇબ કરે છે.
+
+2. **ઉપકરણ નિયંત્રણ**:
+   - વિષયો પર પ્રકાશિત નિયંત્રણ આદેશો (દા.ત., "home/livingroom/lights/command").
+   - ઉપકરણો સંબંધિત આદેશ વિષયોને સબ્સ્ક્રાઇબ કરે છે.
+
+3. **રીયલ-ટાઇમ મોનિટરિંગ**:
+   - ઉપકરણો સતત સ્થિતિ અપડેટ્સ પ્રકાશિત કરે છે.
+   - મોનિટરિંગ એપ્લિકેશન્સ સ્થિતિ વિષયોને સબ્સ્ક્રાઇબ કરે છે.
+
+4. **સ્કેલેબલ આર્કિટેક્ચર**:
+   - MQTT બ્રોકર્સ હજારો સમકાલીન કનેક્શન્સને સંભાળી શકે છે.
+   - મોટા પાયે IoT ડેપ્લોયમેન્ટ માટે આદર્શ.
+
+```mermaid
+graph TD
+    A[MQTT બ્રોકર] --> B[પ્રકાશક: સેન્સર]
+    A --> C[સબ્સ્ક્રાઇબર: ડેટા પ્રોસેસર]
+    A --> D[પ્રકાશક: નિયંત્રણ સિસ્ટમ]
+    A --> E[સબ્સ્ક્રાઇબર: IoT ઉપકરણ]
+    B -->|પ્રકાશિત કરે છે| F[વિષય: sensor/data]
+    C -->|સબ્સ્ક્રાઇબ કરે છે| F
+    D -->|પ્રકાશિત કરે છે| G[વિષય: device/command]
+    E -->|સબ્સ્ક્રાઇબ કરે છે| G
+```
+
+**શ્રેષ્ઠ પ્રથાઓ:**
+- સુરક્ષિત સંચાર માટે SSL/TLS નો ઉપયોગ કરો.
+- યોગ્ય ભૂલ હેન્ડલિંગ અને પુનઃજોડાણ લોજિક લાગુ કરો.
+- સરળ વ્યવસ્થાપન માટે અર્થપૂર્ણ વિષય માળખાનો ઉપયોગ કરો.
+- કાર્યક્ષમતા માટે સંદેશ પેલોડ કદને ઓપ્ટિમાઇઝ કરો.
+
+MQTT ની હલકી પ્રકૃતિ, તેની મજબૂત સુવિધાઓ સાથે જોડાયેલી, તેને Java માં IoT એપ્લિકેશન્સ માટે એક ઉત્તમ પસંદગી બનાવે છે. તેનું પબ્લિશ-સબ્સ્ક્રાઇબ મોડેલ IoT ઇકોસિસ્ટમ્સમાં ઉપકરણો અને સિસ્ટમ્સ વચ્ચે લવચીક, સ્કેલેબલ અને કાર્યક્ષમ સંચારની મંજૂરી આપે છે.
+
+**વધારાના મહત્વપૂર્ણ મુદ્દાઓ:**
+
+1. **સુરક્ષા વિચારણાઓ**:
+   - MQTT બ્રોકર પર SSL/TLS સક્ષમ કરો.
+   - યુઝરનેમ અને પાસવર્ડ પ્રમાણીકરણનો ઉપયોગ કરો.
+   - સંવેદનશીલ ડેટા માટે પેલોડ એન્ક્રિપ્શન લાગુ કરો.
+
+   ```java
+   MqttConnectOptions options = new MqttConnectOptions();
+   options.setSocketFactory(SSLSocketFactory.getDefault());
+   options.setUserName("username");
+   options.setPassword("password".toCharArray());
+   ```
+
+2. **ડેટા ફોર્મેટિંગ**:
+   - JSON અથવા Protocol Buffers જેવા માનક ડેટા ફોર્મેટ્સનો ઉપયોગ કરો.
+   - ડેટા સંરચના અને પ્રકારની સુસંગતતા જાળવો.
+
+   ```java
+   JSONObject payload = new JSONObject();
+   payload.put("temperature", 25.5);
+   payload.put("humidity", 60);
+   String message = payload.toString();
+   mqttClient.publish("sensor/data", message.getBytes(), 1, false);
+   ```
+
+3. **પુનઃપ્રયાસ અને પુનઃજોડાણ વ્યૂહરચના**:
+   - નેટવર્ક વિક્ષેપો સામે ટકાઉ રહેવા માટે પુનઃપ્રયાસ લોજિક લાગુ કરો.
+   - એક્સપોનેન્શિયલ બેકઓફ અલ્ગોરિધમનો ઉપયોગ કરો.
+
+   ```java
+   options.setAutomaticReconnect(true);
+   options.setMaxReconnectDelay(5000);
+   ```
+
+4. **બેચ પ્રોસેસિંગ અને એગ્રિગેશન**:
+   - બેટરી સંચાલિત ઉપકરણો માટે, ડેટાને બેચમાં એકત્રિત કરો અને મોકલો.
+   - એજ ઉપકરણો પર પ્રાથમિક એગ્રિગેશન કરો.
+
+5. **ટોપિક ફિલ્ટરિંગ અને વાઇલ્ડકાર્ડ્સ**:
+   - ટોપિક ફિલ્ટરિંગનો ઉપયોગ કરીને કાર્યક્ષમ સબ્સ્ક્રિપ્શન્સ બનાવો.
+   - વાઇલ્ડકાર્ડ્સનો ઉપયોગ કરો: '+' (એક-સ્તરીય) અને '#' (બહુ-સ્તરીય).
+
+   ```java
+   client.subscribe("home/+/temperature");
+   client.subscribe("sensors/#");
+   ```
+
+6. **ઓફલાઇન મેસેજિંગ અને બફરિંગ**:
+   - ઓફલાઇન સમય દરમિયાન સંદેશાઓને બફર કરવા માટે ક્લાયન્ટ-સાઇડ લોજિક લાગુ કરો.
+   - પુનઃજોડાણ પર બફર કરેલા સંદેશાઓ મોકલો.
+
+7. **મોનિટરિંગ અને લોગિંગ**:
+   - MQTT કનેક્શન્સ અને મેસેજ ફ્લો પર નજર રાખવા માટે લોગિંગ મેકેનિઝમ લાગુ કરો.
+   - ભૂલો અને અસામાન્ય ઘટનાઓને લોગ કરો.
+
+   ```java
+   import org.slf4j.Logger;
+   import org.slf4j.LoggerFactory;
+
+   private static final Logger logger = LoggerFactory.getLogger(MQTTClient.class);
+
+   // લોગિંગનો ઉપયોગ
+   logger.info("MQTT કનેક્શન સ્થાપિત");
+   logger.error("કનેક્શન નિષ્ફળ", exception);
+   ```
+
+8. **રિસોર્સ મેનેજમેન્ટ**:
+   - યોગ્ય રીતે MQTT કનેક્શન્સ બંધ કરો.
+   - મેમરી લીક્સને ટાळવા માટે સંસાધનોને મુક્ત કરો.
+
+   ```java
+   public void disconnect() {
+       try {
+           client.disconnect();
+           client.close();
+       } catch (MqttException e) {
+           logger.error("ડિસ્કનેક્ટ કરતી વખતે ભૂલ", e);
+       }
+   }
+   ```
+
+```mermaid
+graph TD
+    A[MQTT IoT એપ્લિકેશન] --> B[સુરક્ષા]
+    A --> C[ડેટા ફોર્મેટિંગ]
+    A --> D[પુનઃપ્રયાસ વ્યૂહરચના]
+    A --> E[બેચ પ્રોસેસિંગ]
+    A --> F[ટોપિક ફિલ્ટરિંગ]
+    A --> G[ઓફલાઇન મેસેજિંગ]
+    A --> H[મોનિટરિંગ અને લોગિંગ]
+    A --> I[રિસોર્સ મેનેજમેન્ટ]
+```
+
+આ વિસ્તૃત અભિગમ Java માં MQTT નો ઉપયોગ કરીને મજબૂત, સ્કેલેબલ અને કાર્યક્ષમ IoT એપ્લિકેશન્સ બનાવવા માટેની સંપૂર્ણ રૂપરેખા પ્રદાન કરે છે. તે સુરક્ષા, કાર્યક્ષમતા અને વિશ્વસનીયતા સુનિશ્ચિત કરતી વખતે IoT ઇકોસિસ્ટમમાં MQTT નો શ્રેષ્ઠ ઉપયોગ કરવાની પદ્ધતિઓ પર ભાર મૂકે છે. આ માર્ગદર્શિકાને અનુસરીને, ડેવલપર્સ વિવિધ IoT પરિદૃશ્યોમાં અસરકારક રીતે કામ કરી શકે તેવા સોફ્ટવેર સોલ્યુશન્સ બનાવી શકે છે.

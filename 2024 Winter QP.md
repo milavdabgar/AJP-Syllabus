@@ -118,7 +118,7 @@ Q.5 (c) Explain the process of developing a Java application for IoT using Raspb
 07
 
 OR
-Q.5 Q.5 (a) Explain the concept of Aspect-Oriented Programming (AOP) in Spring.
+Q.5 (a) Explain the concept of Aspect-Oriented Programming (AOP) in Spring.
 પ્રશ્ન.5 (અ) સ્પ્રિંગમાં આસ્પેક્ટ-ઓરિએન્ટેડ પ્રોગ્રામિંગ (AOP) ની વિભાવના સમજાવો.
 03
 

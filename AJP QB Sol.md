@@ -1,3 +1,7 @@
+# Advance Java
+
+## Question Bank Solution
+
 ### Question 1(a): Define lambda expressions and explain their significance in Java programming. (3 marks)
 
 **Ans 1(a):**
@@ -6,7 +10,7 @@ Lambda expressions in Java are anonymous functions that provide a concise way to
 
 Key points about lambda expressions:
 
-1. **Syntax**: 
+1. **Syntax**:
    - Basic structure: `(parameters) -> expression` or `(parameters) -> { statements; }`
    - Example: `(int a, int b) -> a + b`
 
@@ -18,13 +22,13 @@ Key points about lambda expressions:
 3. **Significance in Java programming**:
 
    - **Concise code**: Lambda expressions reduce the verbosity of anonymous inner classes, making code more readable and maintainable.
-   
+
    - **Functional programming support**: They enable functional programming concepts in Java, allowing functions to be treated as first-class citizens.
-   
+
    - **Enhanced collection processing**: Lambda expressions work seamlessly with the Streams API, enabling efficient and expressive data processing.
-   
+
    - **Improved API design**: Libraries can now define more flexible and powerful APIs using functional interfaces.
-   
+
    - **Parallel processing**: Lambda expressions facilitate writing concurrent code, especially when used with parallel streams.
 
 Example demonstrating lambda expression usage:
@@ -73,13 +77,13 @@ Lambda expressions વિશે મુખ્ય મુદ્દાઓ:
 3. **જાવા પ્રોગ્રામિંગમાં મહત્વ**:
 
    - **સંક્ષિપ્ત કોડ**: Lambda expressions anonymous inner classes ની વર્બોસિટી ઘટાડે છે, જેથી કોડ વધુ વાંચી શકાય અને જાળવી શકાય તેવો બને છે.
-   
+
    - **Functional programming સપોર્ટ**: તેઓ જાવામાં functional programming concepts ને સક્ષમ કરે છે, જેથી functions ને પ્રથમ-વર્ગના નાગરિકો તરીકે ગણવામાં આવે છે.
-   
+
    - **વધુ સારી collection પ્રોસેસિંગ**: Lambda expressions Streams API સાથે સરળતાથી કામ કરે છે, જે કાર્યક્ષમ અને અભિવ્યક્તિપૂર્ણ ડેટા પ્રોસેસિંગને સક્ષમ કરે છે.
-   
+
    - **સુધારેલ API ડિઝાઇન**: લાઇબ્રેરીઓ હવે functional interfaces નો ઉપયોગ કરીને વધુ લવચીક અને શક્તિશાળી APIs વ્યાખ્યાયિત કરી શકે છે.
-   
+
    - **સમાંતર પ્રક્રિયા**: Lambda expressions concurrent કોડ લખવાની સુવિધા આપે છે, ખાસ કરીને parallel streams સાથે વપરાય ત્યારે.
 
 Lambda expression ના ઉપયોગને દર્શાવતું ઉદાહરણ:
@@ -150,6 +154,7 @@ String text = stringBox.get();
 ```
 
 In this example:
+
 - `Box<T>` is a generic class where `T` is a type parameter.
 - We can create `Box` objects for different types (e.g., `Integer`, `String`).
 - The compiler ensures type safety, preventing type mismatches.
@@ -157,6 +162,7 @@ In this example:
 Benefits of using generics:
 
 1. **Type-safe collections**: Eliminates the need for explicit casting.
+
    ```java
    List<String> list = new ArrayList<>();
    list.add("Java");
@@ -164,6 +170,7 @@ Benefits of using generics:
    ```
 
 2. **Generic methods**: Allow creation of type-safe methods.
+
    ```java
    public static <E> void printArray(E[] array) {
        for (E element : array) {
@@ -173,6 +180,7 @@ Benefits of using generics:
    ```
 
 3. **Bounded type parameters**: Restrict the types that can be used with a generic class or method.
+
    ```java
    public class NumberBox<T extends Number> {
        // ...
@@ -235,6 +243,7 @@ String text = stringBox.get();
 ```
 
 આ ઉદાહરણમાં:
+
 - `Box<T>` એ generic class છે જ્યાં `T` એક પ્રકાર પરિમાણ છે.
 - આપણે વિવિધ પ્રકારો માટે `Box` objects બનાવી શકીએ છીએ (દા.ત., `Integer`, `String`).
 - કમ્પાઇલર પ્રકાર સુરક્ષા સુનિશ્ચિત કરે છે, પ્રકાર બેમેળને રોકે છે.
@@ -242,6 +251,7 @@ String text = stringBox.get();
 Generics ના ઉપયોગના ફાયદાઓ:
 
 1. **પ્રકાર-સુરક્ષિત સંગ્રહો**: સ્પષ્ટ casting ની જરૂરિયાતને દૂર કરે છે.
+
    ```java
    List<String> list = new ArrayList<>();
    list.add("Java");
@@ -249,6 +259,7 @@ Generics ના ઉપયોગના ફાયદાઓ:
    ```
 
 2. **Generic પદ્ધતિઓ**: પ્રકાર-સુરક્ષિત પદ્ધતિઓ બનાવવાની મંજૂરી આપે છે.
+
    ```java
    public static <E> void printArray(E[] array) {
        for (E element : array) {
@@ -258,6 +269,7 @@ Generics ના ઉપયોગના ફાયદાઓ:
    ```
 
 3. **બાઉન્ડેડ પ્રકાર પરિમાણો**: Generic class અથવા પદ્ધતિ સાથે ઉપયોગ કરી શકાય તેવા પ્રકારોને મર્યાદિત કરે છે.
+
    ```java
    public class NumberBox<T extends Number> {
        // ...
@@ -297,6 +309,7 @@ Key features of the Streams API:
 5. **Parallel Execution**: Streams can easily switch between sequential and parallel processing.
 
 Basic structure of a Stream operation:
+
 ```java
 collection.stream()
     .intermediateOperation1()
@@ -321,6 +334,7 @@ Common Stream operations:
    - `anyMatch()`, `allMatch()`, `noneMatch()`: Checks elements against a predicate.
 
 Example of Stream usage:
+
 ```java
 List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
 long count = names.stream()
@@ -336,6 +350,7 @@ The Streams API facilitates parallel processing through the use of parallel stre
 How Streams facilitate parallel processing:
 
 1. **Easy Parallelization**: Convert a sequential stream to parallel with `parallelStream()` or `parallel()`.
+
    ```java
    long count = names.parallelStream()
                      .filter(name -> name.length() > 4)
@@ -397,6 +412,7 @@ Streams API ની મુખ્ય વિશેષતાઓ:
 5. **સમાંતર અમલીકરણ**: Streams સરળતાથી અનુક્રમિક અને સમાંતર પ્રક્રિયા વચ્ચે સ્વિચ કરી શકે છે.
 
 Stream ઓપરેશનની મૂળભૂત રચના:
+
 ```java
 collection.stream()
     .intermediateOperation1()
@@ -421,6 +437,7 @@ collection.stream()
    - `anyMatch()`, `allMatch()`, `noneMatch()`: પ્રેડિકેટ સામે તત્વોની તપાસ કરે છે.
 
 Stream ઉપયોગનું ઉદાહરણ:
+
 ```java
 List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
 long count = names.stream()
@@ -436,6 +453,7 @@ Streams API સમાંતર streams ના ઉપયોગ દ્વારા
 Streams સમાંતર પ્રક્રિયાને કેવી રીતે સરળ બનાવે છે:
 
 1. **સરળ સમાંતરીકરણ**: `parallelStream()` અથવા `parallel()` સાથે અનુક્રમિક stream ને સમાંતર માં રૂપાંતરિત કરો.
+
    ```java
    long count = names.parallelStream()
                      .filter(name -> name.length() > 4)
@@ -539,6 +557,7 @@ Applications of Reflection:
 Advanced reflection techniques:
 
 1. **Accessing Private Members**:
+
    ```java
    Field field = someClass.getDeclaredField("privateField");
    field.setAccessible(true);
@@ -546,6 +565,7 @@ Advanced reflection techniques:
    ```
 
 2. **Dynamic Proxy**:
+
    ```java
    Interface proxy = (Interface) Proxy.newProxyInstance(
        classLoader, 
@@ -559,17 +579,20 @@ Advanced reflection techniques:
    ```
 
 3. **Creating Instances**:
+
    ```java
    Class<?> clazz = Class.forName("com.example.MyClass");
    Object instance = clazz.newInstance();
    ```
 
 Advantages of Reflection:
+
 - Flexibility in coding
 - Enables creation of versatile libraries
 - Supports dynamic loading of classes
 
 Disadvantages:
+
 - Performance overhead
 - Security restrictions in some environments
 - Loss of compile-time type checking
@@ -655,6 +678,7 @@ for (Method method : methods) {
 અદ્યતન રિફ્લેક્શન તકનીકો:
 
 1. **ખાનગી સભ્યોને ઍક્સેસ કરવા**:
+
    ```java
    Field field = someClass.getDeclaredField("privateField");
    field.setAccessible(true);
@@ -662,6 +686,7 @@ for (Method method : methods) {
    ```
 
 2. **ડાયનેમિક પ્રોક્સી**:
+
    ```java
    Interface proxy = (Interface) Proxy.newProxyInstance(
        classLoader, 
@@ -675,17 +700,20 @@ for (Method method : methods) {
    ```
 
 3. **ઇન્સ્ટન્સ બનાવવા**:
+
    ```java
    Class<?> clazz = Class.forName("com.example.MyClass");
    Object instance = clazz.newInstance();
    ```
 
 રિફ્લેક્શનના ફાયદા:
+
 - કોડિંગમાં લવચીકતા
 - બહુમુખી લાઇબ્રેરીઓના નિર્માણને સક્ષમ કરે છે
 - વર્ગોના ડાયનેમિક લોડિંગને સમર્થન આપે છે
 
 ગેરફાયદા:
+
 - કાર્યક્ષમતા ઓવરહેડ
 - કેટલાક વાતાવરણમાં સુરક્ષા પ્રતિબંધો
 - કમ્પાઇલ-ટાઇમ પ્રકાર તપાસની ખોટ
@@ -860,6 +888,7 @@ Common layout managers in Swing:
    - Default for JPanel.
 
    Example:
+
    ```java
    JPanel panel = new JPanel(new FlowLayout());
    panel.add(new JButton("Button 1"));
@@ -871,6 +900,7 @@ Common layout managers in Swing:
    - Default for JFrame.
 
    Example:
+
    ```java
    JFrame frame = new JFrame();
    frame.setLayout(new BorderLayout());
@@ -882,6 +912,7 @@ Common layout managers in Swing:
    - Arranges components in a grid of rows and columns.
 
    Example:
+
    ```java
    JPanel panel = new JPanel(new GridLayout(2, 3));
    for (int i = 1; i <= 6; i++) {
@@ -893,6 +924,7 @@ Common layout managers in Swing:
    - Arranges components in a single row or column.
 
    Example:
+
    ```java
    JPanel panel = new JPanel();
    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -905,6 +937,7 @@ Common layout managers in Swing:
    - Allows fine-grained control over component placement.
 
    Example:
+
    ```java
    JPanel panel = new JPanel(new GridBagLayout());
    GridBagConstraints gbc = new GridBagConstraints();
@@ -930,6 +963,7 @@ graph TD
 ```
 
 Benefits of using layout managers:
+
 - Simplify UI design and maintenance
 - Ensure responsive and adaptive layouts
 - Improve cross-platform consistency
@@ -957,6 +991,7 @@ By using appropriate layout managers, developers can create flexible and respons
    - JPanel માટે ડિફોલ્ટ છે.
 
    ઉદાહરણ:
+
    ```java
    JPanel panel = new JPanel(new FlowLayout());
    panel.add(new JButton("બટન 1"));
@@ -968,6 +1003,7 @@ By using appropriate layout managers, developers can create flexible and respons
    - JFrame માટે ડિફોલ્ટ છે.
 
    ઉદાહરણ:
+
    ```java
    JFrame frame = new JFrame();
    frame.setLayout(new BorderLayout());
@@ -979,6 +1015,7 @@ By using appropriate layout managers, developers can create flexible and respons
    - કમ્પોનન્ટ્સને પંક્તિઓ અને કૉલમ્સની ગ્રિડમાં ગોઠવે છે.
 
    ઉદાહરણ:
+
    ```java
    JPanel panel = new JPanel(new GridLayout(2, 3));
    for (int i = 1; i <= 6; i++) {
@@ -990,6 +1027,7 @@ By using appropriate layout managers, developers can create flexible and respons
    - કમ્પોનન્ટ્સને એક પંક્તિ અથવા કૉલમમાં ગોઠવે છે.
 
    ઉદાહરણ:
+
    ```java
    JPanel panel = new JPanel();
    panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -1002,6 +1040,7 @@ By using appropriate layout managers, developers can create flexible and respons
    - કમ્પોનન્ટ સ્થાન પર ઝીણવટભર્યું નિયંત્રણ આપે છે.
 
    ઉદાહરણ:
+
    ```java
    JPanel panel = new JPanel(new GridBagLayout());
    GridBagConstraints gbc = new GridBagConstraints();
@@ -1027,6 +1066,7 @@ graph TD
 ```
 
 લેઆઉટ મેનેજર્સના ઉપયોગના ફાયદા:
+
 - UI ડિઝાઇન અને જાળવણીને સરળ બનાવે છે
 - પ્રતિસાદાત્મક અને અનુકૂલનશીલ લેઆઉટ્સ સુનિશ્ચિત કરે છે
 - ક્રોસ-પ્લેટફોર્મ સુસંગતતા સુધારે છે
@@ -1089,6 +1129,7 @@ Key aspects of FXML:
 1. **Declarative UI Definition**:
    - Describes the structure and layout of the UI in XML format
    - Example:
+
      ```xml
      <?xml version="1.0" encoding="UTF-8"?>
      <?import javafx.scene.layout.VBox?>
@@ -1109,6 +1150,7 @@ Key aspects of FXML:
 4. **Controller Integration**:
    - Links FXML elements to Java controller classes
    - Example:
+
      ```xml
      <VBox fx:controller="com.example.MyController">
          <Button text="Click Me" onAction="#handleButtonClick"/>
@@ -1118,6 +1160,7 @@ Key aspects of FXML:
 5. **Resource Binding**:
    - Allows binding of UI elements to resources (e.g., internationalization)
    - Example:
+
      ```xml
      <Label text="%welcomeMessage"/>
      ```
@@ -1129,6 +1172,7 @@ Key aspects of FXML:
 7. **Nested Structures**:
    - Supports complex layouts through nesting of elements
    - Example:
+
      ```xml
      <BorderPane>
          <top><MenuBar>...</MenuBar></top>
@@ -1140,17 +1184,21 @@ Using FXML in a JavaFX application:
 
 1. Create an FXML file defining the UI layout.
 2. Load the FXML file in the Java code:
+
    ```java
    Parent root = FXMLLoader.load(getClass().getResource("layout.fxml"));
    Scene scene = new Scene(root);
    ```
+
 3. Set the scene to the stage and display:
+
    ```java
    stage.setScene(scene);
    stage.show();
    ```
 
 Benefits of using FXML:
+
 - Clear separation of UI design and logic
 - Easier maintenance and updates of UI
 - Supports rapid prototyping and iteration
@@ -1213,6 +1261,7 @@ FXML ના મુખ્ય પાસાઓ:
 1. **ડિક્લેરેટિવ UI વ્યાખ્યા**:
    - UI ની રચના અને લેઆઉટનું XML ફોર્મેટમાં વર્ણન કરે છે
    - ઉદાહરણ:
+
      ```xml
      <?xml version="1.0" encoding="UTF-8"?>
      <?import javafx.scene.layout.VBox?>
@@ -1233,6 +1282,7 @@ FXML ના મુખ્ય પાસાઓ:
 4. **કંટ્રોલર એકીકરણ**:
    - FXML તત્વોને Java કંટ્રોલર ક્લાસ સાથે જોડે છે
    - ઉદાહરણ:
+
      ```xml
      <VBox fx:controller="com.example.MyController">
          <Button text="મને ક્લિક કરો" onAction="#handleButtonClick"/>
@@ -1242,6 +1292,7 @@ FXML ના મુખ્ય પાસાઓ:
 5. **રિસોર્સ બાઇન્ડિંગ**:
    - UI તત્વોને સંસાધનો સાથે બાઇન્ડ કરવાની મંજૂરી આપે છે (દા.ત., આંતરરાષ્ટ્રીયકરણ)
    - ઉદાહરણ:
+
      ```xml
      <Label text="%welcomeMessage"/>
      ```
@@ -1253,6 +1304,7 @@ FXML ના મુખ્ય પાસાઓ:
 7. **નેસ્ટેડ સ્ટ્રક્ચર્સ**:
    - તત્વોના નેસ્ટિંગ દ્વારા જટિલ લેઆઉટ્સને સપોર્ટ કરે છે
    - ઉદાહરણ:
+
      ```xml
      <BorderPane>
          <top><MenuBar>...</MenuBar></top>
@@ -1264,17 +1316,21 @@ JavaFX એપ્લિકેશનમાં FXML નો ઉપયોગ:
 
 1. UI લેઆઉટ વ્યાખ્યાયિત કરતી FXML ફાઇલ બનાવો.
 2. Java કોડમાં FXML ફાઇલ લોડ કરો:
+
    ```java
    Parent root = FXMLLoader.load(getClass().getResource("layout.fxml"));
    Scene scene = new Scene(root);
    ```
+
 3. સ્ટેજ પર સીન સેટ કરો અને પ્રદર્શિત કરો:
+
    ```java
    stage.setScene(scene);
    stage.show();
    ```
 
 FXML નો ઉપયોગ કરવાના ફાયદા:
+
 - UI ડિઝાઇન અને લોજિકનું સ્પષ્ટ વિભાજન
 - UI ની સરળ જાળવણી અને અપડેટ્સ
 - ઝડપી પ્રોટોટાઇપિંગ અને પુનરાવર્તનને સમર્થન આપે છે
@@ -1292,7 +1348,7 @@ Event-driven programming is a programming paradigm in which the flow of the prog
 
 Key aspects of event-driven programming in Java:
 
-1. **Events**: 
+1. **Events**:
    - Occurrences or incidents that happen during the execution of a program.
    - Examples: button clicks, mouse movements, key presses.
 
@@ -1337,6 +1393,7 @@ public class EventExample extends JFrame {
 ```
 
 In this example:
+
 - The `JButton` is the event source.
 - The `ActionListener` is the event listener.
 - The `actionPerformed` method is the event handler.
@@ -1361,7 +1418,7 @@ Event-driven programming allows for responsive and interactive applications, mak
 
 જાવામાં ઇવેન્ટ-ડ્રિવન પ્રોગ્રામિંગના મુખ્ય પાસાઓ:
 
-1. **ઇવેન્ટ્સ**: 
+1. **ઇવેન્ટ્સ**:
    - પ્રોગ્રામના અમલીકરણ દરમિયાન થતી ઘટનાઓ અથવા બનાવો.
    - ઉદાહરણો: બટન ક્લિક્સ, માઉસ હલનચલન, કી દબાવવી.
 
@@ -1406,6 +1463,7 @@ public class EventExample extends JFrame {
 ```
 
 આ ઉદાહરણમાં:
+
 - `JButton` ઇવેન્ટ સ્રોત છે.
 - `ActionListener` ઇવેન્ટ લિસનર છે.
 - `actionPerformed` પદ્ધતિ ઇવેન્ટ હેન્ડલર છે.
@@ -1433,6 +1491,7 @@ The Model-View-Controller (MVC) is an architectural pattern commonly used for de
 3. **Controller**: Handles user input and updates the Model and View accordingly.
 
 Key characteristics of MVC:
+
 - Separation of concerns
 - Improved code organization and maintainability
 - Facilitates parallel development
@@ -1441,6 +1500,7 @@ Key characteristics of MVC:
 Implementation in JavaFX:
 
 In JavaFX, the MVC pattern is often implemented with FXML, where:
+
 - Model: Java classes representing data and logic
 - View: FXML files defining the UI layout
 - Controller: Java classes handling user interactions and updating Model/View
@@ -1448,54 +1508,58 @@ In JavaFX, the MVC pattern is often implemented with FXML, where:
 Example implementation:
 
 1. Model (Person.java):
-```java
-public class Person {
-    private String name;
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-}
-```
+
+   ```java
+   public class Person {
+      private String name;
+      public String getName() { return name; }
+      public void setName(String name) { this.name = name; }
+   }
+   ```
 
 2. View (PersonView.fxml):
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="PersonController">
-    <TextField fx:id="nameField"/>
-    <Button text="Save" onAction="#savePerson"/>
-    <Label fx:id="resultLabel"/>
-</VBox>
-```
+
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <?import javafx.scene.control.*?>
+   <?import javafx.scene.layout.*?>
+   <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="PersonController">
+      <TextField fx:id="nameField"/>
+      <Button text="Save" onAction="#savePerson"/>
+      <Label fx:id="resultLabel"/>
+   </VBox>
+   ```
 
 3. Controller (PersonController.java):
-```java
-public class PersonController {
-    @FXML private TextField nameField;
-    @FXML private Label resultLabel;
-    private Person person = new Person();
 
-    @FXML
-    private void savePerson() {
-        person.setName(nameField.getText());
-        resultLabel.setText("Saved: " + person.getName());
-    }
-}
-```
+   ```java
+   public class PersonController {
+      @FXML private TextField nameField;
+      @FXML private Label resultLabel;
+      private Person person = new Person();
+
+      @FXML
+      private void savePerson() {
+         person.setName(nameField.getText());
+         resultLabel.setText("Saved: " + person.getName());
+      }
+   }
+   ```
 
 4. Main Application:
-```java
-public class MVCApp extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PersonView.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-}
-```
+
+   ```java
+   public class MVCApp extends Application {
+      @Override
+      public void start(Stage stage) throws IOException {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("PersonView.fxml"));
+         Parent root = loader.load();
+         Scene scene = new Scene(root);
+         stage.setScene(scene);
+         stage.show();
+      }
+   }
+   ```
 
 ```mermaid
 graph TD
@@ -1523,6 +1587,7 @@ Model-View-Controller (MVC) એ યુઝર ઇન્ટરફેસ વિક�
 3. **કંટ્રોલર**: યુઝર ઇનપુટ સંભાળે છે અને તદનુસાર મોડેલ અને વ્યૂને અપડેટ કરે છે.
 
 MVC ની મુખ્ય લાક્ષણિકતાઓ:
+
 - કન્સર્ન્સનું વિભાજન
 - સુધારેલ કોડ સંગઠન અને જાળવણી
 - સમાંતર વિકાસને સુગમ બનાવે છે
@@ -1531,6 +1596,7 @@ MVC ની મુખ્ય લાક્ષણિકતાઓ:
 JavaFX માં અમલીકરણ:
 
 JavaFX માં, MVC પેટર્ન ઘણીવાર FXML સાથે અમલમાં મૂકવામાં આવે છે, જ્યાં:
+
 - મોડેલ: ડેટા અને લોજિકનું પ્રતિનિધિત્વ કરતા Java ક્લાસ
 - વ્યૂ: UI લેઆઉટ વ્યાખ્યાયિત કરતી FXML ફાઇલો
 - કંટ્રોલર: યુઝર ઇન્ટરેક્શન્સ સંભાળતા અને મોડેલ/વ્યૂ અપડેટ કરતા Java ક્લાસ
@@ -1538,54 +1604,58 @@ JavaFX માં, MVC પેટર્ન ઘણીવાર FXML સાથે �
 અમલીકરણનું ઉદાહરણ:
 
 1. મોડેલ (Person.java):
-```java
-public class Person {
-    private String name;
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-}
-```
+
+   ```java
+   public class Person {
+      private String name;
+      public String getName() { return name; }
+      public void setName(String name) { this.name = name; }
+   }
+   ```
 
 2. વ્યૂ (PersonView.fxml):
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="PersonController">
-    <TextField fx:id="nameField"/>
-    <Button text="સેવ કરો" onAction="#savePerson"/>
-    <Label fx:id="resultLabel"/>
-</VBox>
-```
+
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <?import javafx.scene.control.*?>
+   <?import javafx.scene.layout.*?>
+   <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="PersonController">
+      <TextField fx:id="nameField"/>
+      <Button text="સેવ કરો" onAction="#savePerson"/>
+      <Label fx:id="resultLabel"/>
+   </VBox>
+   ```
 
 3. કંટ્રોલર (PersonController.java):
-```java
-public class PersonController {
-    @FXML private TextField nameField;
-    @FXML private Label resultLabel;
-    private Person person = new Person();
 
-    @FXML
-    private void savePerson() {
-        person.setName(nameField.getText());
-        resultLabel.setText("સેવ થયું: " + person.getName());
-    }
-}
-```
+   ```java
+   public class PersonController {
+      @FXML private TextField nameField;
+      @FXML private Label resultLabel;
+      private Person person = new Person();
+
+      @FXML
+      private void savePerson() {
+         person.setName(nameField.getText());
+         resultLabel.setText("સેવ થયું: " + person.getName());
+      }
+   }
+   ```
 
 4. મુખ્ય એપ્લિકેશન:
-```java
-public class MVCApp extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PersonView.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-}
-```
+
+   ```java
+   public class MVCApp extends Application {
+      @Override
+      public void start(Stage stage) throws IOException {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("PersonView.fxml"));
+         Parent root = loader.load();
+         Scene scene = new Scene(root);
+         stage.setScene(scene);
+         stage.show();
+      }
+   }
+   ```
 
 ```mermaid
 graph TD
@@ -1633,104 +1703,110 @@ Creating and handling custom events in Swing allows developers to define their o
 Let's implement this process with an example:
 
 1. Custom Event Class:
-```java
-public class ColorChangeEvent extends EventObject {
-    private Color newColor;
 
-    public ColorChangeEvent(Object source, Color newColor) {
-        super(source);
-        this.newColor = newColor;
-    }
+   ```java
+   public class ColorChangeEvent extends EventObject {
+      private Color newColor;
 
-    public Color getNewColor() {
-        return newColor;
-    }
-}
-```
+      public ColorChangeEvent(Object source, Color newColor) {
+         super(source);
+         this.newColor = newColor;
+      }
+
+      public Color getNewColor() {
+         return newColor;
+      }
+   }
+   ```
 
 2. Event Listener Interface:
-```java
-public interface ColorChangeListener extends EventListener {
-    void colorChanged(ColorChangeEvent event);
-}
-```
+
+   ```java
+   public interface ColorChangeListener extends EventListener {
+      void colorChanged(ColorChangeEvent event);
+   }
+   ```
 
 3. Event Source:
-```java
-public class ColorChanger {
-    private List<ColorChangeListener> listeners = new ArrayList<>();
-    private Color currentColor = Color.BLACK;
 
-    public void addColorChangeListener(ColorChangeListener listener) {
-        listeners.add(listener);
-    }
+   ```java
+   public class ColorChanger {
+      private List<ColorChangeListener> listeners = new ArrayList<>();
+      private Color currentColor = Color.BLACK;
 
-    public void removeColorChangeListener(ColorChangeListener listener) {
-        listeners.remove(listener);
-    }
+      public void addColorChangeListener(ColorChangeListener listener) {
+         listeners.add(listener);
+      }
 
-    protected void fireColorChangeEvent(Color newColor) {
-        ColorChangeEvent event = new ColorChangeEvent(this, newColor);
-        for (ColorChangeListener listener : listeners) {
-            listener.colorChanged(event);
-        }
-    }
+      public void removeColorChangeListener(ColorChangeListener listener) {
+         listeners.remove(listener);
+      }
 
-    public void changeColor(Color newColor) {
-        if (!currentColor.equals(newColor)) {
-            currentColor = newColor;
-            fireColorChangeEvent(newColor);
-        }
-    }
-}
-```
+      protected void fireColorChangeEvent(Color newColor) {
+         ColorChangeEvent event = new ColorChangeEvent(this, newColor);
+         for (ColorChangeListener listener : listeners) {
+               listener.colorChanged(event);
+         }
+      }
+
+      public void changeColor(Color newColor) {
+         if (!currentColor.equals(newColor)) {
+               currentColor = newColor;
+               fireColorChangeEvent(newColor);
+         }
+      }
+   }
+   ```
 
 4. Event Listener Implementation:
-```java
-public class ColorPanel extends JPanel implements ColorChangeListener {
-    public ColorPanel() {
-        setPreferredSize(new Dimension(200, 200));
-    }
 
-    @Override
-    public void colorChanged(ColorChangeEvent event) {
-        setBackground(event.getNewColor());
-        repaint();
-    }
-}
-```
+   ```java
+   public class ColorPanel extends JPanel implements ColorChangeListener {
+      public ColorPanel() {
+         setPreferredSize(new Dimension(200, 200));
+      }
+
+      @Override
+      public void colorChanged(ColorChangeEvent event) {
+         setBackground(event.getNewColor());
+         repaint();
+      }
+   }
+   ```
 
 5. Using the Custom Event System:
-```java
-public class CustomEventDemo extends JFrame {
-    public CustomEventDemo() {
-        ColorChanger colorChanger = new ColorChanger();
-        ColorPanel colorPanel = new ColorPanel();
-        
-        colorChanger.addColorChangeListener(colorPanel);
-        
-        JButton redButton = new JButton("Red");
-        redButton.addActionListener(e -> colorChanger.changeColor(Color.RED));
-        
-        JButton blueButton = new JButton("Blue");
-        blueButton.addActionListener(e -> colorChanger.changeColor(Color.BLUE));
-        
-        setLayout(new FlowLayout());
-        add(colorPanel);
-        add(redButton);
-        add(blueButton);
-        
-        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new CustomEventDemo().setVisible(true));
-    }
-}
-```
+   ```java
+   public class CustomEventDemo extends JFrame {
+      public CustomEventDemo() {
+         ColorChanger colorChanger = new ColorChanger();
+         ColorPanel colorPanel = new ColorPanel();
+         
+         colorChanger.addColorChangeListener(colorPanel);
+         
+         JButton redButton = new JButton("Red");
+         redButton.addActionListener(e -> colorChanger.changeColor(Color.RED));
+         
+         JButton blueButton = new JButton("Blue");
+         blueButton.addActionListener(e -> colorChanger.changeColor(Color.BLUE));
+         
+         setLayout(new FlowLayout());
+         add(colorPanel);
+         add(redButton);
+         add(blueButton);
+         
+         pack();
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      }
+
+      public static void main(String[] args) {
+         SwingUtilities.invokeLater(() -> new CustomEventDemo().setVisible(true));
+      }
+   }
+   ```
 
 This example demonstrates a custom color change event system:
+
 - `ColorChangeEvent` carries information about the new color.
 - `ColorChangeListener` defines the interface for objects interested in color changes.
 - `ColorChanger` manages listeners and fires events when the color changes.
@@ -1784,104 +1860,110 @@ By creating custom events, developers can design more flexible and modular Swing
 ચાલો આ પ્રક્રિયાને એક ઉદાહરણ સાથે અમલમાં મૂકીએ:
 
 1. કસ્ટમ ઇવેન્ટ ક્લાસ:
-```java
-public class ColorChangeEvent extends EventObject {
-    private Color newColor;
 
-    public ColorChangeEvent(Object source, Color newColor) {
-        super(source);
-        this.newColor = newColor;
-    }
+   ```java
+   public class ColorChangeEvent extends EventObject {
+      private Color newColor;
 
-    public Color getNewColor() {
-        return newColor;
-    }
-}
-```
+      public ColorChangeEvent(Object source, Color newColor) {
+         super(source);
+         this.newColor = newColor;
+      }
+
+      public Color getNewColor() {
+         return newColor;
+      }
+   }
+   ```
 
 2. ઇવેન્ટ લિસનર ઇન્ટરફેસ:
-```java
-public interface ColorChangeListener extends EventListener {
-    void colorChanged(ColorChangeEvent event);
-}
-```
+
+   ```java
+   public interface ColorChangeListener extends EventListener {
+      void colorChanged(ColorChangeEvent event);
+   }
+   ```
 
 3. ઇવેન્ટ સ્રોત:
-```java
-public class ColorChanger {
-    private List<ColorChangeListener> listeners = new ArrayList<>();
-    private Color currentColor = Color.BLACK;
 
-    public void addColorChangeListener(ColorChangeListener listener) {
-        listeners.add(listener);
-    }
+   ```java
+   public class ColorChanger {
+      private List<ColorChangeListener> listeners = new ArrayList<>();
+      private Color currentColor = Color.BLACK;
 
-    public void removeColorChangeListener(ColorChangeListener listener) {
-        listeners.remove(listener);
-    }
+      public void addColorChangeListener(ColorChangeListener listener) {
+         listeners.add(listener);
+      }
 
-    protected void fireColorChangeEvent(Color newColor) {
-        ColorChangeEvent event = new ColorChangeEvent(this, newColor);
-        for (ColorChangeListener listener : listeners) {
-            listener.colorChanged(event);
-        }
-    }
+      public void removeColorChangeListener(ColorChangeListener listener) {
+         listeners.remove(listener);
+      }
 
-    public void changeColor(Color newColor) {
-        if (!currentColor.equals(newColor)) {
-            currentColor = newColor;
-            fireColorChangeEvent(newColor);
-        }
-    }
-}
-```
+      protected void fireColorChangeEvent(Color newColor) {
+         ColorChangeEvent event = new ColorChangeEvent(this, newColor);
+         for (ColorChangeListener listener : listeners) {
+               listener.colorChanged(event);
+         }
+      }
+
+      public void changeColor(Color newColor) {
+         if (!currentColor.equals(newColor)) {
+               currentColor = newColor;
+               fireColorChangeEvent(newColor);
+         }
+      }
+   }
+   ```
 
 4. ઇવેન્ટ લિસનર અમલીકરણ:
-```java
-public class ColorPanel extends JPanel implements ColorChangeListener {
-    public ColorPanel() {
-        setPreferredSize(new Dimension(200, 200));
-    }
 
-    @Override
-    public void colorChanged(ColorChangeEvent event) {
-        setBackground(event.getNewColor());
-        repaint();
-    }
-}
-```
+   ```java
+   public class ColorPanel extends JPanel implements ColorChangeListener {
+      public ColorPanel() {
+         setPreferredSize(new Dimension(200, 200));
+      }
+
+      @Override
+      public void colorChanged(ColorChangeEvent event) {
+         setBackground(event.getNewColor());
+         repaint();
+      }
+   }
+   ```
 
 5. કસ્ટમ ઇવેન્ટ સિસ્ટમનો ઉપયોગ:
-```java
-public class CustomEventDemo extends JFrame {
-    public CustomEventDemo() {
-        ColorChanger colorChanger = new ColorChanger();
-        ColorPanel colorPanel = new ColorPanel();
-        
-        colorChanger.addColorChangeListener(colorPanel);
-        
-        JButton redButton = new JButton("લાલ");
-        redButton.addActionListener(e -> colorChanger.changeColor(Color.RED));
-        
-        JButton blueButton = new JButton("વાદળી");
-        blueButton.addActionListener(e -> colorChanger.changeColor(Color.BLUE));
-        
-        setLayout(new FlowLayout());
-        add(colorPanel);
-        add(redButton);
-        add(blueButton);
-        
-        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new CustomEventDemo().setVisible(true));
-    }
-}
-```
+   ```java
+   public class CustomEventDemo extends JFrame {
+      public CustomEventDemo() {
+         ColorChanger colorChanger = new ColorChanger();
+         ColorPanel colorPanel = new ColorPanel();
+         
+         colorChanger.addColorChangeListener(colorPanel);
+         
+         JButton redButton = new JButton("લાલ");
+         redButton.addActionListener(e -> colorChanger.changeColor(Color.RED));
+         
+         JButton blueButton = new JButton("વાદળી");
+         blueButton.addActionListener(e -> colorChanger.changeColor(Color.BLUE));
+         
+         setLayout(new FlowLayout());
+         add(colorPanel);
+         add(redButton);
+         add(blueButton);
+         
+         pack();
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      }
+
+      public static void main(String[] args) {
+         SwingUtilities.invokeLater(() -> new CustomEventDemo().setVisible(true));
+      }
+   }
+   ```
 
 આ ઉદાહરણ કસ્ટમ રંગ બદલાવ ઇવેન્ટ સિસ્ટમનું પ્રદર્શન કરે છે:
+
 - `ColorChangeEvent` નવા રંગ વિશેની માહિતી વહન કરે છે.
 - `ColorChangeListener` રંગ બદલાવમાં રસ ધરાવતા ઑબ્જેક્ટ્સ માટે ઇન્ટરફેસ વ્યાખ્યાયિત કરે છે.
 - `ColorChanger` લિસનર્સનું સંચાલન કરે છે અને રંગ બદલાય ત્યારે ઇવેન્ટ્સ ફાયર કરે છે.
@@ -2009,6 +2091,7 @@ The entity lifecycle in Java Persistence API (JPA) refers to the different state
    - The entity is still in the persistence context until the next flush or commit.
 
 Key transitions between states:
+
 - `persist()`: New → Managed
 - `merge()`: Detached → Managed
 - `remove()`: Managed → Removed
@@ -2055,6 +2138,7 @@ Java Persistence API (JPA) માં એન્ટિટી લાઇફસાય
    - આગામી flush અથવા commit સુધી એન્ટિટી હજુ પણ persistence context માં રહે છે.
 
 અવસ્થાઓ વચ્ચેના મુખ્ય ટ્રાન્ઝિશન્સ:
+
 - `persist()`: નવી → મેનેજ્ડ
 - `merge()`: ડિટેચ્ડ → મેનેજ્ડ
 - `remove()`: મેનેજ્ડ → રિમૂવ્ડ
@@ -2086,6 +2170,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
    - The `@Table` annotation specifies the database table name if it differs from the class name.
 
    Example:
+
    ```java
    @Entity
    @Table(name = "employees")
@@ -2099,6 +2184,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
    - `@GeneratedValue` specifies the strategy for generating primary key values.
 
    Example:
+
    ```java
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -2110,6 +2196,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
    - Use `@Column` to customize column properties (name, nullable, length, etc.).
 
    Example:
+
    ```java
    @Column(name = "first_name", nullable = false, length = 50)
    private String firstName;
@@ -2119,6 +2206,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
    Hibernate supports various types of relationships:
 
    a) One-to-One:
+
       ```java
       @OneToOne
       @JoinColumn(name = "address_id")
@@ -2126,12 +2214,14 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
       ```
 
    b) One-to-Many:
+
       ```java
       @OneToMany(mappedBy = "department")
       private List<Employee> employees;
       ```
 
    c) Many-to-One:
+
       ```java
       @ManyToOne
       @JoinColumn(name = "department_id")
@@ -2139,6 +2229,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
       ```
 
    d) Many-to-Many:
+
       ```java
       @ManyToMany
       @JoinTable(
@@ -2151,6 +2242,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
 
 5. **Cascade Operations:**
    - Use `cascade` attribute to specify how operations should propagate to associated entities.
+
    ```java
    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
    private List<Employee> employees;
@@ -2160,6 +2252,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
    - Specify when related entities should be loaded:
      - EAGER: Load immediately
      - LAZY: Load on demand (default for collections)
+
    ```java
    @ManyToOne(fetch = FetchType.LAZY)
    private Department department;
@@ -2173,6 +2266,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
 
 8. **Composite Keys:**
    - Use `@EmbeddedId` for composite primary keys.
+
    ```java
    @Embeddable
    public class EmployeeId implements Serializable {
@@ -2188,6 +2282,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
    ```
 
 9. **Mapping Enumerations:**
+
    ```java
    @Enumerated(EnumType.STRING)
    private EmployeeStatus status;
@@ -2221,6 +2316,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
    - જો ડેટાબેસ ટેબલનું નામ ક્લાસના નામથી અલગ હોય તો `@Table` એનોટેશન તેને સ્પષ્ટ કરે છે.
 
    ઉદાહરણ:
+
    ```java
    @Entity
    @Table(name = "employees")
@@ -2234,6 +2330,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
    - `@GeneratedValue` પ્રાથમિક કી મૂલ્યો જનરેટ કરવાની વ્યૂહરચના સ્પષ્ટ કરે છે.
 
    ઉદાહરણ:
+
    ```java
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -2245,6 +2342,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
    - કૉલમ ગુણધર્મોને કસ્ટમાઇઝ કરવા માટે `@Column` નો ઉપયોગ કરો (નામ, nullable, લંબાઈ, વગેરે).
 
    ઉદાહરણ:
+
    ```java
    @Column(name = "first_name", nullable = false, length = 50)
    private String firstName;
@@ -2254,6 +2352,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
    Hibernate વિવિધ પ્રકારના સંબંધોને સપોર્ટ કરે છે:
 
    a) વન-ટુ-વન:
+
       ```java
       @OneToOne
       @JoinColumn(name = "address_id")
@@ -2261,12 +2360,14 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
       ```
 
    b) વન-ટુ-મેની:
+
       ```java
       @OneToMany(mappedBy = "department")
       private List<Employee> employees;
       ```
 
    c) મેની-ટુ-વન:
+
       ```java
       @ManyToOne
       @JoinColumn(name = "department_id")
@@ -2274,6 +2375,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
       ```
 
    d) મેની-ટુ-મેની:
+
       ```java
       @ManyToMany
       @JoinTable(
@@ -2286,6 +2388,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
 
 5. **કેસ્કેડ ઓપરેશન્સ:**
    - સંબંધિત એન્ટિટીઝ પર ઓપરેશન્સ કેવી રીતે પ્રસાર થવા જોઈએ તે સ્પષ્ટ કરવા માટે `cascade` એટ્રિબ્યુટનો ઉપયોગ કરો.
+
    ```java
    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
    private List<Employee> employees;
@@ -2295,6 +2398,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
    - સંબંધિત એન્ટિટીઝ ક્યારે લોડ થવી જોઈએ તે સ્પષ્ટ કરો:
      - EAGER: તરત જ લોડ કરો
      - LAZY: માંગ પર લોડ કરો (કલેક્શન્સ માટે ડિફૉલ્ટ)
+
    ```java
    @ManyToOne(fetch = FetchType.LAZY)
    private Department department;
@@ -2308,6 +2412,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
 
 8. **કમ્પોઝિટ કીઝ:**
    - કમ્પોઝિટ પ્રાથમિક કી માટે `@EmbeddedId` નો ઉપયોગ કરો.
+
    ```java
    @Embeddable
    public class EmployeeId implements Serializable {
@@ -2323,6 +2428,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
    ```
 
 9. **એન્યુમરેશન મેપિંગ:**
+
    ```java
    @Enumerated(EnumType.STRING)
    private EmployeeStatus status;
@@ -3398,6 +3504,7 @@ The Model-View-Controller (MVC) pattern is a widely used architectural pattern i
    - Easier to modify or extend individual components
 
 6. **Implementation Example:**
+
    ```java
    // Controller (Servlet)
    @WebServlet("/users")
@@ -3475,6 +3582,7 @@ Model-View-Controller (MVC) પેટર્ન એ વેબ એપ્લિક�
    - વ્યક્તિગત ઘટકોને સંશોધિત કરવા અથવા વિસ્તારવા માટે સરળ
 
 6. **અમલીકરણ ઉદાહરણ:**
+
    ```java
    // કન્ટ્રોલર (સર્વલેટ)
    @WebServlet("/users")
@@ -3529,7 +3637,7 @@ Designing and implementing RESTful APIs involves a systematic approach to create
 2. **Define Resource URIs:**
    - Create a logical and consistent URI structure for resources.
    - Use nouns to represent resources.
-   - Example: 
+   - Example:
      - `/api/posts` for blog posts
      - `/api/users` for users
 
@@ -3537,6 +3645,7 @@ Designing and implementing RESTful APIs involves a systematic approach to create
    - Decide on data formats (usually JSON or XML).
    - Define the structure of request and response bodies.
    - Example JSON representation of a post:
+
      ```json
      {
        "id": 1,
@@ -3562,6 +3671,7 @@ Designing and implementing RESTful APIs involves a systematic approach to create
    - Define a consistent error response format.
    - Use appropriate HTTP status codes.
    - Example error response:
+
      ```json
      {
        "status": 404,
@@ -3585,6 +3695,7 @@ Designing and implementing RESTful APIs involves a systematic approach to create
    - Choose an appropriate framework or library (e.g., Spring Boot, Express.js).
    - Implement the defined endpoints and logic.
    - Example Java Spring Boot controller:
+
      ```java
      @RestController
      @RequestMapping("/api/posts")
@@ -3616,6 +3727,7 @@ Designing and implementing RESTful APIs involves a systematic approach to create
     - Include links in responses to related resources.
     - Enhances discoverability and self-description of the API.
     - Example response with HATEOAS:
+
       ```json
       {
         "id": 1,
@@ -3662,7 +3774,7 @@ RESTful APIs ડિઝાઇન કરવી અને અમલમાં મૂ
 2. **રિસોર્સ URIs વ્યાખ્યાયિત કરવી:**
    - રિસોર્સીસ માટે તાર્કિક અને સુસંગત URI માળખું બનાવો.
    - રિસોર્સીસનું પ્રતિનિધિત્વ કરવા માટે નામો વાપરો.
-   - ઉદાહરણ: 
+   - ઉદાહરણ:
      - બ્લોગ પોસ્ટ્સ માટે `/api/posts`
      - વપરાશકર્તાઓ માટે `/api/users`
 
@@ -3670,6 +3782,7 @@ RESTful APIs ડિઝાઇન કરવી અને અમલમાં મૂ
    - ડેટા ફોર્મેટ્સ નક્કી કરો (સામાન્ય રીતે JSON અથવા XML).
    - રિક્વેસ્ટ અને રિસ્પોન્સ બોડીઓનું માળખું વ્યાખ્યાયિત કરો.
    - પોસ્ટની JSON રજૂઆતનું ઉદાહરણ:
+
      ```json
      {
        "id": 1,
@@ -3695,6 +3808,7 @@ RESTful APIs ડિઝાઇન કરવી અને અમલમાં મૂ
    - સુસંગત એરર રિસ્પોન્સ ફોર્મેટ વ્યાખ્યાયિત કરો.
    - યોગ્ય HTTP સ્ટેટસ કોડ્સનો ઉપયોગ કરો.
    - એરર રિસ્પોન્સનું ઉદાહરણ:
+
      ```json
      {
        "status": 404,
@@ -3718,6 +3832,7 @@ RESTful APIs ડિઝાઇન કરવી અને અમલમાં મૂ
    - યોગ્ય ફ્રેમવર્ક અથવા લાઇબ્રેરી પસંદ કરો (દા.ત., Spring Boot, Express.js).
    - વ્યાખ્યાયિત એન્ડપોઇન્ટ્સ અને લોજિક અમલમાં મૂકો.
    - Java Spring Boot કન્ટ્રોલરનું ઉદાહરણ:
+
      ```java
      @RestController
      @RequestMapping("/api/posts")
@@ -3749,6 +3864,7 @@ RESTful APIs ડિઝાઇન કરવી અને અમલમાં મૂ
     - સંબંધિત રિસોર્સીસ માટે રિસ્પોન્સમાં લિંક્સ શામેલ કરો.
     - API ની શોધક્ષમતા અને સ્વ-વર્ણનને વધારે છે.
     - HATEOAS સાથેના રિસ્પોન્સનું ઉદાહરણ:
+
       ```json
       {
         "id": 1,
@@ -3915,6 +4031,7 @@ graph TD
 ```
 
 These features collectively contribute to rapid application development by:
+
 - Reducing boilerplate code
 - Minimizing configuration efforts
 - Providing out-of-the-box functionality
@@ -3970,6 +4087,7 @@ graph TD
 ```
 
 આ વિશેષતાઓ સામૂહિક રીતે ઝડપી એપ્લિકેશન ડેવલપમેન્ટમાં ફાળો આપે છે દ્વારા:
+
 - Boilerplate કોડ ઘટાડવો
 - કોન્ફિગરેશન પ્રયાસોને ન્યૂનતમ કરવા
 - Out-of-the-box કાર્યક્ષમતા પ્રદાન કરવી
@@ -3998,9 +4116,11 @@ Developing a Java application for IoT (Internet of Things) using Raspberry Pi in
 
 4. **Installing Required Libraries**:
    - Pi4J: For GPIO (General Purpose Input/Output) control
-     ```
+
+     ```bash
      curl -sSL https://pi4j.com/install | sudo bash
      ```
+
    - Other libraries as needed (e.g., MQTT for communication)
 
 5. **Designing the IoT Application**:
@@ -4016,6 +4136,7 @@ Developing a Java application for IoT (Internet of Things) using Raspberry Pi in
    - Create a new Java project in your IDE.
    - Import necessary libraries (Pi4J, MQTT, etc.).
    - Implement the main application logic:
+
      ```java
      import com.pi4j.io.gpio.*;
      
@@ -4048,6 +4169,7 @@ Developing a Java application for IoT (Internet of Things) using Raspberry Pi in
 9. **Implementing IoT Communication**:
    - Add code to send data to cloud services or other devices.
    - Implement protocols like MQTT or HTTP for data transmission.
+
    ```java
    import org.eclipse.paho.client.mqttv3.*;
    
@@ -4108,9 +4230,11 @@ Raspberry Pi નો ઉપયોગ કરીને IoT (Internet of Things) મ
 
 4. **જરૂરી લાઇબ્રેરીઓ ઇન્સ્ટોલ કરવી**:
    - Pi4J: GPIO (General Purpose Input/Output) નિયંત્રણ માટે
-     ```
+
+     ```bash
      curl -sSL https://pi4j.com/install | sudo bash
      ```
+
    - જરૂર મુજબ અન્ય લાઇબ્રેરીઓ (દા.ત., કમ્યુનિકેશન માટે MQTT)
 
 5. **IoT એપ્લિકેશન ડિઝાઇન કરવી**:
@@ -4126,6 +4250,7 @@ Raspberry Pi નો ઉપયોગ કરીને IoT (Internet of Things) મ
    - તમારા IDE માં નવું Java પ્રોજેક્ટ બનાવો.
    - જરૂરી લાઇબ્રેરીઓ (Pi4J, MQTT, વગેરે) import કરો.
    - મુખ્ય એપ્લિકેશન લોજિક લાગુ કરો:
+
      ```java
      import com.pi4j.io.gpio.*;
      
@@ -4158,6 +4283,7 @@ Raspberry Pi નો ઉપયોગ કરીને IoT (Internet of Things) મ
 9. **IoT કમ્યુનિકેશન લાગુ કરવું**:
    - ક્લાઉડ સેવાઓ અથવા અન્ય ઉપકરણોને ડેટા મોકલવા માટે કોડ ઉમેરો.
    - ડેટા ટ્રાન્સમિશન માટે MQTT અથવા HTTP જેવા પ્રોટોકોલ લાગુ કરો.
+
    ```java
    import org.eclipse.paho.client.mqttv3.*;
    
@@ -4179,71 +4305,22 @@ Raspberry Pi નો ઉપયોગ કરીને IoT (Internet of Things) મ
     - એપ્લિકેશન હેલ્થ મોનિટરિંગ માટે લોગિંગ લાગુ કરો.
     - નિયમિત અપડેટ્સ અને જાળવણી માટે યોજના બનાવો.
 
-```mermaid
-graph TD
-    A[Raspberry Pi સેટ અપ કરો] --> B[JDK ઇન્સ્ટોલ કરો]
-    B --> C[ડેવલપમેન્ટ એન્વાયરનમેન્ટ સેટ અપ કરો]
-    C --> D[લાઇબ્રેરીઓ ઇન્સ્ટોલ કરો]
-    D --> E[IoT એપ્લિકેશન ડિઝાઇન કરો]
-    E --> F[હાર્ડવેર કનેક્ટ કરો]
-    F --> G[Java કોડ લખો]
-    G --> H[ટેસ્ટ અને ડીબગ કરો]
-    H --> I[IoT કમ્યુનિકેશન લાગુ કરો]
-    I --> J[પરફોર્મન્સ ઓપ્ટિમાઇઝ કરો]
-    J --> K[એપ્લિકેશન ડિપ્લોય કરો]
-    K --> L[મોનિટર અને જાળવણી કરો]
-```
+   ```mermaid
+   graph TD
+      A[Raspberry Pi સેટ અપ કરો] --> B[JDK ઇન્સ્ટોલ કરો]
+      B --> C[ડેવલપમેન્ટ એન્વાયરનમેન્ટ સેટ અપ કરો]
+      C --> D[લાઇબ્રેરીઓ ઇન્સ્ટોલ કરો]
+      D --> E[IoT એપ્લિકેશન ડિઝાઇન કરો]
+      E --> F[હાર્ડવેર કનેક્ટ કરો]
+      F --> G[Java કોડ લખો]
+      G --> H[ટેસ્ટ અને ડીબગ કરો]
+      H --> I[IoT કમ્યુનિકેશન લાગુ કરો]
+      I --> J[પરફોર્મન્સ ઓપ્ટિમાઇઝ કરો]
+      J --> K[એપ્લિકેશન ડિપ્લોય કરો]
+      K --> L[મોનિટર અને જાળવણી કરો]
+   ```
 
-આ પ્રક્રિયા સોફ્ટવેર ડેવલપમેન્ટ કૌશલ્યોને હાર્ડવેર જ્ઞાન સાથે જોડે છે, જે Raspberry Pi પર Java નો ઉપયોગ કરીને શક્તિશાળી IoT સોલ્યુશન બનાવે છે. Java ની લવચીકતા, Raspberry Pi ની ક્ષમતાઓ સાથે જોડાઈને, સરળ સેન્સર ડેટા સંગ્રહથી લઈને જટિલ સ્વયંસંચાલિત સિસ્ટમ્સ સુધીની વિશાળ શ્રેણીની IoT એપ્લિકેશન્સની મંજૂરી આપે છે.
-
-વધારાના મહત્વપૂર્ણ મુદ્દાઓ:
-
-13. **સુરક્ષા વિચારણાઓ**:
-    - નેટવર્ક કમ્યુનિકેશનમાં એન્ક્રિપ્શન લાગુ કરો.
-    - સુરક્ષિત પ્રમાણીકરણ પદ્ધતિઓનો ઉપયોગ કરો.
-    - નિયમિતપણે સોફ્ટવેર અપડેટ્સ અને સુરક્ષા પેચ લાગુ કરો.
-
-14. **ડેટા મેનેજમેન્ટ**:
-    - ડેટા સ્ટોરેજ અને પ્રોસેસિંગ માટે યોગ્ય ડેટાબેઝ પસંદ કરો (દા.ત., SQLite લોકલ સ્ટોરેજ માટે).
-    - ડેટા બેકઅપ અને પુનઃપ્રાપ્તિ વ્યૂહરચનાઓ વિકસાવો.
-
-15. **સ્કેલેબિલિટી**:
-    - એપ્લિકેશનને વધુ ઉપકરણો અને વધુ ડેટા સંચાલિત કરવા માટે ડિઝાઇન કરો.
-    - ક્લાઉડ સેવાઓ સાથે એકીકરણ માટે તૈયાર રહો.
-
-16. **ઉપયોગકર્તા ઇન્ટરફેસ**:
-    - મોનિટરિંગ અને નિયંત્રણ માટે વેબ-આધારિત UI વિકસાવવાનું ધ્યાનમાં લો.
-    - મોબાઇલ એપ્લિકેશન સાથે એકીકરણ માટે REST API બનાવો.
-
-17. **ઊર્જા કાર્યક્ષમતા**:
-    - બેટરી દ્વારા સંચાલિત IoT ઉપકરણો માટે લો-પાવર મોડ્સ લાગુ કરો.
-    - સેન્સર રીડિંગ્સ અને ડેટા ટ્રાન્સમિશન માટે ઓપ્ટિમલ સમયપત્રક બનાવો.
-
-18. **ટ્રબલશૂટિંગ અને રિમોટ મેનેજમેન્ટ**:
-    - રિમોટ લોગિંગ અને ડાયગ્નોસ્ટિક્સ સક્ષમ કરો.
-    - SSH દ્વારા રિમોટ એક્સેસ સેટ અપ કરો જેથી દૂરસ્થ ડિબગિંગ અને અપડેટ્સ શક્ય બને.
-
-```mermaid
-graph TD
-    A[IoT એપ્લિકેશન] --> B[સુરક્ષા]
-    A --> C[ડેટા મેનેજમેન્ટ]
-    A --> D[સ્કેલેબિલિટી]
-    A --> E[ઉપયોગકર્તા ઇન્ટરફેસ]
-    A --> F[ઊર્જા કાર્યક્ષમતા]
-    A --> G[ટ્રબલશૂટિંગ]
-    B --> H[એન્ક્રિપ્શન]
-    B --> I[પ્રમાણીકરણ]
-    C --> J[ડેટાબેઝ]
-    C --> K[બેકઅપ]
-    D --> L[ક્લાઉડ એકીકરણ]
-    E --> M[વેબ UI]
-    E --> N[મોબાઇલ એપ]
-    F --> O[લો-પાવર મોડ]
-    G --> P[રિમોટ લોગિંગ]
-    G --> Q[SSH એક્સેસ]
-```
-
-આ વિસ્તૃત પ્રક્રિયા Raspberry Pi પર Java નો ઉપયોગ કરીને એક વ્યાપક IoT સોલ્યુશન બનાવવા માટેના તમામ મહત્વપૂર્ણ પાસાઓને આવરી લે છે. તે ટેક્નિકલ વિકાસથી લઈને વ્યવહારુ વિચારણાઓ સુધી, એક મજબૂત અને ટકાઉ IoT એપ્લિકેશન બનાવવા માટે જરૂરી તમામ પગલાંને સમાવે છે. આ અભિગમ ડેવલપર્સને તેમના IoT પ્રોજેક્ટ્સમાં Java ની શક્તિ અને Raspberry Pi ની બહુમુખી પ્રતિભાનો પૂરેપૂરો લાભ લેવાની મંજૂરી આપે છે.
+   આ પ્રક્રિયા સોફ્ટવેર ડેવલપમેન્ટ કૌશલ્યોને હાર્ડવેર જ્ઞાન સાથે જોડે છે, જે Raspberry Pi પર Java નો ઉપયોગ કરીને શક્તિશાળી IoT સોલ્યુશન બનાવે છે. Java ની લવચીકતા, Raspberry Pi ની ક્ષમતાઓ સાથે જોડાઈને, સરળ સેન્સર ડેટા સંગ્રહથી લઈને જટિલ સ્વયંસંચાલિત સિસ્ટમ્સ સુધીની વિશાળ શ્રેણીની IoT એપ્લિકેશન્સની મંજૂરી આપે છે.
 
 ### Question 5(a): Explain the concept of Aspect-Oriented Programming (AOP) in Spring. (3 marks)
 
@@ -4267,6 +4344,7 @@ Key concepts of AOP in Spring:
 5. **Weaving**: The process of linking aspects with other application types or objects to create an advised object.
 
 Benefits of AOP in Spring:
+
 - Improves code modularity
 - Reduces code duplication
 - Enhances separation of concerns
@@ -4321,6 +4399,7 @@ Spring માં AOP ની મુખ્ય વિભાવનાઓ:
 5. **Weaving**: Advised object બનાવવા માટે aspects ને અન્ય એપ્લિકેશન પ્રકારો અથવા ઓબ્જેક્ટ્સ સાથે જોડવાની પ્રક્રિયા.
 
 Spring માં AOP ના ફાયદાઓ:
+
 - કોડ મોડ્યુલારિટી સુધારે છે
 - કોડ ડુપ્લિકેશન ઘટાડે છે
 - Concerns ના અલગીકરણમાં વધારો કરે છે
@@ -4364,6 +4443,7 @@ Key roles and features of Spring Boot Actuator:
 1. **Health Checks**:
    - Provides a `/health` endpoint to check the application's health status.
    - Can be customized to include checks for databases, message queues, and other external systems.
+
    ```java
    @Component
    public class CustomHealthIndicator implements HealthIndicator {
@@ -4387,6 +4467,7 @@ Key roles and features of Spring Boot Actuator:
 4. **Application Information**:
    - Provides the `/info` endpoint for displaying application information.
    - Can be customized to show version, build details, and other metadata.
+
    ```properties
    info.app.name=My Spring Boot Application
    info.app.version=1.0.0
@@ -4408,12 +4489,14 @@ Key roles and features of Spring Boot Actuator:
    - When combined with Spring Security, provides audit events for authentication and authorization.
 
 Benefits of using Actuator:
+
 - Enhances application monitoring capabilities
 - Facilitates easy integration with external monitoring tools
 - Provides out-of-the-box production-ready features
 - Improves application maintainability and troubleshooting
 
 Configuration example:
+
 ```yaml
 management:
   endpoints:
@@ -4450,6 +4533,7 @@ Spring Boot Actuator ની મુખ્ય ભૂમિકાઓ અને સ�
 1. **હેલ્થ ચેક્સ**:
    - એપ્લિકેશનની આરોગ્ય સ્થિતિ તપાસવા માટે `/health` endpoint પ્રદાન કરે છે.
    - ડેટાબેસ, મેસેજ ક્યુ અને અન્ય બાહ્ય સિસ્ટમ્સ માટેની તપાસ સામેલ કરવા માટે કસ્ટમાઇઝ કરી શકાય છે.
+
    ```java
    @Component
    public class CustomHealthIndicator implements HealthIndicator {
@@ -4473,6 +4557,7 @@ Spring Boot Actuator ની મુખ્ય ભૂમિકાઓ અને સ�
 4. **એપ્લિકેશન માહિતી**:
    - એપ્લિકેશન માહિતી પ્રદર્શિત કરવા માટે `/info` endpoint પ્રદાન કરે છે.
    - આવૃત્તિ, બિલ્ડ વિગતો અને અન્ય મેટાડેટા બતાવવા માટે કસ્ટમાઇઝ કરી શકાય છે.
+
    ```properties
    info.app.name=મારી Spring Boot એપ્લિકેશન
    info.app.version=1.0.0
@@ -4494,12 +4579,14 @@ Spring Boot Actuator ની મુખ્ય ભૂમિકાઓ અને સ�
    - Spring Security સાથે જોડાયેલ હોય ત્યારે, પ્રમાણીકરણ અને અધિકૃતતા માટે ઓડિટ ઘટનાઓ પ્રદાન કરે છે.
 
 Actuator નો ઉપયોગ કરવાના ફાયદા:
+
 - એપ્લિકેશન મોનિટરિંગ ક્ષમતાઓ વધારે છે
 - બાહ્ય મોનિટરિંગ સાધનો સાથે સરળ એકીકરણની સુવિધા આપે છે
 - Out-of-the-box production-ready સુવિધાઓ પ્રદાન કરે છે
 - એપ્લિકેશન જાળવણી અને સમસ્યા નિવારણમાં સુધારો કરે છે
 
 કોન્ફિગરેશન ઉદાહરણ:
+
 ```yaml
 management:
   endpoints:
@@ -4533,7 +4620,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
 
 **Key Features of MQTT:**
 
-1. **Publish-Subscribe Model**: 
+1. **Publish-Subscribe Model**:
    - Devices can publish messages to topics or subscribe to topics to receive messages.
    - Decouples message senders (publishers) from receivers (subscribers).
 
@@ -4542,7 +4629,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
    - QoS 1: At least once delivery (acknowledged delivery)
    - QoS 2: Exactly once delivery (assured delivery)
 
-3. **Small Footprint**: 
+3. **Small Footprint**:
    - Minimal packet overhead, ideal for constrained devices and low-bandwidth networks.
 
 4. **Last Will and Testament (LWT)**:
@@ -4556,6 +4643,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
 1. **Setting Up Dependencies**:
    - Use Eclipse Paho MQTT Client library for Java.
    - Add to Maven `pom.xml`:
+
      ```xml
      <dependency>
          <groupId>org.eclipse.paho</groupId>
@@ -4565,6 +4653,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
      ```
 
 2. **Connecting to an MQTT Broker**:
+
    ```java
    import org.eclipse.paho.client.mqttv3.*;
    
@@ -4583,6 +4672,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
    ```
 
 3. **Publishing Messages**:
+
    ```java
    public void publish(String topic, String message) throws MqttException {
        MqttMessage mqttMessage = new MqttMessage(message.getBytes());
@@ -4592,6 +4682,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
    ```
 
 4. **Subscribing to Topics**:
+
    ```java
    public void subscribe(String topic) throws MqttException {
        client.subscribe(topic, (topic1, message) -> {
@@ -4601,6 +4692,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
    ```
 
 5. **Handling Connection Loss**:
+
    ```java
    options.setAutomaticReconnect(true);
    client.setCallback(new MqttCallback() {
@@ -4614,6 +4706,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
    ```
 
 6. **Implementing QoS**:
+
    ```java
    MqttMessage message = new MqttMessage(payload);
    message.setQos(2); // Exactly once delivery
@@ -4621,6 +4714,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
    ```
 
 7. **Using Last Will and Testament**:
+
    ```java
    MqttConnectOptions options = new MqttConnectOptions();
    options.setWill("device/status", "offline".getBytes(), 1, true);
@@ -4657,6 +4751,7 @@ graph TD
 ```
 
 **Best Practices:**
+
 - Use SSL/TLS for secure communication.
 - Implement proper error handling and reconnection logic.
 - Use meaningful topic structures for easy management.
@@ -4672,7 +4767,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
 
 **MQTT ની મુખ્ય વિશેષતાઓ:**
 
-1. **પબ્લિશ-સબ્સ્ક્રાઇબ મોડેલ**: 
+1. **પબ્લિશ-સબ્સ્ક્રાઇબ મોડેલ**:
    - ઉપકરણો વિષયો પર સંદેશાઓ પ્રકાશિત કરી શકે છે અથવા સંદેશાઓ પ્રાપ્ત કરવા માટે વિષયોને સબ્સ્ક્રાઇબ કરી શકે છે.
    - સંદેશ મોકલનારાઓ (પ્રકાશકો)ને પ્રાપ્તકર્તાઓ (સબ્સ્ક્રાઇબર્સ)થી અલગ કરે છે.
 
@@ -4681,7 +4776,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
    - QoS 1: ઓછામાં ઓછું એક વખત વિતરણ (સ્વીકૃત વિતરણ)
    - QoS 2: ચોક્કસ એક વખત વિતરણ (ખાતરીપૂર્વક વિતરણ)
 
-3. **નાનું ફૂટપ્રિન્ટ**: 
+3. **નાનું ફૂટપ્રિન્ટ**:
    - ન્યૂનતમ પેકેટ ઓવરહેડ, મર્યાદિત ઉપકરણો અને ઓછી બેન્ડવિડ્થ નેટવર્ક્સ માટે આદર્શ.
 
 4. **છેલ્લી ઇચ્છા અને વસીયત (LWT)**:
@@ -4695,6 +4790,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
 1. **ડિપેન્ડન્સીઝ સેટ અપ કરવી**:
    - Java માટે Eclipse Paho MQTT Client લાઇબ્રેરીનો ઉપયોગ કરો.
    - Maven `pom.xml` માં ઉમેરો:
+
      ```xml
      <dependency>
          <groupId>org.eclipse.paho</groupId>
@@ -4704,6 +4800,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
      ```
 
 2. **MQTT બ્રોકર સાથે કનેક્ટ થવું**:
+
    ```java
    import org.eclipse.paho.client.mqttv3.*;
    
@@ -4722,6 +4819,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
    ```
 
 3. **સંદેશાઓ પ્રકાશિત કરવા**:
+
    ```java
    public void publish(String topic, String message) throws MqttException {
        MqttMessage mqttMessage = new MqttMessage(message.getBytes());
@@ -4731,6 +4829,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
    ```
 
 4. **વિષયોને સબ્સ્ક્રાઇબ કરવા**:
+
    ```java
    public void subscribe(String topic) throws MqttException {
        client.subscribe(topic, (topic1, message) -> {
@@ -4740,6 +4839,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
    ```
 
 5. **કનેક્શન લોસ હેન્ડલિંગ**:
+
    ```java
    options.setAutomaticReconnect(true);
    client.setCallback(new MqttCallback() {
@@ -4753,6 +4853,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
    ```
 
 6. **QoS નો અમલ કરવો**:
+
    ```java
    MqttMessage message = new MqttMessage(payload);
    message.setQos(2); // ચોક્કસ એક વખત વિતરણ
@@ -4760,6 +4861,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
    ```
 
 7. **છેલ્લી ઇચ્છા અને વસીયતનો ઉપયોગ કરવો**:
+
    ```java
    MqttConnectOptions options = new MqttConnectOptions();
    options.setWill("device/status", "offline".getBytes(), 1, true);
@@ -4796,6 +4898,7 @@ graph TD
 ```
 
 **શ્રેષ્ઠ પ્રથાઓ:**
+
 - સુરક્ષિત સંચાર માટે SSL/TLS નો ઉપયોગ કરો.
 - યોગ્ય ભૂલ હેન્ડલિંગ અને પુનઃજોડાણ લોજિક લાગુ કરો.
 - સરળ વ્યવસ્થાપન માટે અર્થપૂર્ણ વિષય માળખાનો ઉપયોગ કરો.

@@ -2179,7 +2179,7 @@ Hibernate is a popular Object-Relational Mapping (ORM) framework that simplifies
        private String companyId;
        private Long employeeNumber;
    }
-
+   
    @Entity
    public class Employee {
        @EmbeddedId
@@ -2314,7 +2314,7 @@ Hibernate એ એક લોકપ્રિય Object-Relational Mapping (ORM) �
        private String companyId;
        private Long employeeNumber;
    }
-
+   
    @Entity
    public class Employee {
        @EmbeddedId
@@ -2630,7 +2630,7 @@ Query optimization is crucial for improving database performance in Java applica
    ```java
    @NamedQuery(name = "User.findByName", query = "SELECT u FROM User u WHERE u.name = :name")
    public class User { ... }
-
+   
    TypedQuery<User> query = em.createNamedQuery("User.findByName", User.class);
    ```
 
@@ -2775,7 +2775,7 @@ Java એપ્લિકેશન્સમાં ડેટાબેસ પરફ�
    ```java
    @NamedQuery(name = "User.findByName", query = "SELECT u FROM User u WHERE u.name = :name")
    public class User { ... }
-
+   
    TypedQuery<User> query = em.createNamedQuery("User.findByName", User.class);
    ```
 
@@ -2814,7 +2814,7 @@ graph TD
     C --> C4[Pagination]
     D --> D1[JPQL]
     D --> D2[Named Queries]
-    ```
+```
 
 આ ઓપ્ટિમાઇઝેશન તકનીકોનો ઉપયોગ કરીને, ડેવલપર્સ JDBC, Hibernate, અથવા JPA નો ઉપયોગ કરતી Java એપ્લિકેશન્સમાં ડેટાબેસ ઓપરેશન્સની કાર્યક્ષમતામાં નોંધપાત્ર સુધારો કરી શકે છે.
 
@@ -2878,9 +2878,9 @@ The lifecycle of a Servlet consists of several phases from its loading to its de
 ```mermaid
 graph TD
     A[Loading] --> B[Instantiation]
-    B --> C[Initialization init()]
-    C --> D[Request Handling service()]
-    D --> E[Destruction destroy()]
+    B --> C["Initialization init()"]
+    C --> D["Request Handling service()"]
+    D --> E["Destruction destroy()"]
     D --> D
 ```
 
@@ -2914,9 +2914,9 @@ This lifecycle ensures efficient resource management and request handling in web
 ```mermaid
 graph TD
     A[લોડિંગ] --> B[ઇન્સ્ટન્સીએશન]
-    B --> C[પ્રારંભીકરણ init()]
-    C --> D[રિક્વેસ્ટ હેન્ડલિંગ service()]
-    D --> E[વિનાશ destroy()]
+    B --> C["પ્રારંભીકરણ init()"]
+    C --> D["રિક્વેસ્ટ હેન્ડલિંગ service()"]
+    D --> E["વિનાશ destroy()"]
     D --> D
 ```
 
@@ -2965,7 +2965,7 @@ Expression Language (EL) in JavaServer Pages (JSP) is a powerful feature that si
 
 ```mermaid
 graph TD
-    A[Expression Language in JSP] --> B[Syntax ${} or #{}]
+    A[Expression Language in JSP] --> B["Syntax ${} or #{}"]
     A --> C[Data Access]
     A --> D[Implicit Objects]
     A --> E[Operators]
@@ -3020,7 +3020,7 @@ JavaServer Pages (JSP) માં એક્સપ્રેશન લેંગ્�
 
 ```mermaid
 graph TD
-    A[JSP માં એક્સપ્રેશન લેંગ્વેજ] --> B[સિન્ટેક્સ ${} અથવા #{}]
+    A[JSP માં એક્સપ્રેશન લેંગ્વેજ] --> B["સિન્ટેક્સ ${} અથવા #{}"]
     A --> C[ડેટા ઍક્સેસ]
     A --> D[ઇમ્પ્લિસિટ ઑબ્જેક્ટ્સ]
     A --> E[ઓપરેટર્સ]
@@ -3063,7 +3063,7 @@ JAX-RS (Java API for RESTful Web Services) is a powerful Java API that simplifie
        public List<User> getUsers() {
            // Implementation to fetch users
        }
-
+   
        @POST
        @Consumes(MediaType.APPLICATION_JSON)
        public Response createUser(User user) {
@@ -3085,13 +3085,13 @@ JAX-RS (Java API for RESTful Web Services) is a powerful Java API that simplifie
    public User getUser(@PathParam("id") int id) {
        // Fetch user by id
    }
-
+   
    @PUT
    @Path("/{id}")
    public Response updateUser(@PathParam("id") int id, User user) {
        // Update user
    }
-
+   
    @DELETE
    @Path("/{id}")
    public Response deleteUser(@PathParam("id") int id) {
@@ -3187,7 +3187,7 @@ JAX-RS (Java API for RESTful Web Services) એ એક શક્તિશાળ�
        public List<User> getUsers() {
            // વપરાશકર્તાઓ મેળવવા માટેનું અમલીકરણ
        }
-
+   
        @POST
        @Consumes(MediaType.APPLICATION_JSON)
        public Response createUser(User user) {
@@ -3209,13 +3209,13 @@ JAX-RS (Java API for RESTful Web Services) એ એક શક્તિશાળ�
    public User getUser(@PathParam("id") int id) {
        // id દ્વારા વપરાશકર્તા મેળવો
    }
-
+   
    @PUT
    @Path("/{id}")
    public Response updateUser(@PathParam("id") int id, User user) {
        // વપરાશકર્તા અપડેટ કરો
    }
-
+   
    @DELETE
    @Path("/{id}")
    public Response deleteUser(@PathParam("id") int id) {
@@ -3409,14 +3409,14 @@ The Model-View-Controller (MVC) pattern is a widely used architectural pattern i
            request.getRequestDispatcher("userView.jsp").forward(request, response);
        }
    }
-
+   
    // Model
    public class UserModel {
        public List<User> getAllUsers() {
            // Logic to fetch users from database
        }
    }
-
+   
    // View (JSP)
    <table>
        <c:forEach var="user" items="${users}">
@@ -3486,14 +3486,14 @@ Model-View-Controller (MVC) પેટર્ન એ વેબ એપ્લિક�
            request.getRequestDispatcher("userView.jsp").forward(request, response);
        }
    }
-
+   
    // મોડેલ
    public class UserModel {
        public List<User> getAllUsers() {
            // ડેટાબેસમાંથી વપરાશકર્તાઓ મેળવવાની લોજિક
        }
    }
-
+   
    // વ્યૂ (JSP)
    <table>
        <c:forEach var="user" items="${users}">
@@ -3593,7 +3593,7 @@ Designing and implementing RESTful APIs involves a systematic approach to create
          public List<Post> getAllPosts() {
              // Implementation
          }
-
+     
          @PostMapping
          public ResponseEntity<Post> createPost(@RequestBody Post post) {
              // Implementation
@@ -3726,7 +3726,7 @@ RESTful APIs ડિઝાઇન કરવી અને અમલમાં મૂ
          public List<Post> getAllPosts() {
              // અમલીકરણ
          }
-
+     
          @PostMapping
          public ResponseEntity<Post> createPost(@RequestBody Post post) {
              // અમલીકરણ
@@ -4567,10 +4567,10 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
 2. **Connecting to an MQTT Broker**:
    ```java
    import org.eclipse.paho.client.mqttv3.*;
-
+   
    public class MQTTClient {
        private MqttClient client;
-
+   
        public void connect() throws MqttException {
            String broker = "tcp://broker.hivemq.com:1883";
            String clientId = MqttClient.generateClientId();
@@ -4608,7 +4608,7 @@ MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe n
        public void connectionLost(Throwable cause) {
            System.out.println("Connection lost! " + cause.getMessage());
        }
-
+   
        // Other callback methods...
    });
    ```
@@ -4706,10 +4706,10 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
 2. **MQTT બ્રોકર સાથે કનેક્ટ થવું**:
    ```java
    import org.eclipse.paho.client.mqttv3.*;
-
+   
    public class MQTTClient {
        private MqttClient client;
-
+   
        public void connect() throws MqttException {
            String broker = "tcp://broker.hivemq.com:1883";
            String clientId = MqttClient.generateClientId();
@@ -4747,7 +4747,7 @@ MQTT (Message Queuing Telemetry Transport) એ એક હળવું, પ્ર
        public void connectionLost(Throwable cause) {
            System.out.println("કનેક્શન ગુમાવ્યું! " + cause.getMessage());
        }
-
+   
        // અન્ય કોલબેક પદ્ધતિઓ...
    });
    ```
@@ -4862,9 +4862,9 @@ MQTT ની હલકી પ્રકૃતિ, તેની મજબૂત સ
    ```java
    import org.slf4j.Logger;
    import org.slf4j.LoggerFactory;
-
+   
    private static final Logger logger = LoggerFactory.getLogger(MQTTClient.class);
-
+   
    // લોગિંગનો ઉપયોગ
    logger.info("MQTT કનેક્શન સ્થાપિત");
    logger.error("કનેક્શન નિષ્ફળ", exception);
